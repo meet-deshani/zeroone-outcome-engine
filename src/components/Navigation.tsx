@@ -18,12 +18,13 @@ const Navigation = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "Work", path: "/work" },
+    { name: "Solutions", path: "/solutions" },
     { name: "Approach", path: "/approach" },
-    { name: "Insights", path: "/insights" },
     { name: "Pricing", path: "/pricing" },
+    { name: "Case Studies", path: "/work" },
+    { name: "Security", path: "/security" },
     { name: "About", path: "/about" },
+    { name: "Insights", path: "/insights" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -43,9 +44,9 @@ const Navigation = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-bold text-lg leading-none">
-                ZeroOne DTS
+                ZeroOne DOTS.ai
               </span>
-              <span className="text-xs text-muted-foreground">Consulting</span>
+              <span className="text-xs text-muted-foreground">Outcome-first AI Agents</span>
             </div>
           </Link>
 
@@ -70,7 +71,7 @@ const Navigation = () => {
           <div className="hidden lg:block">
             <Link to="/contact">
               <Button size="lg" className="gradient-primary text-white font-semibold shadow-lg hover:shadow-glow transition-all">
-                Book Discovery Call
+                Launch My Agent
               </Button>
             </Link>
           </div>
@@ -106,7 +107,7 @@ const Navigation = () => {
             ))}
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
               <Button size="lg" className="w-full gradient-primary text-white font-semibold">
-                Book Discovery Call
+                Launch My Agent
               </Button>
             </Link>
           </div>

@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/home/HeroSection";
+import MoatSection from "@/components/home/MoatSection";
+import IntegrationsSection from "@/components/home/IntegrationsSection";
 import SocialProofSection from "@/components/home/SocialProofSection";
-import ServicesSection from "@/components/home/ServicesSection";
 import ApproachSection from "@/components/home/ApproachSection";
 import CaseStudiesSection from "@/components/home/CaseStudiesSection";
 import CTASection from "@/components/home/CTASection";
@@ -13,8 +14,9 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
+        <MoatSection />
+        <IntegrationsSection />
         <SocialProofSection />
-        <ServicesSection />
         <ApproachSection />
         <CaseStudiesSection />
         <CTASection />

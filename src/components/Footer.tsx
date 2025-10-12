@@ -16,14 +16,14 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-lg leading-none">
-                  ZeroOne DTS
+                  ZeroOne DOTS.ai
                 </span>
-                <span className="text-xs text-muted-foreground">Consulting</span>
+                <span className="text-xs text-muted-foreground">Outcome-first AI Agents</span>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Data. Tech. Strategy.<br />
-              100% Outcome.
+              Problem Solving First • Outcome First — Zero Billing<br />
+              Data Safeguard First
             </p>
             <div className="flex space-x-3">
               <a
@@ -56,28 +56,33 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Solutions */}
           <div>
-            <h4 className="font-heading font-semibold mb-4">Services</h4>
+            <h4 className="font-heading font-semibold mb-4">AI Agents</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Data Stack
+                <Link to="/solutions" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Data Agents
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Tech Stack
+                <Link to="/solutions" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Ops Agents
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Strategy Engine
+                <Link to="/solutions" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Tech Agents
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Pricing
+                <Link to="/solutions" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Strategy Agents
+                </Link>
+              </li>
+              <li>
+                <Link to="/security" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Security
                 </Link>
               </li>
             </ul>
@@ -116,8 +121,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail size={16} />
-                <a href="mailto:hello@zeroonedts.com" className="hover:text-foreground transition-colors">
-                  hello@zeroonedts.com
+                <a href="mailto:hello@zeroonedots.ai" className="hover:text-foreground transition-colors">
+                  hello@zeroonedots.ai
                 </a>
               </li>
               <li>
@@ -130,15 +135,17 @@ const Footer = () => {
             </ul>
             <div className="mt-4 p-3 rounded-lg bg-card text-xs text-muted-foreground">
               <span className="inline-flex items-center px-2 py-1 rounded bg-primary/10 text-primary font-semibold mb-2">
-                0 Billing for 99% Outcome !!!
+                Outcome First — Zero Billing
               </span>
-              <p>NDA available. ISO-standard data handling.</p>
+              <p>Enterprise-grade security. Safe, responsible AI.</p>
             </div>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© {currentYear} ZeroOne DTS Consulting. All rights reserved.</p>
+          <p className="mb-1">Made in India • Serving globally</p>
+          <p className="text-xs mb-2">Problem Solving First • Outcome First — Zero Billing • Data Safeguard First</p>
+          <p>© {currentYear} ZeroOne DOTS.ai. All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link to="/privacy" className="hover:text-foreground transition-colors">
               Privacy Policy
