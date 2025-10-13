@@ -5,27 +5,21 @@ const SocialProofSection = () => {
   const metrics = [
     {
       icon: Database,
-      value: "1M+",
-      label: "Rows Automated",
+      value: "10M+",
+      label: "Data Automated",
       color: "text-primary",
     },
     {
       icon: TrendingDown,
-      value: "40%",
+      value: "90%+",
       label: "Manual Work Reduced",
       color: "text-secondary",
     },
     {
       icon: TrendingUp,
-      value: "25%",
-      label: "Ops Productivity Lift",
+      value: "2x",
+      label: "Productivity Lift",
       color: "text-primary-light",
-    },
-    {
-      icon: Target,
-      value: "100%",
-      label: "Delivery Rate",
-      color: "text-secondary",
     },
   ];
 
@@ -33,8 +27,14 @@ const SocialProofSection = () => {
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
+          {/* Section Title */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold gradient-text mb-3">Proof of AI Automation Capability</h2>
+            <p className="text-muted-foreground">Real outcomes delivered through custom AI agents</p>
+          </div>
+
           {/* Metrics Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {metrics.map((metric, index) => (
               <div
                 key={index}
@@ -55,9 +55,9 @@ const SocialProofSection = () => {
           </div>
 
           {/* CTA Link */}
-          <div className="text-center animate-fade-up" style={{ animationDelay: "400ms" }}>
+          <div className="text-center animate-fade-up" style={{ animationDelay: "300ms" }}>
             <Link
-              to="/work"
+              to="/insights"
               className="inline-flex items-center text-primary hover:text-primary-light font-semibold group transition-colors"
             >
               See how we measure outcomes
