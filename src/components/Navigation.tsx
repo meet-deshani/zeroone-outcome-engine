@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -19,9 +21,7 @@ const Navigation = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Solutions", path: "/solutions" },
-    { name: "Approach", path: "/approach" },
     { name: "Pricing", path: "/pricing" },
-    { name: "Case Studies", path: "/work" },
     { name: "Security", path: "/security" },
     { name: "About", path: "/about" },
     { name: "Insights", path: "/insights" },
@@ -69,11 +69,13 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link to="/contact">
-              <Button size="lg" className="gradient-primary text-white font-semibold shadow-lg hover:shadow-glow transition-all">
-                Launch My Agent
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="gradient-primary text-white font-semibold shadow-lg hover:shadow-glow transition-all"
+              onClick={() => setIsContactFormOpen(true)}
+            >
+              Launch My Agent
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,14 +107,25 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button size="lg" className="w-full gradient-primary text-white font-semibold">
-                Launch My Agent
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="w-full gradient-primary text-white font-semibold"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsContactFormOpen(true);
+              }}
+            >
+              Launch My Agent
+            </Button>
           </div>
         </div>
       )}
+      
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Launch My Agent"
+      />
     </nav>
   );
 };

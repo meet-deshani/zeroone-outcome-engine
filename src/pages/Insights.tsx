@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Clock, ArrowRight, Download } from "lucide-react";
+import { Clock, ArrowRight, Download, TrendingUp } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const Insights = () => {
   const [email, setEmail] = useState("");
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const featuredPosts = [
     {
@@ -64,6 +65,33 @@ const Insights = () => {
     "Ops & Process",
     "Unit Economics & Strategy",
     "Outcome Pricing",
+  ];
+
+  const caseStudies = [
+    {
+      title: "Ops Alert Agent: 38% TAT Reduction in 6 Weeks",
+      metric: "38%",
+      metricLabel: "TAT Reduction",
+      challenge: "Manual ops monitoring causing delays",
+      solution: "Deployed Ops Alert Agent with real-time SLA tracking",
+      outcome: "Cut turnaround time by 38% and reduced alert fatigue by 50%",
+    },
+    {
+      title: "Data Pipeline Agent: 72% Manual Hours Saved",
+      metric: "72%",
+      metricLabel: "Hours Saved",
+      challenge: "Daily manual data exports and transformations",
+      solution: "Built automated ETL pipeline with quality checks",
+      outcome: "Team reallocated 72% of manual hours to strategic work",
+    },
+    {
+      title: "Strategy Agent: 14% Unit Economics Improvement",
+      metric: "14%",
+      metricLabel: "Economics Lift",
+      challenge: "CAC/LTV modeling done ad-hoc in spreadsheets",
+      solution: "Unit Economics Agent with real-time cohort tracking",
+      outcome: "Improved unit economics by 14% through data-driven decisions",
+    },
   ];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
@@ -200,8 +228,54 @@ const Insights = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Case Studies */}
       <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl font-bold mb-4">Case Studies</h2>
+            <p className="text-xl text-muted-foreground">
+              Real outcomes from AI agent deployments
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
+              <article key={index} className="card-elevated group hover-lift cursor-pointer">
+                <div className="p-6">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary-light mx-auto mb-4 flex items-center justify-center shadow-glow">
+                    <div className="text-center">
+                      <div className="text-white font-bold text-2xl">{study.metric}</div>
+                      <div className="text-white text-xs">{study.metricLabel}</div>
+                    </div>
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold mb-4 text-center group-hover:text-primary transition-colors">
+                    {study.title}
+                  </h3>
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <p className="font-semibold mb-1">Challenge:</p>
+                      <p className="text-muted-foreground">{study.challenge}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-1">Solution:</p>
+                      <p className="text-muted-foreground">{study.solution}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-1 flex items-center gap-1">
+                        <TrendingUp size={14} className="text-primary" />
+                        Outcome:
+                      </p>
+                      <p className="text-muted-foreground">{study.outcome}</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Get Outcome Insights Weekly
@@ -229,21 +303,29 @@ const Insights = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Your Outcome System?
+            Ready to Build Your AI Agent Solution?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Let's talk about your data, tech, and strategy challenges.
+            Let's design custom agents for your challenges
           </p>
-          <Link to="/contact">
-            <Button size="lg" className="gradient-primary text-white text-base">
-              Book a Discovery Call
-            </Button>
-          </Link>
+          <Button 
+            size="lg" 
+            className="gradient-primary text-white text-base"
+            onClick={() => setIsContactFormOpen(true)}
+          >
+            Launch My Agent
+          </Button>
         </div>
       </section>
+
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Launch My Agent"
+      />
 
       <Footer />
     </div>

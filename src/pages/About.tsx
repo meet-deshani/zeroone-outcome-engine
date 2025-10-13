@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Target, Zap, Shield, Gauge, Users } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const About = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   const values = [
     {
       icon: Zap,
@@ -152,50 +155,51 @@ const About = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="font-heading text-4xl font-bold mb-4">The Team</h2>
-            <p className="text-muted-foreground">We hire 0→1 problem solvers.</p>
+            <p className="text-xl text-muted-foreground mb-2">1 PM with Customised Dedicated AI Agents</p>
+            <p className="text-muted-foreground">Full end-to-end AI automation capability across your stack</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
-            <div className="card-elevated text-center group hover-lift">
-              <div className="p-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary via-primary-light to-accent mx-auto mb-4 flex items-center justify-center shadow-glow">
-                  <span className="text-white font-bold text-4xl">A</span>
+          <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
+            {/* PM + AI Agents */}
+            <div className="card-elevated group hover-lift">
+              <div className="p-8">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary via-primary-light to-accent flex items-center justify-center shadow-glow flex-shrink-0">
+                    <span className="text-white font-bold text-4xl">PM</span>
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="font-heading text-2xl font-semibold mb-2">Your Dedicated Project Manager</h3>
+                    <p className="text-primary font-semibold mb-4">Orchestrating Specialized AI Agents</p>
+                    <p className="text-muted-foreground mb-4">
+                      One PM who designs solutions and coordinates custom AI agents to solve problems end-to-end. No large teams, no handoffs—just focused execution across Data, Ops, Tech, and Strategy.
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-3 mt-4">
+                      <div className="flex items-center gap-2 text-sm">
+                        <CheckCircle2 className="text-primary flex-shrink-0" size={18} />
+                        <span>Data Agents</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <CheckCircle2 className="text-primary flex-shrink-0" size={18} />
+                        <span>Ops Agents</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <CheckCircle2 className="text-primary flex-shrink-0" size={18} />
+                        <span>Tech Agents</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <CheckCircle2 className="text-primary flex-shrink-0" size={18} />
+                        <span>Strategy Agents</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-1">Founder & Lead</h3>
-                <p className="text-sm text-primary mb-3">Strategy + Data Architecture</p>
-                <p className="text-sm text-muted-foreground">
-                  10+ years building data systems. Ex-consultant turned operator. Believes systems beat slides.
-                </p>
               </div>
             </div>
-
-            {/* Team Member 2 */}
-            <div className="card-elevated text-center group hover-lift">
-              <div className="p-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary via-primary-light to-accent mx-auto mb-4 flex items-center justify-center shadow-glow">
-                  <span className="text-white font-bold text-4xl">B</span>
-                </div>
-                <h3 className="font-heading text-xl font-semibold mb-1">Tech Lead</h3>
-                <p className="text-sm text-primary mb-3">Engineering + Product</p>
-                <p className="text-sm text-muted-foreground">
-                  Full-stack engineer with ops process expertise. Builds APIs, automations, and dashboards that scale.
-                </p>
-              </div>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="card-elevated text-center group hover-lift">
-              <div className="p-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary via-primary-light to-accent mx-auto mb-4 flex items-center justify-center shadow-glow">
-                  <span className="text-white font-bold text-4xl">C</span>
-                </div>
-                <h3 className="font-heading text-xl font-semibold mb-1">Analytics Lead</h3>
-                <p className="text-sm text-primary mb-3">BI + MIS + Dashboards</p>
-                <p className="text-sm text-muted-foreground">
-                  Specialist in KPI design, dashboard UX, and executive reporting. Makes data visible and actionable.
-                </p>
-              </div>
-            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Our approach: 1 PM manages the entire engagement, leveraging purpose-built AI agents for each domain. This gives you full-stack capability at a fraction of traditional consulting costs—with faster delivery and clearer accountability.
+            </p>
           </div>
         </div>
       </section>
@@ -262,19 +266,22 @@ const About = () => {
             Let's build systems that scale from 0 → 1 → ∞
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="gradient-primary text-white text-base">
-                Book a Discovery Call
-              </Button>
-            </Link>
-            <Link to="/approach">
-              <Button size="lg" variant="outline" className="text-base">
-                See Our Approach
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="gradient-primary text-white text-base"
+              onClick={() => setIsContactFormOpen(true)}
+            >
+              Launch My Agent
+            </Button>
           </div>
         </div>
       </section>
+
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Launch My Agent"
+      />
 
       <Footer />
     </div>

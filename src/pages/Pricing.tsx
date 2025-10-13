@@ -1,12 +1,26 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, X } from "lucide-react";
+import { CheckCircle2, Download } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import ContactForm from "@/components/ContactForm";
 
 const Pricing = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [contactSubject, setContactSubject] = useState("Launch My Agent");
+
+  const tools = [
+    "PostgreSQL", "BigQuery", "Snowflake", "dbt", "Power BI", 
+    "Looker Studio", "Metabase", "FastAPI", "Airflow", "WhatsApp/IVR"
+  ];
+
+  const openContactForm = (subject: string) => {
+    setContactSubject(subject);
+    setIsContactFormOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -26,9 +40,214 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* Our 0→1→∞ Approach */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-4xl text-center mb-12">
+          <h2 className="font-heading text-4xl font-bold mb-4">Our 0 → 1 → ∞ Method</h2>
+          <p className="text-lg text-muted-foreground">
+            From problem clarity to system build to scalable automation.
+          </p>
+        </div>
+        <div className="container mx-auto max-w-5xl">
+          {/* Timeline: Discover */}
+          <div className="flex items-start gap-8 mb-16">
+            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
+              <span className="text-white font-heading font-bold text-4xl">0</span>
+            </div>
+            <div className="flex-1">
+              <h3 className="font-heading text-4xl font-bold mb-4">Discover</h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Audit data, map KPIs, align success criteria
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Activities</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>Stakeholder interviews</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>Data profiling & system map</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>Risk register</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Deliverables</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>KPI Tree</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>Data Model Draft</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>Success Metrics</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
+                <div>
+                  <p className="text-sm font-medium mb-1">Timeline</p>
+                  <p className="text-2xl font-bold">1–2 weeks</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm font-medium mb-1">Acceptance Test</p>
+                  <p className="text-sm text-muted-foreground">Written scope + KPI baseline signed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline: Build */}
+          <div className="flex items-start gap-8 mb-16">
+            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
+              <span className="text-white font-heading font-bold text-4xl">1</span>
+            </div>
+            <div className="flex-1">
+              <h3 className="font-heading text-4xl font-bold mb-4">Build</h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Implement AI agents, data pipelines, dashboards, and automation
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Activities</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>AI agent design & development</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>ETL/ELT with dbt</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>BI setup & dashboard design</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>Ops workflows & automation</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Deliverables</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>Custom AI Agents</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>Data Warehouse</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>BI Dashboard Pack</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>SOPs & Runbook</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
+                <div>
+                  <p className="text-sm font-medium mb-1">Timeline</p>
+                  <p className="text-2xl font-bold">2–6 sprints</p>
+                  <p className="text-xs text-muted-foreground">(custom to scope)</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm font-medium mb-1">Acceptance Test</p>
+                  <p className="text-sm text-muted-foreground">Milestone agents & features pass UAT</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline: Scale */}
+          <div className="flex items-start gap-8">
+            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
+              <span className="text-white font-heading font-bold text-4xl">∞</span>
+            </div>
+            <div className="flex-1">
+              <h3 className="font-heading text-4xl font-bold mb-4">Scale</h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Automate, optimize, expand agents & processes; reduce cost / increase output
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Activities</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>Agent optimization & tuning</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>Alerting & monitoring</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>Unit economics tuning</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Deliverables</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>Automation Playbook</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>SLA Dashboard</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
+                      <span>Optimization Backlog</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
+                <div>
+                  <p className="text-sm font-medium mb-1">Timeline</p>
+                  <p className="text-2xl font-bold">Ongoing</p>
+                  <p className="text-xs text-muted-foreground">Monthly cycles</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm font-medium mb-1">Acceptance Test</p>
+                  <p className="text-sm text-muted-foreground">% lift vs baseline (productivity, TAT, cost/case)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Cards */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-6xl">
+          <h2 className="font-heading text-4xl font-bold mb-12 text-center">Pricing Models</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Discovery */}
             <Card className="relative overflow-hidden border-2 hover:border-primary/50 transition-all hover-lift">
@@ -62,11 +281,13 @@ const Pricing = () => {
                     </li>
                   </ul>
                 </div>
-                <Link to="/contact">
-                  <Button variant="outline" className="w-full mt-4">
-                    Start Discovery
-                  </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="w-full mt-4"
+                  onClick={() => openContactForm("Start Discovery")}
+                >
+                  Start Discovery
+                </Button>
               </CardContent>
             </Card>
 
@@ -90,15 +311,15 @@ const Pricing = () => {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <span>AI Agent Development</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
                       <span>Data Engineering & ETL/ELT</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
                       <span>Analytics & Dashboard Pack</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Feature/API Development</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
@@ -110,11 +331,12 @@ const Pricing = () => {
                     </li>
                   </ul>
                 </div>
-                <Link to="/contact">
-                  <Button className="w-full mt-4 gradient-primary text-white">
-                    Get Custom Quote
-                  </Button>
-                </Link>
+                <Button 
+                  className="w-full mt-4 gradient-primary text-white"
+                  onClick={() => openContactForm("Get Custom Quote")}
+                >
+                  Get Custom Quote
+                </Button>
               </CardContent>
             </Card>
 
@@ -136,6 +358,10 @@ const Pricing = () => {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <span>Agent Optimization & Tuning</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
                       <span>SLA Dashboard Monitoring</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm">
@@ -144,34 +370,45 @@ const Pricing = () => {
                     </li>
                     <li className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Optimization Backlog</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
                       <span>Cost/Case Reduction Targets</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Productivity Lift Tracking</span>
                     </li>
                   </ul>
                 </div>
-                <Link to="/contact">
-                  <Button variant="outline" className="w-full mt-4">
-                    Discuss Retainer
-                  </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="w-full mt-4"
+                  onClick={() => openContactForm("Discuss Retainer")}
+                >
+                  Discuss Retainer
+                </Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
+      {/* Tooling & Stack */}
       <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-5xl text-center">
+          <h2 className="font-heading text-4xl font-bold mb-4">Tooling & Stack</h2>
+          <p className="text-muted-foreground mb-8">
+            Stack is chosen to fit your constraints—cloud/on-prem, security, budget.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            {tools.map((tool) => (
+              <div key={tool} className="px-6 py-3 rounded-xl bg-card border border-border font-mono text-sm hover-lift">
+                {tool}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-5xl">
           <h2 className="font-heading text-4xl font-bold mb-12 text-center">
-            Traditional vs ZeroOne DTS
+            Traditional vs ZeroOne DOTS.ai
           </h2>
           <div className="card-elevated overflow-hidden">
             <div className="overflow-x-auto">
@@ -180,7 +417,7 @@ const Pricing = () => {
                   <tr className="border-b border-border">
                     <th className="text-left p-6 font-heading">Aspect</th>
                     <th className="text-left p-6 font-heading">Traditional Consulting</th>
-                    <th className="text-left p-6 font-heading bg-primary/5">ZeroOne DTS</th>
+                    <th className="text-left p-6 font-heading bg-primary/5">ZeroOne DOTS.ai</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -192,17 +429,17 @@ const Pricing = () => {
                     </td>
                   </tr>
                   <tr className="border-b border-border">
-                    <td className="p-6 font-medium">Scope Clarity</td>
-                    <td className="p-6 text-muted-foreground">Vague, changes frequently</td>
+                    <td className="p-6 font-medium">Team Structure</td>
+                    <td className="p-6 text-muted-foreground">Multiple consultants</td>
                     <td className="p-6 bg-primary/5">
-                      <span className="font-semibold text-primary">Clear acceptance tests</span>
+                      <span className="font-semibold text-primary">1 PM + Dedicated AI Agents</span>
                     </td>
                   </tr>
                   <tr className="border-b border-border">
                     <td className="p-6 font-medium">Deliverables</td>
                     <td className="p-6 text-muted-foreground">Slides & reports</td>
                     <td className="p-6 bg-primary/5">
-                      <span className="font-semibold text-primary">Systems & dashboards</span>
+                      <span className="font-semibold text-primary">Systems & AI agents</span>
                     </td>
                   </tr>
                   <tr className="border-b border-border">
@@ -226,126 +463,52 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Outcome Examples */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="font-heading text-4xl font-bold mb-4 text-center">Real Outcome Examples</h2>
-          <p className="text-center text-muted-foreground mb-12">
-            Clear, measurable results from actual engagements
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="card-elevated p-6 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light mx-auto mb-4 flex items-center justify-center shadow-glow">
-                <span className="text-white font-bold text-2xl">40%</span>
-              </div>
-              <h3 className="font-heading text-xl font-semibold mb-2">Manual Work Reduced</h3>
-              <p className="text-sm text-muted-foreground">
-                Automated reporting & data pipeline for fintech startup
-              </p>
-            </div>
-            <div className="card-elevated p-6 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light mx-auto mb-4 flex items-center justify-center shadow-glow">
-                <span className="text-white font-bold text-2xl">25%</span>
-              </div>
-              <h3 className="font-heading text-xl font-semibold mb-2">Ops Productivity Lift</h3>
-              <p className="text-sm text-muted-foreground">
-                Process optimization & dashboard visibility for logistics firm
-              </p>
-            </div>
-            <div className="card-elevated p-6 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light mx-auto mb-4 flex items-center justify-center shadow-glow">
-                <span className="text-white font-bold text-xl">30d</span>
-              </div>
-              <h3 className="font-heading text-xl font-semibold mb-2">Executive MIS Live</h3>
-              <p className="text-sm text-muted-foreground">
-                Real-time CXO dashboard from zero to production in 30 days
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQs */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-3xl">
-          <h2 className="font-heading text-4xl font-bold mb-8 text-center">Pricing FAQs</h2>
+          <h2 className="font-heading text-4xl font-bold mb-8 text-center">FAQs</h2>
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="card-elevated px-6">
               <AccordionTrigger className="text-left">
-                How do you define outcome acceptance?
+                How do you define "outcome" and acceptance?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                We define measurable acceptance tests upfront: KPI deltas, dashboard functionality, API response times, or process efficiency gains. You sign off on deliverables before billing.
+                We define measurable acceptance tests upfront: KPI deltas, dashboard functionality, AI agent performance, API response times, or process efficiency gains. You sign off on deliverables before billing.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2" className="card-elevated px-6">
               <AccordionTrigger className="text-left">
-                What if milestones aren't hit?
+                What if scope changes mid-sprint?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                No milestone acceptance = no billing for that sprint. We iterate until acceptance criteria are met or mutually agree to re-scope.
+                We re-scope and re-baseline transparently. If changes materially alter effort, we update the milestone pricing with mutual agreement before proceeding.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3" className="card-elevated px-6">
               <AccordionTrigger className="text-left">
-                Can we pause between sprints?
+                How does 1 PM + AI Agents work?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Yes. Sprints are independent. You can pause, re-prioritize, or continue at your pace.
+                You get one dedicated PM who orchestrates specialized AI agents across Data, Ops, Tech, and Strategy. The PM designs the solution, coordinates agent tasks, and ensures quality—providing full-stack capability without large human teams.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4" className="card-elevated px-6">
               <AccordionTrigger className="text-left">
-                What about IP & code ownership?
+                What about data security & NDAs?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                All code, data models, and documentation transfer to you. Full IP ownership. No lock-in.
+                NDA available from day one. We follow bank-grade security practices: PII-minimised, AES-256 at rest, TLS 1.2+ in transit, role-based access, and full audit logs.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-5" className="card-elevated px-6">
               <AccordionTrigger className="text-left">
-                What stacks do you support?
+                Can you work with our internal engineers?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                PostgreSQL, BigQuery, Snowflake, dbt, Power BI, Looker Studio, Metabase, FastAPI, Airflow, and more. We adapt to your constraints.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-6" className="card-elevated px-6">
-              <AccordionTrigger className="text-left">
-                Any hidden costs?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                None. Fixed-cost per sprint. Infrastructure costs (cloud, licenses) are transparently passed through or billed separately upfront.
+                Yes. We integrate with your existing teams, provide documentation, and can train your engineers on the systems and agents we build. Full knowledge transfer included.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </div>
-      </section>
-
-      {/* Trust Microcopy */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="card-elevated p-8 text-center">
-            <h3 className="font-heading text-2xl font-semibold mb-4">Security & Ownership</h3>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-primary" size={18} />
-                <span>NDA Available</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-primary" size={18} />
-                <span>Data Remains Your Property</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-primary" size={18} />
-                <span>Security Best Practices</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-primary" size={18} />
-                <span>Clear Invoice & Sign-off Flow</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -353,25 +516,36 @@ const Pricing = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
-            Ready to Calculate Your Outcome Plan?
+            Ready to go from 0 → 1 → ∞?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Let's scope your project and define clear milestones.
+            Let's design your custom AI agent solution
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="gradient-primary text-white text-base">
-                Book a Discovery Call
-              </Button>
-            </Link>
-            <Link to="/approach">
-              <Button size="lg" variant="outline" className="text-base">
-                See Our Approach
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="gradient-primary text-white text-base"
+              onClick={() => openContactForm("Start a Discovery")}
+            >
+              Start a Discovery
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-base"
+              onClick={() => openContactForm("Get My Outcome Plan")}
+            >
+              Get My Outcome Plan
+            </Button>
           </div>
         </div>
       </section>
+
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject={contactSubject}
+      />
 
       <Footer />
     </div>
