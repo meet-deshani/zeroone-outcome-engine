@@ -1,44 +1,53 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Clock, CheckCircle2 } from "lucide-react";
+import { TrendingUp } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const CaseStudiesSection = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   const caseStudies = [
     {
+      title: "💰 FinTech SaaS",
       industry: "FinTech SaaS",
-      problem: "Manual MIS taking 40+ hours/month with errors",
-      solution: "Built automated data pipeline + real-time dashboards",
-      outcome: "100% automation, <1% error rate, 25% faster decisions",
+      problem: "Manual MIS and reconciliation took 40+ hours/month with recurring data mismatches.",
+      agentDeployed: "🧠 Data Pipeline Agent",
+      agentDescription: "Connected across CRM, Billing, and MIS tools to auto-reconcile, validate, and generate dashboards in real time.",
+      howItWorked: "Agent auto-detected mismatched entries, flagged anomalies to Slack, and triggered re-runs using internal logic.",
+      outcome: "✅ 100% automation, <1% reconciliation error, 25% faster CXO decision cycles.",
       metrics: [
-        { label: "Time Saved", value: "40hrs/mo" },
-        { label: "Error Rate", value: "<1%" },
-        { label: "Decision Speed", value: "+25%" },
+        { label: "40 hrs/mo saved", icon: "⏱️" },
+        { label: "<1% error", icon: "📉" },
+        { label: "25% faster decisions", icon: "⚡" },
       ],
-      gradient: "from-primary to-primary-light",
     },
     {
+      title: "🚚 Logistics Startup",
       industry: "Logistics Startup",
-      problem: "No visibility into field ops efficiency",
-      solution: "Field ops tracking + CXO dashboard + alerts",
-      outcome: "30% productivity gain, reduced TAT by 2 days",
+      problem: "Field operations lacked visibility; no clarity on which zones were underperforming.",
+      agentDeployed: "📍 Ops Tracking Agent + CXO Dashboard Agent",
+      agentDescription: "Built tracking and visibility system for field operations.",
+      howItWorked: "Agent fetched GPS pings and ticket logs, flagged inactive routes, and pushed weekly summary to WhatsApp via API integration.",
+      outcome: "🚀 30% productivity boost, 2-day reduction in TAT, ₹8L/year cost savings.",
       metrics: [
-        { label: "Productivity", value: "+30%" },
-        { label: "TAT Reduction", value: "2 days" },
-        { label: "Cost Savings", value: "₹8L/yr" },
+        { label: "30% productivity boost", icon: "📈" },
+        { label: "2-day TAT reduction", icon: "⚡" },
+        { label: "₹8L/year saved", icon: "💰" },
       ],
-      gradient: "from-primary-light to-secondary",
     },
     {
-      industry: "D2C E-commerce",
-      problem: "Unit economics unclear, burning cash",
-      solution: "P&L modeling + cost optimization analysis",
-      outcome: "Identified ₹12L annual savings, improved margins by 15%",
+      title: "🛒 D2C E-Commerce",
+      industry: "D2C E-Commerce",
+      problem: "Burning cash due to unclear P&L structure and inefficient ad spend.",
+      agentDeployed: "📈 Financial Insight Agent",
+      agentDescription: "Linked Shopify + Ad Manager + Inventory APIs to simulate real-time P&L models.",
+      howItWorked: "Agent autonomously adjusted budget allocations based on ROI patterns.",
+      outcome: "💡 ₹12L annual savings, 15% higher gross margins, ROI achieved within 3 months.",
       metrics: [
-        { label: "Cost Saved", value: "₹12L/yr" },
-        { label: "Margin Lift", value: "+15%" },
-        { label: "RoI Time", value: "3 months" },
+        { label: "₹12L annual savings", icon: "💰" },
+        { label: "15% higher margins", icon: "📊" },
+        { label: "3-month ROI", icon: "⚡" },
       ],
-      gradient: "from-secondary to-primary",
     },
   ];
 
@@ -49,91 +58,99 @@ const CaseStudiesSection = () => {
           {/* Section Header */}
           <div className="text-center mb-16 space-y-4 animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-heading font-bold">
-              Proof of <span className="gradient-text">Outcomes</span>
+              Proof of <span className="gradient-text">Intelligence in Action</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real problems. Real solutions. Real results.
+              Real AI Agent deployments. Real transformation. Real outcomes.
             </p>
           </div>
 
           {/* Case Studies Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {caseStudies.map((study, index) => (
-              <div
+              <article
                 key={index}
-                className="group relative rounded-2xl border border-border bg-card overflow-hidden hover-lift animate-fade-up"
+                className="card-elevated group hover-lift cursor-pointer animate-fade-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Gradient Header */}
-                <div className={`h-2 bg-gradient-to-r ${study.gradient}`} />
-
-                <div className="p-6 space-y-4">
-                  {/* Industry Tag */}
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-muted text-sm font-medium">
-                    {study.industry}
-                  </div>
-
-                  {/* Problem */}
-                  <div className="space-y-2">
-                    <div className="flex items-center text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                      <Clock size={14} className="mr-2" />
-                      Problem
+                <div className="p-6">
+                  {/* Title with emoji */}
+                  <h3 className="font-heading text-2xl font-bold mb-4 text-center">
+                    {study.title}
+                  </h3>
+                  
+                  <div className="space-y-4 text-sm">
+                    {/* Problem */}
+                    <div className="border-l-2 border-destructive pl-3">
+                      <p className="font-semibold text-destructive mb-1 uppercase text-xs tracking-wide">Problem</p>
+                      <p className="text-muted-foreground leading-relaxed">{study.problem}</p>
                     </div>
-                    <p className="text-sm leading-relaxed">{study.problem}</p>
-                  </div>
-
-                  {/* Solution */}
-                  <div className="space-y-2">
-                    <div className="flex items-center text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                      <CheckCircle2 size={14} className="mr-2" />
-                      What We Built
+                    
+                    {/* AI Agent Deployed */}
+                    <div className="border-l-2 border-primary pl-3">
+                      <p className="font-semibold text-primary mb-1 uppercase text-xs tracking-wide">AI Agent Deployed</p>
+                      <p className="text-foreground font-semibold">{study.agentDeployed}</p>
+                      <p className="text-muted-foreground text-xs mt-1 leading-relaxed">{study.agentDescription}</p>
                     </div>
-                    <p className="text-sm leading-relaxed">{study.solution}</p>
-                  </div>
-
-                  {/* Outcome */}
-                  <div className="space-y-2">
-                    <div className="flex items-center text-sm font-semibold text-primary uppercase tracking-wide">
-                      <TrendingUp size={14} className="mr-2" />
-                      Outcome
+                    
+                    {/* How It Worked */}
+                    <div className="border-l-2 border-primary-light pl-3">
+                      <p className="font-semibold text-primary-light mb-1 uppercase text-xs tracking-wide">How It Worked</p>
+                      <p className="text-muted-foreground leading-relaxed">{study.howItWorked}</p>
                     </div>
-                    <p className="text-sm font-medium leading-relaxed">
-                      {study.outcome}
-                    </p>
-                  </div>
-
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-3 pt-4 border-t border-border">
-                    {study.metrics.map((metric, idx) => (
-                      <div key={idx} className="text-center">
-                        <div className="text-lg font-bold font-mono text-primary">
-                          {metric.value}
+                    
+                    {/* Outcome */}
+                    <div className="bg-gradient-to-br from-primary/10 to-primary-light/10 border border-primary/20 rounded-lg p-3">
+                      <p className="font-semibold text-primary mb-2 uppercase text-xs tracking-wide flex items-center gap-1">
+                        <TrendingUp size={14} />
+                        Outcome
+                      </p>
+                      <p className="text-foreground font-medium leading-relaxed">{study.outcome}</p>
+                    </div>
+                    
+                    {/* Metrics */}
+                    <div className="grid grid-cols-1 gap-2 pt-2">
+                      {study.metrics.map((metric, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs">
+                          <span className="text-lg">{metric.icon}</span>
+                          <span className="font-medium text-foreground">{metric.label}</span>
                         </div>
-                        <div className="text-xs text-muted-foreground">
-                          {metric.label}
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                    
+                    {/* Footer note */}
+                    <div className="pt-3 border-t border-border">
+                      <p className="text-xs text-muted-foreground italic text-center">
+                        Deployed Inside Client Platform
+                      </p>
+                    </div>
                   </div>
                 </div>
-
-                {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none`} />
-              </div>
+              </article>
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="text-center animate-fade-up" style={{ animationDelay: "300ms" }}>
-            <Link to="/work">
-              <Button size="lg" className="gradient-primary text-white font-semibold shadow-glow">
-                View All Case Studies
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </Link>
+          {/* Footer tagline & CTA */}
+          <div className="text-center space-y-6 animate-fade-up" style={{ animationDelay: "300ms" }}>
+            <p className="text-sm text-muted-foreground">
+              Powered by ZeroOne DOTS.ai Agents – seamlessly embedded in client environments
+            </p>
+            <Button 
+              size="lg" 
+              className="gradient-primary text-white font-semibold shadow-glow"
+              onClick={() => setIsContactFormOpen(true)}
+            >
+              Launch My Agent
+            </Button>
           </div>
         </div>
       </div>
+      
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Launch My Agent"
+      />
     </section>
   );
 };

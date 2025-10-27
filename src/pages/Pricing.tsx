@@ -40,71 +40,56 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Our 0→1→∞ Approach */}
+      {/* The ZeroOne 0 → 1 → ∞ Approach */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl text-center mb-12">
-          <h2 className="font-heading text-4xl font-bold mb-4">Our 0 → 1 → ∞ Method</h2>
+          <h2 className="font-heading text-4xl font-bold mb-4">The ZeroOne 0 → 1 → ∞ Approach</h2>
           <p className="text-lg text-muted-foreground">
-            From problem clarity to system build to scalable automation.
+            From problem clarity to autonomous systems in three phases
           </p>
         </div>
         <div className="container mx-auto max-w-5xl">
           {/* Timeline: Discover */}
           <div className="flex items-start gap-8 mb-16">
             <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
-              <span className="text-white font-heading font-bold text-4xl">0</span>
+              <span className="text-white font-heading font-bold text-4xl">🔍</span>
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-4xl font-bold mb-4">Discover</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                Audit data, map KPIs, align success criteria
+                From clarity to intelligent design
+              </p>
+              <p className="text-foreground mb-6">
+                Problem RCA, KPI formulation, and AI Agent blueprinting. We identify where intelligence adds the most value.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3">Activities</h4>
+                  <h4 className="font-semibold mb-3 text-primary">Includes:</h4>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>Stakeholder interviews</span>
+                      <span>🧩 Problem RCA</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>Data profiling & system map</span>
+                      <span>📊 KPI Formation</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>Risk register</span>
+                      <span>🤖 AI Agent Design</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span>📈 Possible Projections</span>
                     </li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-3">Deliverables</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>KPI Tree</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>Data Model Draft</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>Success Metrics</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
-                <div>
-                  <p className="text-sm font-medium mb-1">Timeline</p>
-                  <p className="text-2xl font-bold">1–2 weeks</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-medium mb-1">Acceptance Test</p>
-                  <p className="text-sm text-muted-foreground">Written scope + KPI baseline signed</p>
+                <div className="flex items-center justify-center">
+                  <div className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-primary-light/10 border border-primary/20">
+                    <p className="text-sm font-medium text-muted-foreground mb-2">Timeline</p>
+                    <p className="text-2xl font-bold">1–2 weeks</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -113,68 +98,45 @@ const Pricing = () => {
           {/* Timeline: Build */}
           <div className="flex items-start gap-8 mb-16">
             <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
-              <span className="text-white font-heading font-bold text-4xl">1</span>
+              <span className="text-white font-heading font-bold text-4xl">🛠️</span>
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-4xl font-bold mb-4">Build</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                Implement AI agents, data pipelines, dashboards, and automation
+                From plan to AI-powered MVP
+              </p>
+              <p className="text-foreground mb-6">
+                Our Product Managers and Agent Engineers build deployable MVPs using our in-house Agent-Building Capabilities — connecting your data, workflows, and logic into smart operational agents.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3">Activities</h4>
+                  <h4 className="font-semibold mb-3 text-primary">Includes:</h4>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>AI agent design & development</span>
+                      <span>🧠 AI Agent Development</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>ETL/ELT with dbt</span>
+                      <span>📡 Data Integration</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>BI setup & dashboard design</span>
+                      <span>📊 Dashboards</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>Ops workflows & automation</span>
+                      <span>⚙️ Automation</span>
                     </li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-3">Deliverables</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>Custom AI Agents</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>Data Warehouse</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>BI Dashboard Pack</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>SOPs & Runbook</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
-                <div>
-                  <p className="text-sm font-medium mb-1">Timeline</p>
-                  <p className="text-2xl font-bold">2–6 sprints</p>
-                  <p className="text-xs text-muted-foreground">(custom to scope)</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-medium mb-1">Acceptance Test</p>
-                  <p className="text-sm text-muted-foreground">Milestone agents & features pass UAT</p>
+                <div className="flex items-center justify-center">
+                  <div className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-primary-light/10 border border-primary/20">
+                    <p className="text-sm font-medium text-muted-foreground mb-2">Timeline</p>
+                    <p className="text-2xl font-bold">2–6 sprints</p>
+                    <p className="text-xs text-muted-foreground mt-1">(custom to scope)</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -183,60 +145,41 @@ const Pricing = () => {
           {/* Timeline: Scale */}
           <div className="flex items-start gap-8">
             <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
-              <span className="text-white font-heading font-bold text-4xl">∞</span>
+              <span className="text-white font-heading font-bold text-4xl">🚀</span>
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-4xl font-bold mb-4">Scale</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                Automate, optimize, expand agents & processes; reduce cost / increase output
+                From MVP to self-improving systems
+              </p>
+              <p className="text-foreground mb-6">
+                We evolve your AI Agents with real-time analytics, monitoring, and continuous strategic improvement — all autonomously powered by LLMs, with minimal human intervention.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3">Activities</h4>
+                  <h4 className="font-semibold mb-3 text-primary">Includes:</h4>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>Agent optimization & tuning</span>
+                      <span>📈 Realtime Analytics</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>Alerting & monitoring</span>
+                      <span>🧭 Continuous Optimization</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                      <span>Unit economics tuning</span>
+                      <span>🪄 LLM-backed Automation</span>
                     </li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-3">Deliverables</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>Automation Playbook</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>SLA Dashboard</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={18} />
-                      <span>Optimization Backlog</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
-                <div>
-                  <p className="text-sm font-medium mb-1">Timeline</p>
-                  <p className="text-2xl font-bold">Ongoing</p>
-                  <p className="text-xs text-muted-foreground">Monthly cycles</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-medium mb-1">Acceptance Test</p>
-                  <p className="text-sm text-muted-foreground">% lift vs baseline (productivity, TAT, cost/case)</p>
+                <div className="flex items-center justify-center">
+                  <div className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-primary-light/10 border border-primary/20">
+                    <p className="text-sm font-medium text-muted-foreground mb-2">Timeline</p>
+                    <p className="text-2xl font-bold">Ongoing</p>
+                    <p className="text-xs text-muted-foreground mt-1">Monthly cycles</p>
+                  </div>
                 </div>
               </div>
             </div>
