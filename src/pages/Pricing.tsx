@@ -51,8 +51,8 @@ const Pricing = () => {
         <div className="container mx-auto max-w-5xl">
           {/* Timeline: Discover */}
           <div className="flex items-start gap-8 mb-16">
-            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
-              <span className="text-white font-heading font-bold text-4xl">🔍</span>
+            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex-shrink-0 flex items-center justify-center shadow-glow transition-all hover:scale-110 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+              <span className="text-4xl">🔍</span>
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-4xl font-bold mb-4">Discover</h3>
@@ -97,8 +97,8 @@ const Pricing = () => {
 
           {/* Timeline: Build */}
           <div className="flex items-start gap-8 mb-16">
-            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
-              <span className="text-white font-heading font-bold text-4xl">🛠️</span>
+            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-purple-600/20 to-purple-700/20 flex-shrink-0 flex items-center justify-center shadow-glow transition-all hover:scale-110 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+              <span className="text-4xl">🛠️</span>
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-4xl font-bold mb-4">Build</h3>
@@ -144,8 +144,8 @@ const Pricing = () => {
 
           {/* Timeline: Scale */}
           <div className="flex items-start gap-8">
-            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-primary via-primary-light to-accent flex-shrink-0 flex items-center justify-center shadow-glow">
-              <span className="text-white font-heading font-bold text-4xl">🚀</span>
+            <div className="hidden md:block w-32 h-32 rounded-3xl bg-gradient-to-br from-teal-500/20 to-teal-600/20 flex-shrink-0 flex items-center justify-center shadow-glow transition-all hover:scale-110 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)]">
+              <span className="text-4xl">🚀</span>
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-4xl font-bold mb-4">Scale</h3>

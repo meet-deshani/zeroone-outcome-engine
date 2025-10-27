@@ -48,7 +48,7 @@ const ContactForm = ({ open, onOpenChange, defaultSubject = "Launch My Agent" }:
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px] animate-scale-in">
         <DialogHeader>
           <DialogTitle className="font-heading text-2xl">Get Started</DialogTitle>
           <DialogDescription>

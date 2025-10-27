@@ -1,35 +1,38 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Search, Hammer, Rocket, ArrowRight } from "lucide-react";
+import { Search, Hammer, Rocket } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const ApproachSection = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   const steps = [
     {
       icon: Search,
       phase: "0",
       title: "Discover",
-      description: "Problem clarity & data audit",
-      deliverables: ["KPI Map", "Data Model", "Scope Definition"],
-      color: "text-primary",
-      bgColor: "bg-primary/10",
+      description: "Problem RCA, KPI Formation, and AI Agent Blueprinting",
+      deliverables: ["Problem RCA", "KPI Formation", "Agent Design", "Possible Projections"],
+      color: "text-purple-500",
+      bgColor: "bg-purple-500/10",
     },
     {
       icon: Hammer,
       phase: "1",
       title: "Build",
-      description: "System, dashboards, workflows",
-      deliverables: ["Data Pipeline", "Dashboards", "Automation"],
-      color: "text-primary-light",
-      bgColor: "bg-primary-light/10",
+      description: "AI Agent MVP built by our PM + Agent Engineering stack",
+      deliverables: ["AI Agent Development", "Data Integration", "Dashboard Automation"],
+      color: "text-purple-600",
+      bgColor: "bg-purple-600/10",
     },
     {
       icon: Rocket,
       phase: "∞",
       title: "Scale",
-      description: "Automation, growth, optimization",
-      deliverables: ["Ops SOPs", "Scale Strategy", "Ongoing Support"],
-      color: "text-secondary",
-      bgColor: "bg-secondary/10",
+      description: "LLM-backed real-time analytics, monitoring, and continuous optimization",
+      deliverables: ["Realtime Analytics", "Continuous Improvement", "Self-learning Systems"],
+      color: "text-teal-500",
+      bgColor: "bg-teal-500/10",
     },
   ];
 
@@ -45,7 +48,7 @@ const ApproachSection = () => {
               Approach
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From problem clarity to scalable systems in three phases
+              From problem clarity to scalable AI Systems — powered by Autonomous Agents.
             </p>
           </div>
 
@@ -66,8 +69,8 @@ const ApproachSection = () => {
                   <div className="glass rounded-2xl p-8 hover-lift h-full">
                     {/* Icon Badge */}
                     <div className="flex items-center justify-center mb-6">
-                      <div className={`relative w-20 h-20 rounded-2xl ${step.bgColor} flex items-center justify-center shadow-glow`}>
-                        <step.icon className={step.color} size={36} />
+                      <div className={`relative w-20 h-20 rounded-2xl ${step.bgColor} flex items-center justify-center shadow-glow transition-all hover:scale-110 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)]`}>
+                        <step.icon className={step.color} size={36} strokeWidth={2.5} />
                         <div className={`absolute -top-3 -right-3 w-10 h-10 rounded-full bg-gradient-to-br from-white to-gray-100 flex items-center justify-center shadow-md`}>
                           <span className={`text-2xl font-bold font-mono ${step.color}`}>
                             {step.phase}
@@ -115,15 +118,23 @@ const ApproachSection = () => {
 
           {/* CTA */}
           <div className="text-center mt-8 animate-fade-up" style={{ animationDelay: "500ms" }}>
-            <Link to="/approach">
-              <Button size="lg" variant="outline" className="font-semibold">
-                Learn More About Our Process
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="font-semibold"
+              onClick={() => setIsContactFormOpen(true)}
+            >
+              Start Your AI Agent Journey
+            </Button>
           </div>
         </div>
       </div>
+
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Start AI Agent Project"
+      />
     </section>
   );
 };
