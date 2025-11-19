@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -21,8 +22,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import ContactForm from "@/components/ContactForm";
 
 const Solutions = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const agentCategories = [
     {
       title: "Data Agents",
@@ -361,12 +364,14 @@ const Solutions = () => {
                   Let's discuss which agent fits your needs and pilot it risk-free.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                  <Link to="/contact">
-                    <Button size="lg" className="gradient-primary text-white font-semibold shadow-glow">
-                      Launch My Agent
-                      <ArrowRight className="ml-2" size={20} />
-                    </Button>
-                  </Link>
+                  <Button 
+                    size="lg" 
+                    className="gradient-primary text-white font-semibold shadow-glow"
+                    onClick={() => setIsContactFormOpen(true)}
+                  >
+                    Launch My Agent
+                    <ArrowRight className="ml-2" size={20} />
+                  </Button>
                   <Link to="/work">
                     <Button size="lg" variant="outline" className="font-semibold">
                       See Live Demos
@@ -377,6 +382,12 @@ const Solutions = () => {
             </div>
           </section>
         </main>
+
+        <ContactForm 
+          open={isContactFormOpen} 
+          onOpenChange={setIsContactFormOpen}
+          defaultSubject="Launch My Agent"
+        />
 
         <Footer />
       </div>
