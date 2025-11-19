@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Lock, Eye } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import ContactForm from "@/components/ContactForm";
 
 const HeroSection = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background */}
@@ -80,12 +84,14 @@ const HeroSection = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Link to="/contact">
-              <Button size="lg" className="gradient-primary text-white font-semibold text-lg px-8 shadow-glow hover:scale-105 transition-transform">
-                Launch My Agent
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="gradient-primary text-white font-semibold text-lg px-8 shadow-glow hover:scale-105 transition-transform"
+              onClick={() => setIsContactFormOpen(true)}
+            >
+              Launch My Agent
+              <ArrowRight className="ml-2" size={20} />
+            </Button>
             <Link to="/work">
               <Button size="lg" variant="outline" className="font-semibold text-lg px-8 hover:bg-primary/5">
                 See Live Demos
@@ -107,6 +113,12 @@ const HeroSection = () => {
           <div className="w-1 h-3 rounded-full bg-primary/50" />
         </div>
       </div>
+
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Launch My Agent"
+      />
     </section>
   );
 };

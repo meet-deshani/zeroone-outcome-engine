@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -9,8 +10,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ContactForm from "@/components/ContactForm";
 
 const Services = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const services = [
     {
       icon: Database,
@@ -260,12 +263,14 @@ const Services = () => {
                 Let's discuss your data, tech, and strategy needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                <Link to="/contact">
-                  <Button size="lg" className="gradient-primary text-white font-semibold shadow-glow">
-                    Schedule a Call
-                    <ArrowRight className="ml-2" size={20} />
-                  </Button>
-                </Link>
+                <Button 
+                  size="lg" 
+                  className="gradient-primary text-white font-semibold shadow-glow"
+                  onClick={() => setIsContactFormOpen(true)}
+                >
+                  Schedule a Call
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
                 <Link to="/pricing">
                   <Button size="lg" variant="outline" className="font-semibold">
                     View Pricing
@@ -276,6 +281,12 @@ const Services = () => {
           </div>
         </section>
       </main>
+
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Schedule a Call"
+      />
 
       <Footer />
     </div>

@@ -1,9 +1,12 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Shield, Lock, Eye, Key, FileCheck, Server, CheckCircle2, Download } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const Security = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const securityFeatures = [
     {
       icon: Shield,
@@ -286,7 +289,11 @@ const Security = () => {
                 Let's discuss your security requirements and compliance needs.
               </p>
               <div className="pt-4">
-                <Button size="lg" className="gradient-primary text-white font-semibold shadow-glow">
+                <Button 
+                  size="lg" 
+                  className="gradient-primary text-white font-semibold shadow-glow"
+                  onClick={() => setIsContactFormOpen(true)}
+                >
                   Schedule a Security Review
                 </Button>
               </div>
@@ -294,6 +301,12 @@ const Security = () => {
           </div>
         </section>
       </main>
+
+      <ContactForm 
+        open={isContactFormOpen} 
+        onOpenChange={setIsContactFormOpen}
+        defaultSubject="Schedule a Security Review"
+      />
 
       <Footer />
     </div>
