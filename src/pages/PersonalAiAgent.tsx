@@ -39,16 +39,16 @@ const PersonalAiAgent = () => {
             <Navigation />
 
             {/* Hero Section (The Hook) */}
-            <section className="pt-32 pb-20 px-4 relative overflow-hidden text-center">
-                {/* Blueprint grid background effect */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+            <section className="pt-32 pb-20 md:pb-28 px-4 relative overflow-hidden text-center">
+                {/* Subtle radial glow background */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(200,182,255,0.08),transparent)] -z-10" />
 
                 <div className="container mx-auto max-w-5xl">
                     <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={fadeInUp}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dots-data/10 border border-dots-data/20 text-ink mb-6"
                     >
                         <DraftingCompass size={16} />
                         <span className="font-semibold text-sm tracking-wide uppercase">Nuanced. Private. Yours.</span>
@@ -61,7 +61,7 @@ const PersonalAiAgent = () => {
                         className="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight"
                     >
                         Learn to Build Your Own <br />
-                        <span className="text-primary">Personal AI Agent</span>
+                        <span className="text-plum">Personal AI Agent</span>
                     </motion.h1>
 
                     <motion.p
@@ -71,7 +71,7 @@ const PersonalAiAgent = () => {
                         className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed"
                     >
                         Pay once for the skill, benefit for a lifetime. <br />
-                        A <span className="font-bold text-foreground">4-week sprint</span> to 10X your career.
+                        A <span className="font-bold text-foreground">4-week sprint</span> to become 10 times more productive.
                     </motion.p>
 
                     <motion.div
@@ -82,7 +82,8 @@ const PersonalAiAgent = () => {
                     >
                         <Button
                             size="lg"
-                            className="gradient-primary text-white text-lg h-14 px-10 shadow-lg hover:shadow-primary/25 transition-all rounded-full min-w-[240px]"
+                            variant="brand"
+                            className="text-lg h-14 px-10 shadow-lg transition-all rounded-full min-w-[240px]"
                             onClick={() => openContactForm("Start Building - Hero")}
                         >
                             Start Building Now
@@ -93,23 +94,23 @@ const PersonalAiAgent = () => {
             </section>
 
             {/* The "Why You Build It" Section (The Logic) */}
-            <section className="py-20 px-4 bg-muted/30">
+            <section className="py-20 md:py-28 px-4 bg-cream-100">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
                         <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-                            Why Generic AI Fails High-Level Careers
+                            Why Regular AI Isn't Enough
                         </h2>
                         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                            ChatGPT doesn't know your context. It doesn't know your history. <br />
-                            To truly scale yourself, you need to build the tool yourself.
+                            ChatGPT doesn't know YOUR work. It doesn't know your history. <br />
+                            To really multiply what you can do, you need to build the tool yourself.
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {/* Nuance */}
-                        <Card className="border-t-4 border-t-blue-500 shadow-sm hover:shadow-md transition-all">
+                        <Card className="border-t-4 border-t-dots-data shadow-sm hover:shadow-md transition-all">
                             <CardHeader>
-                                <div className="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4 text-blue-600">
+                                <div className="w-14 h-14 rounded-xl bg-dots-data/10 flex items-center justify-center mb-4 text-dots-data">
                                     <DraftingCompass size={32} />
                                 </div>
                                 <CardTitle className="text-xl font-bold">Nuance</CardTitle>
@@ -122,9 +123,9 @@ const PersonalAiAgent = () => {
                         </Card>
 
                         {/* Speed */}
-                        <Card className="border-t-4 border-t-green-500 shadow-sm hover:shadow-md transition-all">
+                        <Card className="border-t-4 border-t-dots-ops shadow-sm hover:shadow-md transition-all">
                             <CardHeader>
-                                <div className="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-4 text-green-600">
+                                <div className="w-14 h-14 rounded-xl bg-dots-ops/10 flex items-center justify-center mb-4 text-dots-ops">
                                     <Zap size={32} />
                                 </div>
                                 <CardTitle className="text-xl font-bold">Speed</CardTitle>
@@ -137,9 +138,9 @@ const PersonalAiAgent = () => {
                         </Card>
 
                         {/* Ownership */}
-                        <Card className="border-t-4 border-t-purple-500 shadow-sm hover:shadow-md transition-all">
+                        <Card className="border-t-4 border-t-dots-strategy shadow-sm hover:shadow-md transition-all">
                             <CardHeader>
-                                <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 text-purple-600">
+                                <div className="w-14 h-14 rounded-xl bg-dots-strategy/10 flex items-center justify-center mb-4 text-dots-strategy">
                                     <Lock size={32} />
                                 </div>
                                 <CardTitle className="text-xl font-bold">Ownership</CardTitle>
@@ -155,15 +156,15 @@ const PersonalAiAgent = () => {
             </section>
 
             {/* The "Community" Section (The Upsell) */}
-            <section className="py-24 px-4 bg-background">
+            <section className="py-20 md:py-28 px-4 bg-background">
                 <div className="container mx-auto max-w-6xl">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="flex-1 space-y-8">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-accent/10 text-accent text-sm font-bold tracking-wide uppercase">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-dots-data/10 text-ink text-sm font-bold tracking-wide uppercase">
                                 <Users size={14} /> The Elite Network
                             </div>
                             <h2 className="font-heading text-4xl md:text-5xl font-bold">
-                                The ZeroOne <span className="text-primary">100X Community</span>
+                                The ZeroOne <span className="text-plum">100X Community</span>
                             </h2>
                             <p className="text-xl text-muted-foreground leading-relaxed">
                                 Building is just the start. Staying ahead is the journey.
@@ -178,7 +179,7 @@ const PersonalAiAgent = () => {
                                     "Direct access to ZeroOne architects"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-lg">
-                                        <CheckCircle2 size={24} className="text-primary shrink-0" />
+                                        <CheckCircle2 size={24} className="text-dots-ops shrink-0" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
@@ -186,26 +187,26 @@ const PersonalAiAgent = () => {
                         </div>
                         <div className="flex-1 w-full relative">
                             {/* Abstract Visualization of Network */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-dots-data/20 rounded-full blur-[100px] -z-10" />
                             <div className="bg-card border border-border rounded-3xl p-8 shadow-2xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
                                 <div className="space-y-6 relative z-10">
                                     <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border/50">
-                                        <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 font-bold">SD</div>
+                                        <div className="w-10 h-10 rounded-full bg-dots-data/20 flex items-center justify-center text-dots-data font-bold">SD</div>
                                         <div>
                                             <div className="font-bold text-sm">Sidhharth D. just shared a workflow</div>
                                             <div className="text-xs text-muted-foreground">"Automated my entire morning briefing..."</div>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border/50 translate-x-4">
-                                        <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 font-bold">DP</div>
+                                        <div className="w-10 h-10 rounded-full bg-dots-ops/20 flex items-center justify-center text-dots-ops font-bold">DP</div>
                                         <div>
                                             <div className="font-bold text-sm">Dhaval P. updated Agent "SalesBot"</div>
                                             <div className="text-xs text-muted-foreground">"Now handling objection handling automatically."</div>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border/50">
-                                        <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 font-bold">KH</div>
+                                        <div className="w-10 h-10 rounded-full bg-dots-strategy/20 flex items-center justify-center text-dots-strategy font-bold">KH</div>
                                         <div>
                                             <div className="font-bold text-sm">Keval H. asked a question</div>
                                             <div className="text-xs text-muted-foreground">"Best vector DB for legal documents?"</div>
@@ -219,7 +220,7 @@ const PersonalAiAgent = () => {
             </section>
 
             {/* Pricing Section */}
-            <section className="py-24 px-4 bg-muted/30">
+            <section className="py-20 md:py-28 px-4 bg-cream-100">
                 <div className="container mx-auto max-w-5xl">
                     <div className="text-center mb-16">
                         <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">Start Building. Keep Growing.</h2>
@@ -228,7 +229,7 @@ const PersonalAiAgent = () => {
 
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {/* Monthly Mentorship */}
-                        <Card className="flex flex-col h-full border-2 hover:border-primary/50 transition-all">
+                        <Card className="flex flex-col h-full border-2 hover:border-dots-data/50 transition-all">
                             <CardHeader className="text-center pb-2">
                                 <CardTitle className="text-2xl font-bold">Monthly Mentorship</CardTitle>
                                 <CardDescription className="text-base mt-2">Focus: <span className="font-semibold text-foreground">Start Building</span></CardDescription>
@@ -245,7 +246,7 @@ const PersonalAiAgent = () => {
                                         "Month-1 Money Back Guarantee"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3">
-                                            <CheckCircle2 size={20} className="text-primary mt-0.5 shrink-0" />
+                                            <CheckCircle2 size={20} className="text-dots-ops mt-0.5 shrink-0" />
                                             <span>{item}</span>
                                         </li>
                                     ))}
@@ -261,8 +262,8 @@ const PersonalAiAgent = () => {
                         </Card>
 
                         {/* Yearly Community */}
-                        <Card className="flex flex-col h-full border-2 border-primary shadow-2xl relative overflow-hidden">
-                            <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-bl-xl">
+                        <Card className="flex flex-col h-full border-2 border-ink shadow-2xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 bg-ink text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">
                                 BEST FOR LONG-TERM GROWTH
                             </div>
                             <CardHeader className="text-center pb-2">
@@ -272,7 +273,7 @@ const PersonalAiAgent = () => {
                             <CardContent className="flex flex-col h-full pt-6">
                                 <div className="text-center mb-8">
                                     <div className="text-muted-foreground line-through text-lg mb-1">₹119,988</div>
-                                    <div className="text-5xl font-bold text-primary">₹83,990<span className="text-xl font-normal text-muted-foreground">/yr</span></div>
+                                    <div className="text-5xl font-bold text-plum">₹83,990<span className="text-xl font-normal text-muted-foreground">/yr</span></div>
                                     <div className="text-sm font-bold text-green-600 mt-2 bg-green-500/10 inline-block px-3 py-1 rounded-full">
                                         SAVE 30%
                                     </div>
@@ -286,13 +287,14 @@ const PersonalAiAgent = () => {
                                         "Peer Networking Events"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3">
-                                            <CheckCircle2 size={20} className="text-primary mt-0.5 shrink-0" />
+                                            <CheckCircle2 size={20} className="text-dots-ops mt-0.5 shrink-0" />
                                             <span>{item}</span>
                                         </li>
                                     ))}
                                 </ul>
                                 <Button
-                                    className="w-full h-12 text-lg gradient-primary text-white"
+                                    variant="brand"
+                                    className="w-full h-12 text-lg"
                                     onClick={() => openContactForm("Yearly Community - Keep Growing")}
                                 >
                                     Join Yearly & Save
@@ -304,9 +306,9 @@ const PersonalAiAgent = () => {
             </section>
 
             {/* Risk Reversal */}
-            <section className="py-24 px-4 bg-background border-t border-border/50">
+            <section className="py-20 md:py-28 px-4 bg-background border-t border-border/50">
                 <div className="container mx-auto max-w-4xl text-center">
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/10 text-green-600 mb-8 border border-green-500/20">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-dots-ops/10 text-dots-ops mb-8 border border-dots-ops/20">
                         <ShieldCheck size={40} />
                     </div>
                     <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">
@@ -314,12 +316,13 @@ const PersonalAiAgent = () => {
                     </h2>
                     <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
                         If you don't have a working AI Agent by <span className="font-bold text-foreground">Day 30</span>,
-                        we will issue a <span className="text-primary font-bold">100% Refund</span>.
+                        we will issue a <span className="text-plum font-bold">100% Refund</span>.
                     </p>
                     <div className="mt-12">
                         <Button
                             size="lg"
-                            className="gradient-primary text-white text-lg h-14 px-12 shadow-glow rounded-full"
+                            variant="brand"
+                            className="text-lg h-14 px-12 shadow-lg rounded-full"
                             onClick={() => openContactForm("Claim Guarantee Offer")}
                         >
                             Build Risk-Free

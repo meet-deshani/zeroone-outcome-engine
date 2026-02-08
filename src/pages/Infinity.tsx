@@ -58,7 +58,7 @@ const beforeAfter = [
   },
   {
     before: "Leadership waits for weekly decks to see performance.",
-    after: "Strategy Agent answers questions like “What changed in growth this week by cohort?” directly from your data.",
+    after: "Strategy Agent answers questions like 'What changed in growth this week by cohort?' directly from your data.",
   },
   {
     before: "D2C brand manually copies customer signals between ads, support, and the CRM.",
@@ -104,7 +104,7 @@ const Infinity = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-white">
+    <div className="min-h-screen bg-cream-50">
       <Navigation />
 
       <main>
@@ -112,19 +112,19 @@ const Infinity = () => {
           <div className="container mx-auto max-w-6xl grid lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-6">
               <p className="text-sm uppercase tracking-[0.5em] text-muted-foreground">ZeroOne DOTS.ai</p>
-              <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900">
-                Plug DOTS.ai into your existing stack – not the other way around.
+              <h1 className="text-4xl md:text-5xl font-heading font-bold text-ink">
+                Add AI Power to Your Current Tools
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                We add an AI middleware layer on top of your current tools and APIs, so your teams and clients can use AI
-                agents without rebuilding anything. Infinity CRM pulls from warehouses, CRMs, helpdesks, analytics tools,
-                dialers, and other stack signals through DOTS.ai middleware to deliver the right actions to the people
+                We add a smart AI layer on top of your current tools and APIs, so your teams and clients can use AI
+                agents without rebuilding anything. Infinity CRM connects all your business tools in one place
+                through DOTS.ai middleware to deliver the right actions to the people
                 who need them.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button
                   size="lg"
-                  className="gradient-primary text-white"
+                  variant="brand"
                   onClick={() => openContactForm("See DOTS.ai middleware flow")}
                 >
                   See how the middleware works
@@ -138,7 +138,7 @@ const Infinity = () => {
                 </Button>
               </div>
             </div>
-            <div className="rounded-3xl border border-border bg-white shadow-[0_25px_45px_rgba(15,23,42,0.12)] p-6 flex flex-col gap-6 min-h-[620px]">
+            <div className="rounded-3xl border border-border bg-cream-50 shadow-2xl p-6 flex flex-col gap-6 min-h-[620px]">
               <div className="space-y-4">
                 <div className="text-sm font-semibold text-muted-foreground uppercase tracking-[0.5em]">
                   Your stack & APIs
@@ -154,7 +154,7 @@ const Infinity = () => {
                   ].map((tool) => (
                     <div
                       key={tool.label}
-                      className="flex items-center gap-2 rounded-full border border-primary/20 px-3 py-2 text-sm text-foreground hover:border-primary transition-all"
+                      className="flex items-center gap-2 rounded-full border border-dots-data/20 px-3 py-2 text-sm text-foreground hover:border-dots-data/50 transition-all"
                     >
                       <span className="text-base">{tool.icon}</span>
                       <span>{tool.label}</span>
@@ -163,11 +163,11 @@ const Infinity = () => {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-px h-8 bg-gradient-to-b from-primary to-secondary" />
+                <div className="w-px h-8 bg-gradient-to-b from-dots-data to-dots-ops" />
               </div>
-              <div className="rounded-3xl border border-primary/40 p-4 bg-gradient-to-b from-purple-500/20 to-cyan-400/30 text-white space-y-3">
+              <div className="rounded-3xl border border-ink/40 p-4 bg-ink text-white space-y-3">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.3em]">DOTS.ai middleware</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white">DOTS.ai middleware</p>
                   <p className="text-xs text-white/80">Agents that sit on top of your stack</p>
                 </div>
                 <div className="space-y-2">
@@ -180,9 +180,9 @@ const Infinity = () => {
                   ].map((agent) => (
                     <div
                       key={agent.title}
-                      className="flex items-start gap-3 rounded-2xl bg-white bg-opacity-90 px-3 py-2"
+                      className="flex items-start gap-3 rounded-2xl bg-white/90 px-3 py-2"
                     >
-                      <div className="h-8 w-8 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white font-semibold text-sm">
+                      <div className="h-8 w-8 flex items-center justify-center rounded-full bg-ink text-white font-semibold text-sm">
                         {agent.title[0]}
                       </div>
                       <div>
@@ -194,7 +194,7 @@ const Infinity = () => {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-px h-8 bg-gradient-to-b from-primary to-secondary" />
+                <div className="w-px h-8 bg-gradient-to-b from-dots-data to-dots-ops" />
               </div>
               <div className="space-y-3">
                 <div className="text-sm font-semibold text-muted-foreground uppercase tracking-[0.5em]">
@@ -209,7 +209,7 @@ const Infinity = () => {
                   ].map((item) => (
                     <span
                       key={item.label}
-                      className="px-3 py-2 rounded-full border border-primary/30 bg-white/60 text-xs font-semibold text-foreground"
+                      className="px-3 py-2 rounded-full border border-dots-data/30 bg-white/60 text-xs font-semibold text-foreground"
                     >
                       {item.label}
                     </span>
@@ -223,7 +223,7 @@ const Infinity = () => {
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-white">
+        <section className="px-4 py-16 md:py-24 bg-cream-50">
           <div className="container mx-auto max-w-6xl space-y-10">
             <div className="text-center space-y-3">
               <p className="text-sm uppercase tracking-[0.5em] text-muted-foreground">How it works</p>
@@ -244,7 +244,7 @@ const Infinity = () => {
                   {["Core Product / App", "CRM / Ticketing", "Data Warehouse / Database", "Internal / External APIs"].map(
                     (item) => (
                       <li key={item} className="flex items-center gap-2">
-                        <CheckCircle2 size={16} className="text-primary" />
+                        <CheckCircle2 size={16} className="text-plum" />
                         {item}
                       </li>
                     ),
@@ -258,7 +258,7 @@ const Infinity = () => {
                 </p>
                 <div className="space-y-3">
                   {agentCards.map((agent) => (
-                    <div key={agent.title} className="border border-border rounded-2xl p-4 bg-gray-50">
+                    <div key={agent.title} className="border border-border rounded-2xl p-4 bg-cream-100">
                       <div className="text-lg font-semibold">{agent.title}</div>
                       <p className="text-sm text-muted-foreground">{agent.description}</p>
                     </div>
@@ -268,7 +268,7 @@ const Infinity = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Who actually uses DOTS.ai</h3>
                 {["Your internal users", "Your leadership", "Your clients"].map((title) => (
-                  <div key={title} className="rounded-2xl border border-border bg-gradient-to-br from-white to-primary/5 p-4">
+                  <div key={title} className="rounded-2xl border border-border bg-gradient-to-br from-cream-50 to-dots-data/5 p-4">
                     <p className="font-semibold">{title}</p>
                     <p className="text-xs text-muted-foreground">
                       {title === "Your internal users"
@@ -286,9 +286,9 @@ const Infinity = () => {
             </div>
             <div className="text-center">
               <Button
-                size="md"
+                size="default"
                 variant="ghost"
-                className="text-primary hover:text-secondary"
+                className="text-ink hover:text-plum"
                 onClick={() => openContactForm("Schedule Infinity CRM review")}
               >
                 Schedule Infinity CRM review
@@ -297,15 +297,15 @@ const Infinity = () => {
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-gradient-to-br from-primary/5 to-white">
+        <section className="px-4 py-16 md:py-24 bg-gradient-to-br from-dots-data/5 to-cream-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <div className="inline-flex items-center gap-2 bg-white/80 border border-primary/20 rounded-full px-4 py-2 mx-auto mb-4">
-              <ShieldCheck className="text-primary" />
+            <div className="inline-flex items-center gap-2 bg-white/80 border border-dots-data/20 rounded-full px-4 py-2 mx-auto mb-4">
+              <ShieldCheck className="text-ink" />
               <span className="text-xs font-semibold uppercase tracking-[0.4em]">No PII</span>
             </div>
-            <h2 className="text-3xl font-heading font-bold mb-3">No PII or sensitive data required</h2>
+            <h2 className="text-3xl font-heading font-bold mb-3">We Don't Need Your Private Data</h2>
             <p className="text-muted-foreground mb-8">
-              DOTS.ai is designed to work safely with your existing systems. We don’t need to store PII or sensitive records.
+              DOTS.ai is designed to work safely with your existing systems. We don't need to store PII or sensitive records.
               For many use-cases we work with summary or aggregated data. For others, we only trigger automations without
               exporting raw data.
             </p>
@@ -324,7 +324,7 @@ const Infinity = () => {
                   copy: "Work with summary metrics, anonymised signals, or just run middle-layer automation.",
                 },
               ].map((card) => (
-                <div key={card.heading} className="rounded-2xl border border-border bg-white p-6 shadow-sm space-y-2">
+                <div key={card.heading} className="rounded-2xl border border-border bg-cream-50 p-6 shadow-sm space-y-2">
                   <p className="font-semibold">{card.heading}</p>
                   <p className="text-sm text-muted-foreground">{card.copy}</p>
                 </div>
@@ -332,9 +332,9 @@ const Infinity = () => {
             </div>
             <div className="text-center mt-6">
               <Button
-                size="md"
+                size="default"
                 variant="outline"
-                className="text-primary border-primary"
+                className="text-ink hover:border-dots-data"
                 onClick={() => openContactForm("Talk about safe data for DOTS.ai")}
               >
                 Talk about safe data
@@ -343,20 +343,20 @@ const Infinity = () => {
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-white">
+        <section className="px-4 py-16 md:py-24 bg-cream-50">
           <div className="container mx-auto max-w-6xl space-y-8">
             <div className="text-center space-y-3">
               <p className="text-sm uppercase tracking-[0.5em] text-muted-foreground">Consulting + Build</p>
               <h2 className="text-3xl font-heading font-bold">Consulting + AI Middleware Implementation</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                We don’t sell yet another SaaS. We realize AI inside your stack via the DOTS.ai middle layer,
+                We don't sell yet another SaaS. We realize AI inside your stack via the DOTS.ai middle layer,
                 built by AI Masters who prioritize security and credibility.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {processSteps.map((step, idx) => (
-                <div key={step.title} className="rounded-2xl border border-border p-6 bg-gradient-to-br from-white to-primary/5">
-                  <div className="text-xs font-semibold text-primary mb-2">Step {idx + 1}</div>
+                <div key={step.title} className="rounded-2xl border border-border p-6 bg-gradient-to-br from-cream-50 to-dots-data/5">
+                  <div className="text-xs font-semibold text-plum mb-2">Step {idx + 1}</div>
                   <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
                   <p className="text-sm text-muted-foreground">{step.text}</p>
                 </div>
@@ -365,7 +365,7 @@ const Infinity = () => {
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-muted/30">
+        <section className="px-4 py-16 md:py-24 bg-cream-100">
           <div className="container mx-auto max-w-5xl space-y-8">
             <div className="text-center">
               <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Before & after</p>
@@ -373,7 +373,7 @@ const Infinity = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {beforeAfter.map((example, idx) => (
-                <div key={idx} className="rounded-2xl bg-white p-6 border border-border space-y-4">
+                <div key={idx} className="rounded-2xl bg-cream-50 p-6 border border-border space-y-4">
                   <div>
                     <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Before DOTS.ai</p>
                     <p className="text-sm text-foreground">{example.before}</p>
@@ -388,7 +388,7 @@ const Infinity = () => {
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-white">
+        <section className="px-4 py-16 md:py-24 bg-cream-50">
           <div className="container mx-auto max-w-5xl space-y-6">
             <div className="text-center space-y-2">
               <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Tailored for</p>
@@ -396,7 +396,7 @@ const Infinity = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {whoTiles.map((tile) => (
-                <div key={tile.title} className="rounded-2xl border border-border p-6 bg-gradient-to-br from-primary/5 to-white">
+                <div key={tile.title} className="rounded-2xl border border-border p-6 bg-gradient-to-br from-dots-data/5 to-cream-50">
                   <h3 className="font-semibold text-xl">{tile.title}</h3>
                   <p className="text-sm text-muted-foreground">{tile.text}</p>
                 </div>
@@ -405,7 +405,7 @@ const Infinity = () => {
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-gradient-to-br from-primary/5 to-white">
+        <section className="px-4 py-16 md:py-24 bg-gradient-to-br from-dots-data/5 to-cream-50">
           <div className="container mx-auto max-w-5xl space-y-6">
             <div className="text-center">
               <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">FAQ</p>
@@ -413,10 +413,10 @@ const Infinity = () => {
             </div>
             <div className="space-y-4">
               {faqItems.map((faq) => (
-                <details key={faq.question} className="group rounded-2xl border border-border bg-white p-4 open:ring-2 open:ring-primary/50">
+                <details key={faq.question} className="group rounded-2xl border border-border bg-cream-50 p-4 open:ring-2 open:ring-dots-data/50">
                   <summary className="flex items-center justify-between font-semibold cursor-pointer">
                     {faq.question}
-                    <span className="text-primary">+</span>
+                    <span className="text-ink">+</span>
                   </summary>
                   <p className="mt-3 text-sm text-muted-foreground">{faq.answer}</p>
                 </details>
@@ -425,14 +425,15 @@ const Infinity = () => {
           </div>
         </section>
 
-        <section className="px-4 py-20">
+        <section className="px-4 py-16 md:py-24">
           <div className="container mx-auto max-w-6xl">
-            <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/10 to-secondary/10 p-8 text-center space-y-4 shadow-xl">
+            <div className="rounded-2xl border border-border bg-gradient-to-br from-dots-data/10 to-dots-strategy/10 p-8 text-center space-y-4 shadow-xl">
               <p className="text-xl font-semibold">Want AI agents on top of your existing stack – without sharing PII?</p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button
                   size="lg"
-                  className="gradient-primary text-white px-8"
+                  variant="brand"
+                  className="px-8"
                   onClick={() => openContactForm("Talk to DOTS.ai")}
                 >
                   Talk to DOTS.ai

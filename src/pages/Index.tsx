@@ -2,11 +2,12 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import MoatSection from "@/components/home/MoatSection";
-import IntegrationsSection from "@/components/home/IntegrationsSection";
-import SocialProofSection from "@/components/home/SocialProofSection";
-import FoundersReviewSection from "@/components/home/FoundersReviewSection";
+import ServicesSection from "@/components/home/ServicesSection";
 import ApproachSection from "@/components/home/ApproachSection";
 import CaseStudiesSection from "@/components/home/CaseStudiesSection";
+import SocialProofSection from "@/components/home/SocialProofSection";
+import IntegrationsSection from "@/components/home/IntegrationsSection";
+import FoundersReviewSection from "@/components/home/FoundersReviewSection";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
@@ -16,11 +17,12 @@ const Index = () => {
       <main>
         <HeroSection />
         <MoatSection />
-        <IntegrationsSection />
-        <SocialProofSection />
-        <FoundersReviewSection />
+        <ServicesSection />
         <ApproachSection />
         <CaseStudiesSection />
+        <SocialProofSection />
+        <IntegrationsSection />
+        <FoundersReviewSection />
         <CTASection />
       </main>
       <Footer />

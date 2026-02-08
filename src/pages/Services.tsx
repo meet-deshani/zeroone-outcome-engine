@@ -17,22 +17,22 @@ const Services = () => {
   const services = [
     {
       icon: Database,
-      title: "Data Stack – From Raw Data to Smart Decisions",
+      title: "Smart Data — Turn Numbers Into Answers",
       subtitle: "Build scalable data infrastructure and analytics",
-      color: "from-primary to-primary-light",
+      color: "from-dots-data to-dots-data",
       offerings: [
         {
-          name: "Data Architecture & Engineering",
+          name: "Set Up Your Data Foundation",
           description: "Design and build modern data warehouses (PostgreSQL, BigQuery, Snowflake) with validated ETL/ELT pipelines.",
           deliverables: ["Data models", "Pipeline automation", "Quality checks"],
         },
         {
-          name: "Analytics Stack & KPI Layer",
+          name: "Dashboards That Show What Matters",
           description: "Integrate dbt, Power BI, Looker Studio, Metabase. Auto-track KPIs across all functions.",
           deliverables: ["KPI dashboards", "Automated reporting", "Data catalogs"],
         },
         {
-          name: "Advanced Dashboard Visibility",
+          name: "Reports for Every Team",
           description: "Business-wide reporting with role-based dashboards for CXO, Ops, Product, Finance.",
           deliverables: ["Executive dashboards", "Team dashboards", "Alert systems"],
         },
@@ -40,22 +40,22 @@ const Services = () => {
     },
     {
       icon: Code,
-      title: "Tech Stack – From Ideas to Working Systems",
+      title: "Custom Tech — Turn Ideas Into Working Tools",
       subtitle: "Engineer products, automation, and operational flows",
-      color: "from-primary-light to-secondary",
+      color: "from-dots-ops to-dots-ops",
       offerings: [
         {
-          name: "Product Feature Development",
+          name: "Build Your Product",
           description: "Build MVPs, APIs, automation systems, web apps from concept to production.",
           deliverables: ["API development", "Frontend apps", "Automation scripts"],
         },
         {
-          name: "Ops Process Setup via Tech",
+          name: "Automate Your Daily Work",
           description: "Field ops, customer support, communication flows—bridging process with technology.",
           deliverables: ["Workflow automation", "Integration systems", "Process dashboards"],
         },
         {
-          name: "Management Control Centers",
+          name: "Live Business Dashboard",
           description: "Real-time control panels for daily business visibility via automation.",
           deliverables: ["CXO panels", "Live reporting", "Performance monitors"],
         },
@@ -63,22 +63,22 @@ const Services = () => {
     },
     {
       icon: Target,
-      title: "Strategy Engine – From Clarity to Growth",
+      title: "Growth Strategy — Turn Plans Into Profit",
       subtitle: "Drive measurable outcomes through strategic execution",
-      color: "from-secondary to-primary",
+      color: "from-dots-strategy to-dots-strategy",
       offerings: [
         {
-          name: "Unit Economics Improvement",
+          name: "Make More Per Sale",
           description: "Deep-dive P&L modeling, cost optimization, and profitability analysis.",
           deliverables: ["Unit economics model", "Cost analysis", "Margin optimization"],
         },
         {
-          name: "Process Optimization & Efficiency",
+          name: "Do More With Less",
           description: "Streamline operations, reduce waste, improve productivity across teams.",
           deliverables: ["Process maps", "Efficiency metrics", "Improvement roadmap"],
         },
         {
-          name: "Organization MIS Setup",
+          name: "Track Everything That Matters",
           description: "Build KPI frameworks, reporting cadence, and decision-making dashboards.",
           deliverables: ["KPI trees", "MIS architecture", "Report templates"],
         },
@@ -89,33 +89,33 @@ const Services = () => {
   const faqs = [
     {
       question: "What industries do you serve?",
-      answer: "We work with startups and mid-market firms across FinTech, SaaS, Logistics, Manufacturing, E-commerce, and D2C—anywhere data, tech, and strategy drive growth.",
+      answer: "We work with startups and growing companies in FinTech, SaaS, Logistics, Manufacturing, E-commerce, and D2C — any business where data, tech, and strategy drive growth.",
     },
     {
       question: "How long does a typical project take?",
-      answer: "Discovery takes 1-2 weeks (free). Build sprints are 2-4 weeks each. Most clients see initial outcomes within 4-8 weeks from kickoff.",
+      answer: "Discovery is 1–2 weeks (free). Build sprints run 2–4 weeks each. Most clients see results within 4–8 weeks.",
     },
     {
       question: "Do you offer ongoing support?",
-      answer: "Yes! After initial delivery, we offer Scale Retainers for monthly optimization, monitoring, and continuous improvement with SLAs.",
+      answer: "Yes. After delivery, we offer monthly retainers for optimization, monitoring, and continuous improvement.",
     },
     {
       question: "What's your tech stack?",
-      answer: "We're tech-agnostic but favor: PostgreSQL, BigQuery, Snowflake, dbt, Power BI, Looker, Python, Node.js, React—chosen based on your needs and existing systems.",
+      answer: "We pick what fits best. Common tools: PostgreSQL, BigQuery, Snowflake, dbt, Power BI, Looker, Python, Node.js, and React.",
     },
   ];
 
   return (
     <div className="min-h-screen w-full">
       <Navigation />
-      
+
       <main className="pt-20">
         {/* Hero */}
-        <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        <section className="py-20 md:py-28 bg-gradient-to-br from-dots-data/5 via-cream-50 to-dots-strategy/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-up">
               <h1 className="text-5xl md:text-6xl font-heading font-bold">
-                <span className="gradient-text">Data, Tech & Strategy</span>
+                <span className="text-plum italic">Data, Tech & Strategy</span>
                 <br />
                 Built for Outcomes
               </h1>
@@ -124,7 +124,7 @@ const Services = () => {
               </p>
               <div className="pt-4">
                 <Link to="/contact">
-                  <Button size="lg" className="gradient-primary text-white font-semibold shadow-glow">
+                  <Button size="lg" variant="brand" className="font-semibold shadow-lg">
                     Discuss Your Project
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
@@ -135,13 +135,13 @@ const Services = () => {
         </section>
 
         {/* Services Detail */}
-        <section className="py-24">
+        <section className="py-20 md:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto space-y-24">
               {services.map((service, idx) => (
                 <div key={idx} className="animate-fade-up" style={{ animationDelay: `${idx * 100}ms` }}>
                   <div className="flex items-start gap-6 mb-8">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-glow flex-shrink-0`}>
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg flex-shrink-0`}>
                       <service.icon className="text-white" size={32} />
                     </div>
                     <div>
@@ -158,7 +158,7 @@ const Services = () => {
                     {service.offerings.map((offering, offerIdx) => (
                       <div
                         key={offerIdx}
-                        className="glass rounded-2xl p-6 hover-lift"
+                        className="bg-white border border-sand-200 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-500"
                       >
                         <h3 className="text-xl font-heading font-semibold mb-3">
                           {offering.name}
@@ -172,7 +172,7 @@ const Services = () => {
                           </p>
                           {offering.deliverables.map((item, itemIdx) => (
                             <div key={itemIdx} className="flex items-center text-sm">
-                              <CheckCircle2 size={14} className="text-secondary mr-2 flex-shrink-0" />
+                              <CheckCircle2 size={14} className="text-dots-ops mr-2 flex-shrink-0" />
                               <span>{item}</span>
                             </div>
                           ))}
@@ -187,12 +187,12 @@ const Services = () => {
         </section>
 
         {/* Results Section */}
-        <section className="py-24 bg-muted/30">
+        <section className="py-20 md:py-28 bg-cream-100">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12 animate-fade-up">
                 <h2 className="text-4xl font-heading font-bold mb-4">
-                  Proven <span className="gradient-text">Impact</span>
+                  Proven <span className="text-plum italic">Impact</span>
                 </h2>
                 <p className="text-lg text-muted-foreground">
                   Metrics that matter across our engagements
@@ -206,8 +206,8 @@ const Services = () => {
                   { value: "25%", label: "Productivity ↑" },
                   { value: "100%", label: "Delivery Rate" },
                 ].map((stat, idx) => (
-                  <div key={idx} className="glass rounded-2xl p-6 text-center hover-lift">
-                    <div className="text-4xl font-bold font-mono gradient-text mb-2">
+                  <div key={idx} className="bg-white border border-sand-200 rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                    <div className="text-4xl font-bold font-mono text-plum mb-2">
                       {stat.value}
                     </div>
                     <div className="text-sm text-muted-foreground">
@@ -230,7 +230,7 @@ const Services = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-24">
+        <section className="py-20 md:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-4xl font-heading font-bold text-center mb-12 animate-fade-up">
@@ -238,7 +238,7 @@ const Services = () => {
               </h2>
               <Accordion type="single" collapsible className="space-y-4 animate-fade-up" style={{ animationDelay: "100ms" }}>
                 {faqs.map((faq, idx) => (
-                  <AccordionItem key={idx} value={`item-${idx}`} className="glass rounded-xl px-6">
+                  <AccordionItem key={idx} value={`item-${idx}`} className="bg-white border border-sand-200 rounded-xl px-6">
                     <AccordionTrigger className="text-left font-semibold">
                       {faq.question}
                     </AccordionTrigger>
@@ -253,7 +253,7 @@ const Services = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        <section className="py-20 md:py-28 bg-gradient-to-br from-dots-data/5 via-cream-50 to-dots-strategy/5">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-up">
               <h2 className="text-4xl font-heading font-bold">
@@ -263,9 +263,10 @@ const Services = () => {
                 Let's discuss your data, tech, and strategy needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                <Button 
-                  size="lg" 
-                  className="gradient-primary text-white font-semibold shadow-glow"
+                <Button
+                  size="lg"
+                  variant="brand"
+                  className="font-semibold shadow-lg"
                   onClick={() => setIsContactFormOpen(true)}
                 >
                   Schedule a Call
@@ -282,8 +283,8 @@ const Services = () => {
         </section>
       </main>
 
-      <ContactForm 
-        open={isContactFormOpen} 
+      <ContactForm
+        open={isContactFormOpen}
         onOpenChange={setIsContactFormOpen}
         defaultSubject="Schedule a Call"
       />

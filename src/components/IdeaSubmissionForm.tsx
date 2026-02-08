@@ -307,11 +307,11 @@ const IdeaSubmissionForm = ({ open, onOpenChange }: IdeaSubmissionFormProps) => 
                             </Button>
 
                             {step < 3 ? (
-                                <Button onClick={handleNext} className="gradient-primary text-white">
+                                <Button onClick={handleNext} className="bg-ink text-white hover:bg-plum">
                                     Next Step
                                 </Button>
                             ) : (
-                                <Button onClick={handleSubmit} disabled={isSubmitting} className="gradient-primary text-white">
+                                <Button onClick={handleSubmit} disabled={isSubmitting} className="bg-ink text-white hover:bg-plum">
                                     {isSubmitting ? <Loader2 className="animate-spin mr-2" /> : null}
                                     Submit Idea
                                 </Button>

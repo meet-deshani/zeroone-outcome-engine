@@ -3,31 +3,31 @@ import type { HTMLAttributes } from "react";
 type LogoProps = HTMLAttributes<HTMLDivElement> & {
   imgClassName?: string;
   showText?: boolean;
+  variant?: "light" | "dark";
 };
 
 const Logo = ({
   imgClassName = "h-10 w-auto",
-  showText = true,
+  showText = false,
+  variant = "light",
   className = "",
   ...props
 }: LogoProps) => (
-  <div className={`flex items-center gap-2 ${className}`} {...props}>
+  <div className={`flex items-center gap-3 ${className}`} {...props}>
     <img
-      src="/logo.png"
-      alt="ZeroOne DOTS.ai logo"
+      src={
+        showText
+          ? variant === "dark"
+            ? "/v2-logo-primary-dark.svg"
+            : "/v2-logo-primary-light.svg"
+          : variant === "dark"
+            ? "/v2-logo-horizontal-dark.svg"
+            : "/v2-logo-horizontal.svg"
+      }
+      alt="ZeroOne D·O·T·S AI"
       className={`object-contain ${imgClassName}`}
       loading="lazy"
     />
-    {showText && (
-      <div className="leading-tight text-left">
-        <span className="font-heading font-semibold text-base leading-tight block">
-          ZeroOne DOTS.ai
-        </span>
-        <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground block">
-          Outcome-first AI Agents
-        </span>
-      </div>
-    )}
   </div>
 );
 

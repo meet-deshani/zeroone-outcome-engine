@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+  <!-- Primary Logo - Light Background -->
+  <!-- The diagonal dots now carry meaning: D.O.T.S -->
+  
+  <!-- 3x3 Dot Matrix -->
+  <!-- Row 1 -->
+  <circle cx="36" cy="36" r="10" fill="#C8B6FF"/><!-- Data -->
+  <circle cx="62" cy="36" r="10" fill="#E8E6E0"/>
+  <circle cx="88" cy="36" r="10" fill="#E8E6E0"/>
+  <!-- Row 2 -->
+  <circle cx="36" cy="62" r="10" fill="#E8E6E0"/>
+  <circle cx="62" cy="62" r="10" fill="#B8E0D2"/><!-- Operations + Tech (center) -->
+  <circle cx="88" cy="62" r="10" fill="#E8E6E0"/>
+  <!-- Row 3 -->
+  <circle cx="36" cy="88" r="10" fill="#E8E6E0"/>
+  <circle cx="62" cy="88" r="10" fill="#E8E6E0"/>
+  <circle cx="88" cy="88" r="10" fill="#A2D2FF"/><!-- Strategy -->
+  
+  <!-- Wordmark -->
+  <text x="120" y="58" font-family="'Space Mono', 'Courier New', monospace" font-weight="700" font-size="18" letter-spacing="2" fill="#191924">ZEROONE</text>
+  <text x="120" y="82" font-family="'Space Mono', 'Courier New', monospace" font-weight="700" font-size="18" letter-spacing="2">
+    <tspan fill="#C8B6FF">D</tspan><tspan fill="#191924">·</tspan><tspan fill="#B8E0D2">O</tspan><tspan fill="#191924">·</tspan><tspan fill="#FFCDB2">T</tspan><tspan fill="#191924">·</tspan><tspan fill="#A2D2FF">S</tspan>
+    <tspan fill="#191924" dx="10">AI</tspan>
+  </text>
+</svg>

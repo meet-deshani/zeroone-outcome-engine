@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 60" width="540" height="60">
+  <!-- Dot Matrix compact -->
+  <circle cx="16" cy="16" r="7" fill="#C8B6FF"/>
+  <circle cx="34" cy="16" r="7" fill="#E8E6E0"/>
+  <circle cx="52" cy="16" r="7" fill="#E8E6E0"/>
+  <circle cx="16" cy="34" r="7" fill="#E8E6E0"/>
+  <circle cx="34" cy="34" r="7" fill="#B8E0D2"/>
+  <circle cx="52" cy="34" r="7" fill="#E8E6E0"/>
+  <circle cx="16" cy="52" r="7" fill="#E8E6E0"/>
+  <circle cx="34" cy="52" r="7" fill="#E8E6E0"/>
+  <circle cx="52" cy="52" r="7" fill="#A2D2FF"/>
+  
+  <!-- Wordmark -->
+  <text x="80" y="38" font-family="'Space Mono', 'Courier New', monospace" font-weight="700" font-size="17" letter-spacing="2">
+    <tspan fill="#191924">ZEROONE</tspan>
+    <tspan dx="8" fill="#C8B6FF">D</tspan><tspan fill="#191924">·</tspan><tspan fill="#B8E0D2">O</tspan><tspan fill="#191924">·</tspan><tspan fill="#FFCDB2">T</tspan><tspan fill="#191924">·</tspan><tspan fill="#A2D2FF">S</tspan>
+    <tspan fill="#191924" dx="8">AI</tspan>
+  </text>
+</svg>

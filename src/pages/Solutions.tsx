@@ -33,21 +33,21 @@ const Solutions = () => {
   const agentCategories = [
     {
       title: "Data Guardians (Revenue Protection)",
-      color: "from-primary to-primary-light",
-      description: "Stop flying blind. We build agents that clean data and surface profit-killing anomalies.",
+      color: "from-dots-data to-dots-ops",
+      description: "Stop flying blind. We build smart AI tools that clean data and find where you're losing money.",
       agents: [
         {
           icon: LineChart,
-          name: "Margin Leakage Detective",
-          oneLiner: "Surfaces hidden costs and lost revenue in your logs.",
+          name: "Money You're Losing Detective",
+          oneLiner: "Finds hidden costs and lost revenue in your logs.",
           inputs: ["Transaction Logs", "Inventory Data", "Ad Spend"],
           actions: ["Profile for discrepancies", "Detect margin erosion", "Identify fraud/waste"],
           outputs: ["Ranked Revenue Alerts", "Leakage Report", "Corrective Actions"],
         },
         {
           icon: Database,
-          name: "Data Pipeline Autopilot",
-          oneLiner: "Ensures your dashboards are never empty or wrong.",
+          name: "Auto-Fix Your Data Feeds",
+          oneLiner: "Keeps your dashboards full and correct, always.",
           inputs: ["API Sources", "Legacy DBs", "Excel Sheets"],
           actions: ["Auto-heal pipelines", "Retry failed jobs", "Backfill missing days"],
           outputs: ["Fresh Data 24/7", "0 Downtime Alerts", "Self-Healing Logs"],
@@ -58,12 +58,12 @@ const Solutions = () => {
           oneLiner: "Exec-grade visibility without asking analysts for favors.",
           inputs: ["Metrics Catalog", "KPI Definitions"],
           actions: ["Real-time consolidation", "Trend analysis", "Variance explanation"],
-          outputs: ["Live P&L View", "Investor Updates", "Drill-down Capability"],
+          outputs: ["Live Profit View", "Investor Updates", "Drill-down Capability"],
         },
         {
           icon: Eraser,
-          name: "Automated Hygiene Agent",
-          oneLiner: "Dedupes and validates customer data so you stop marketing to ghosts.",
+          name: "Data Cleaner",
+          oneLiner: "Removes duplicates and fixes bad contact info so you stop marketing to ghosts.",
           inputs: ["CRM Contacts", "Email Lists"],
           actions: ["Validate emails/phones", "Merge duplicates", "Standardize formats"],
           outputs: ["Clean Customer Golden Record", "Bounce Reduction", "Higher Deliverability"],
@@ -72,8 +72,8 @@ const Solutions = () => {
     },
     {
       title: "Ops Velocity (Speed & Scale)",
-      color: "from-primary-light to-secondary",
-      description: "Replace manual 'glued together' spreadsheets with autonomous workflows.",
+      color: "from-dots-ops to-dots-tech",
+      description: "Replace messy spreadsheets with smart workflows that run themselves.",
       agents: [
         {
           icon: ClipboardList,
@@ -93,7 +93,7 @@ const Solutions = () => {
         },
         {
           icon: Calendar,
-          name: "Demand Forecasting Agent",
+          name: "Future Demand Predictor",
           oneLiner: "Predicts volume spikes so you don't overhire or underdeliver.",
           inputs: ["Historical Volume", "Seasonality Trends", "Marketing Calendar"],
           actions: ["Model capacity needs", "Simulate shock scenarios", "Optimize scheduling"],
@@ -101,7 +101,7 @@ const Solutions = () => {
         },
         {
           icon: Timer,
-          name: "SLA Enforcer",
+          name: "Deadline Watcher",
           oneLiner: "Chases your team for you. Nudges tickets *before* they breach.",
           inputs: ["Support Queue", "Order Fulfillment", "TAT Targets"],
           actions: ["Monitor countdowns", "Auto-escalate", "Nudge owners via Slack"],
@@ -111,12 +111,12 @@ const Solutions = () => {
     },
     {
       title: "Tech Stability (Risk Reduction)",
-      color: "from-secondary to-primary",
+      color: "from-dots-tech to-dots-strategy",
       description: "Make your tech stack boringly reliable. Less firefighting, more building.",
       agents: [
         {
           icon: Rocket,
-          name: "Release Guardian",
+          name: "Safe Code Launcher",
           oneLiner: "Prevents bad code from breaking revenue flows.",
           inputs: ["CI/CD Pipeline", "Test Suites", "Error Rates"],
           actions: ["Canary deployment checks", "Auto-rollback on error spike", "Verify core flows"],
@@ -124,7 +124,7 @@ const Solutions = () => {
         },
         {
           icon: Wrench,
-          name: "Boilerplate Builder",
+          name: "Quick Code Setup",
           oneLiner: "Spins up standardized, secure microservices in minutes.",
           inputs: ["Service Specs", "Security Policies"],
           actions: ["Generate repo structure", "Configure CI/CD", "Inject auth middleware"],
@@ -134,12 +134,12 @@ const Solutions = () => {
     },
     {
       title: "Strategic Clarity (Financial Outcomes)",
-      color: "from-primary to-secondary",
-      description: "Simulate decisions before you make them. CFO-level power in a bot.",
+      color: "from-dots-data to-dots-strategy",
+      description: "Test your decisions before you make them. CFO-level power in a bot.",
       agents: [
         {
           icon: DollarSign,
-          name: "Unit Economics Simulator",
+          name: "Profit Calculator",
           oneLiner: "Live LTV/CAC modeling. Know exactly when to step on the gas.",
           inputs: ["Ad Spend", "Churn Rate", "Expansion Revenue"],
           actions: ["Calculate repayment periods", "Simulate pricing changes", "Cohort analysis"],
@@ -147,8 +147,8 @@ const Solutions = () => {
         },
         {
           icon: Zap,
-          name: "Efficiency Hunter",
-          oneLiner: "Finds process waste and recommends exactly what to automate next.",
+          name: "Waste Finder",
+          oneLiner: "Finds wasted time and recommends exactly what to automate next.",
           inputs: ["Time Tracking", "Process Maps", "Error Logs"],
           actions: ["Identify bottlenecks", "Quantify manual toil", "Estimate ROI of automation"],
           outputs: ["Automation Roadmap", "Cost-Savings Leaderboard", "Efficiency Score"],
@@ -160,23 +160,23 @@ const Solutions = () => {
   const faqs = [
     {
       question: "How do you define 'outcome' and acceptance?",
-      answer: "We don't bill for effort. We bill for results. Each agent has specific success criteria (e.g., 'Reduce Invoice Processing time by 80%' or 'Achieve 99% Data Accuracy'). You sign off on the Proof of Concept before full implementation billing kicks in.",
+      answer: "We don't charge for time spent — we charge for results. Each agent has clear success targets (like 'cut invoice processing time by 80%' or 'hit 99% data accuracy'). You approve the proof of concept before full billing starts.",
     },
     {
       question: "Can we start small (The Wedge)?",
-      answer: "Yes. In fact, we insist on it. We start with a low-risk 'Sprint' or 'Audit' to prove value on a specific pain point. Only after you see the ROI do we discuss scaling to a full system.",
+      answer: "Yes — we actually prefer it. We kick off with a quick, low-risk sprint to prove value on one specific problem. Only after you see real results do we talk about scaling up.",
     },
     {
       question: "Do I need a technical team to manage this?",
-      answer: "No. That's our job. We offer 'Managed AI Operations' where we act as your backend intelligence team, keeping the agents running, optimizing prompts, and handling any API changes.",
+      answer: "Nope. We handle everything. We act as your behind-the-scenes AI team — keeping agents running, tuning them, and dealing with any API changes.",
     },
     {
       question: "What if the agent makes a mistake?",
-      answer: "Our agents are designed with 'Human-in-the-Loop' guardrails for critical decisions. High-confidence actions are automated; low-confidence ones are flagged for human review. We prioritize safety and accuracy over raw speed.",
+      answer: "Our agents have built-in safety checks. High-confidence actions run automatically; anything uncertain gets flagged for a human to review. We always pick accuracy over speed.",
     },
     {
       question: "Do you own the code or do we?",
-      answer: "You do. Unlike SaaS where you rent the software, we build *your* intellectual property. Upon completion, you own the code, the agents, and the workflows. No vendor lock-in.",
+      answer: "You do. Unlike SaaS where you rent software, we build *your* code. When we're done, you own everything — the code, the agents, and the workflows. No lock-in.",
     },
   ];
 
@@ -187,24 +187,25 @@ const Solutions = () => {
 
         <main className="pt-20">
           {/* Hero */}
-          <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+          <section className="py-20 md:py-28 bg-gradient-to-br from-dots-data/5 via-cream-50 to-dots-strategy/5">
             <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-up">
+              <div className="max-w-4xl mx-auto text-center space-y-6">
                 <h1 className="text-5xl md:text-6xl font-heading font-bold leading-tight">
                   Automated Systems for <br />
-                  <span className="gradient-text">Margin & Revenue</span>
+                  <span className="text-plum italic">Margin & Revenue</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                  We don't just "do data." We build autonomous agents that protect your P&L,
-                  accelerate operations, and eliminate expensive manual grunt work.
+                  We don't just "do data." We build smart AI tools that protect your profit,
+                  speed up operations, and wipe out boring repeat tasks.
                 </p>
                 <div className="pt-8 flex flex-wrap gap-4 justify-center">
                   <Button
                     size="lg"
-                    className="gradient-primary text-white font-semibold shadow-glow"
-                    onClick={() => openContactForm("Get Your Data Hygiene Audit")}
+                    variant="brand"
+                    className="font-semibold"
+                    onClick={() => openContactForm("Get Your Data Check-Up")}
                   >
-                    Get Your Data Audit (The Wedge)
+                    Get Your Data Check-Up (The Wedge)
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
                   <Link to="/pricing">
@@ -219,10 +220,10 @@ const Solutions = () => {
 
           {/* Agent Categories */}
           {agentCategories.map((category, catIdx) => (
-            <section key={catIdx} className={catIdx % 2 === 0 ? "py-20" : "py-20 bg-muted/30"}>
+            <section key={catIdx} className={catIdx % 2 === 0 ? "py-20 md:py-28" : "py-20 md:py-28 bg-cream-100"}>
               <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
-                  <div className="mb-12 animate-fade-up">
+                  <div className="mb-12">
                     <h2 className="text-3xl font-heading font-bold mb-2">
                       <span className={`bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
                         {category.title}
@@ -231,9 +232,9 @@ const Solutions = () => {
                     <p className="text-lg text-muted-foreground max-w-2xl">{category.description}</p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8 animate-fade-up" style={{ animationDelay: "100ms" }}>
+                  <div className="grid md:grid-cols-2 gap-8">
                     {category.agents.map((agent, agentIdx) => (
-                      <div key={agentIdx} className="glass rounded-2xl p-6 hover-lift border-2 border-transparent hover:border-primary/10 transition-all">
+                      <div key={agentIdx} className="bg-white border border-sand-200 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-500 border-2 border-transparent hover:border-sand-200">
                         <div className="flex items-start gap-4 mb-4">
                           <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center flex-shrink-0 shadow-sm`}>
                             <agent.icon className="text-white" size={24} />
@@ -253,7 +254,7 @@ const Solutions = () => {
                             <div className="col-span-1 border-r border-border/50 pr-2">
                               <p className="font-bold text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Reads From</p>
                               <div className="flex flex-wrap gap-1">
-                                {agent.inputs.slice(0, 2).map((i, x) => (<span key={x} className="bg-primary/5 text-primary-dark text-xs px-1.5 py-0.5 rounded">{i}</span>))}
+                                {agent.inputs.slice(0, 2).map((i, x) => (<span key={x} className="bg-dots-data/5 text-ink text-xs px-1.5 py-0.5 rounded">{i}</span>))}
                               </div>
                             </div>
                             <div className="col-span-2 pl-2">
@@ -274,7 +275,7 @@ const Solutions = () => {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-primary hover:text-primary-dark group-hover:translate-x-1 transition-transform"
+                            className="text-plum hover:text-ink group-hover:translate-x-1 transition-transform"
                             onClick={() => openContactForm(`Interested in ${agent.name}`)}
                           >
                             Deploy This Agent <ArrowRight size={14} className="ml-1" />
@@ -289,7 +290,7 @@ const Solutions = () => {
           ))}
 
           {/* Approach CTA - Replaced "Approach Preview" with strong value prop */}
-          <section className="py-24 bg-primary text-primary-foreground text-center">
+          <section className="py-20 md:py-28 bg-ink text-white text-center">
             <div className="container mx-auto px-4 max-w-4xl">
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
                 Stop Paying for "Effort". Start Paying for Outcomes.
@@ -298,22 +299,22 @@ const Solutions = () => {
                 Traditional consultants bill by the hour. We bill by the milestone.
                 If the system doesn't work, you don't pay for the build.
               </p>
-              <Button size="lg" variant="secondary" className="font-semibold text-lg hover-lift" onClick={() => openContactForm("Discuss Outcome Pricing")}>
+              <Button size="lg" variant="secondary" className="font-semibold text-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-500" onClick={() => openContactForm("Discuss Outcome Pricing")}>
                 See Our Guarantee
               </Button>
             </div>
           </section>
 
           {/* FAQ */}
-          <section className="py-24">
+          <section className="py-20 md:py-28">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl font-heading font-bold text-center mb-12 animate-fade-up">
+                <h2 className="text-3xl font-heading font-bold text-center mb-12">
                   Common Questions
                 </h2>
-                <Accordion type="single" collapsible className="space-y-4 animate-fade-up" style={{ animationDelay: "100ms" }}>
+                <Accordion type="single" collapsible className="space-y-4">
                   {faqs.map((faq, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`} className="glass rounded-xl px-6 border hover:border-primary/20 transition-colors">
+                    <AccordionItem key={idx} value={`item-${idx}`} className="bg-white border border-sand-200 rounded-xl px-6 hover:border-dots-data/20 transition-colors">
                       <AccordionTrigger className="text-left font-semibold text-lg">
                         {faq.question}
                       </AccordionTrigger>

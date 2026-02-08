@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D.O.T.S. Layered Reveal Strategy — ZeroOne DOTS AI</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--lav:#C8B6FF;--mint:#B8E0D2;--peach:#FFCDB2;--sky:#A2D2FF;--rose:#FFB5C2;--ink:#191924;--plum:#2D1B4E;--n50:#FDFCFA;--n100:#F8F7F4;--n150:#F2F0EC;--n200:#E8E6E0;--n400:#B5B1A7;--n500:#918D82;--n600:#6E6B62;--n700:#4A4842;--se:'Instrument Serif',Georgia,serif;--sa:'DM Sans',sans-serif;--mo:'Space Mono',monospace}
+body{font-family:var(--sa);background:var(--n50);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;font-size:16px}
+.c{max-width:1080px;margin:0 auto;padding:0 40px}
+
+/* Header */
+.hd{text-align:center;padding:100px 0 80px;border-bottom:1px solid var(--n200)}
+.hd .lb{font-family:var(--mo);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--n500);margin-bottom:24px}
+.hd h1{font-family:var(--se);font-size:clamp(40px,6vw,64px);font-weight:400;line-height:1.1;margin-bottom:20px}
+.hd h1 em{font-style:italic;color:var(--plum)}
+.hd p{font-size:17px;color:var(--n600);max-width:560px;margin:0 auto;line-height:1.8}
+
+/* Sections */
+.sec{padding:100px 0;border-bottom:1px solid var(--n200)}
+.sl{font-family:var(--mo);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--n500);margin-bottom:16px}
+.st{font-family:var(--se);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.15;margin-bottom:20px}
+.st em{font-style:italic;color:var(--plum)}
+.sd{font-size:17px;color:var(--n600);max-width:560px;line-height:1.85;margin-bottom:56px}
+
+/* Framework Visual */
+.fw{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:56px}
+.fw-item{text-align:center;padding:40px 24px;border-radius:20px;position:relative}
+.fw-item .letter{font-family:var(--se);font-size:80px;font-weight:400;line-height:1;margin-bottom:12px}
+.fw-item .word{font-family:var(--mo);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+.fw-item .desc{font-size:14px;color:var(--n600);line-height:1.6}
+.fw-d{background:rgba(200,182,255,.1);border:1.5px solid rgba(200,182,255,.25)}
+.fw-d .letter{color:var(--lav)}
+.fw-d .word{color:var(--plum)}
+.fw-o{background:rgba(184,224,210,.1);border:1.5px solid rgba(184,224,210,.3)}
+.fw-o .letter{color:var(--mint)}
+.fw-o .word{color:#1a5c42}
+.fw-t{background:rgba(255,205,178,.1);border:1.5px solid rgba(255,205,178,.3)}
+.fw-t .letter{color:var(--peach)}
+.fw-t .word{color:#8b4513}
+.fw-s{background:rgba(162,210,255,.1);border:1.5px solid rgba(162,210,255,.3)}
+.fw-s .letter{color:var(--sky)}
+.fw-s .word{color:#1a4a7a}
+
+/* Tier Cards */
+.tier{margin-bottom:40px;background:#fff;border:1px solid var(--n200);border-radius:24px;overflow:hidden}
+.tier-head{padding:32px 36px;display:flex;align-items:center;gap:20px;border-bottom:1px solid var(--n200)}
+.tier-num{font-family:var(--se);font-size:48px;color:var(--n200);line-height:1}
+.tier-title h3{font-family:var(--se);font-size:24px;margin-bottom:4px}
+.tier-title .where{font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500)}
+.tier-body{padding:36px}
+.tier-body p{font-size:15px;color:var(--n600);line-height:1.8;margin-bottom:20px}
+
+/* Example Blocks */
+.ex{background:var(--n100);border:1px solid var(--n200);border-radius:16px;padding:28px;margin-bottom:16px}
+.ex-label{font-family:var(--mo);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);margin-bottom:12px}
+.ex-content{font-size:15px;color:var(--ink);line-height:1.7}
+.ex-content .serif{font-family:var(--se);font-size:28px;line-height:1.25}
+.ex-content .mono{font-family:var(--mo);font-size:12px;letter-spacing:1px;color:var(--n600)}
+.ex-content strong{font-weight:600}
+
+/* Pillar detail */
+.pillar-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px}
+.pillar{padding:32px;border-radius:16px}
+.pillar h4{font-family:var(--mo);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.pillar p{font-size:14px;line-height:1.7}
+.pillar ul{list-style:none;padding:0;margin-top:12px}
+.pillar li{font-size:13px;padding:4px 0 4px 18px;position:relative;color:var(--n700)}
+.pillar li::before{content:'→';position:absolute;left:0;font-size:12px}
+.p-d{background:rgba(200,182,255,.08);border:1.5px solid rgba(200,182,255,.2)}
+.p-d h4{color:var(--plum)}
+.p-o{background:rgba(184,224,210,.08);border:1.5px solid rgba(184,224,210,.2)}
+.p-o h4{color:#1a5c42}
+.p-t{background:rgba(255,205,178,.08);border:1.5px solid rgba(255,205,178,.25)}
+.p-t h4{color:#8b4513}
+.p-s{background:rgba(162,210,255,.08);border:1.5px solid rgba(162,210,255,.2)}
+.p-s h4{color:#1a4a7a}
+
+/* Narrative Flow */
+.flow{display:flex;align-items:center;gap:16px;margin:40px 0;flex-wrap:wrap}
+.flow-step{padding:14px 24px;border-radius:999px;font-family:var(--mo);font-size:11px;letter-spacing:1px;font-weight:700}
+.flow-arrow{color:var(--n400);font-size:20px}
+.flow-d{background:rgba(200,182,255,.15);color:var(--plum)}
+.flow-o{background:rgba(184,224,210,.2);color:#1a5c42}
+.flow-t{background:rgba(255,205,178,.2);color:#8b4513}
+.flow-s{background:rgba(162,210,255,.2);color:#1a4a7a}
+.flow-eq{background:var(--ink);color:#fff}
+
+/* Footer */
+.ft{background:var(--ink);padding:60px 40px;text-align:center}
+.ft p{font-family:var(--mo);font-size:11px;color:var(--n600);letter-spacing:2px}
+
+@media(max-width:768px){.c{padding:0 24px}.fw,.pillar-grid{grid-template-columns:1fr 1fr}.flow{justify-content:center}}
+@media(max-width:500px){.fw{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hd">
+<div class="c">
+<div class="lb">Brand Strategy Document</div>
+<h1>The <em>D.O.T.S.</em> Framework</h1>
+<p>How to use the Data · Operations · Tech · Strategy acronym across every touchpoint — from first impression to signed proposal.</p>
+</div>
+</div>
+
+<!-- THE FRAMEWORK -->
+<div class="sec"><div class="c">
+<div class="sl">The Framework</div>
+<div class="st">Four pillars, <em>one promise</em></div>
+<div class="sd">Each letter in D.O.T.S. maps to a consulting pillar. Each pillar has its own color from the brand palette. Together they represent your complete AI consulting capability.</div>
+
+<div class="fw">
+<div class="fw-item fw-d">
+<div class="letter">D</div>
+<div class="word">Data</div>
+<div class="desc">Data strategy, architecture, quality, governance, and AI-ready pipelines</div>
+</div>
+<div class="fw-item fw-o">
+<div class="letter">O</div>
+<div class="word">Operations</div>
+<div class="desc">Process optimization, automation, workflow intelligence, efficiency gains</div>
+</div>
+<div class="fw-item fw-t">
+<div class="letter">T</div>
+<div class="word">Tech</div>
+<div class="desc">AI/ML implementation, model deployment, infrastructure, integration</div>
+</div>
+<div class="fw-item fw-s">
+<div class="letter">S</div>
+<div class="word">Strategy</div>
+<div class="desc">AI roadmap, ROI modeling, change management, outcome planning</div>
+</div>
+</div>
+
+<div style="text-align:center;margin-bottom:20px">
+<div style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);margin-bottom:16px">The Narrative Flow</div>
+</div>
+<div class="flow" style="justify-content:center">
+<span class="flow-step flow-d">D · DATA</span>
+<span class="flow-arrow">→</span>
+<span class="flow-step flow-o">O · OPS</span>
+<span class="flow-arrow">→</span>
+<span class="flow-step flow-t">T · TECH</span>
+<span class="flow-arrow">→</span>
+<span class="flow-step flow-s">S · STRATEGY</span>
+<span class="flow-arrow">=</span>
+<span class="flow-step flow-eq">MARGIN IMPROVEMENT</span>
+</div>
+</div></div>
+
+<!-- TIER 1 -->
+<div class="sec"><div class="c">
+<div class="sl">Layered Reveal Strategy</div>
+<div class="st">Three tiers of <em>discovery</em></div>
+<div class="sd">The D.O.T.S. meaning unfolds gradually. First impressions are clean and intriguing. Deeper pages reveal the framework. Proposals leverage it as methodology.</div>
+
+<div class="tier">
+<div class="tier-head">
+<div class="tier-num">1</div>
+<div class="tier-title"><h3>The Intrigue</h3><div class="where">Homepage · Social Profiles · Logo · Ads</div></div>
+</div>
+<div class="tier-body">
+<p>At first contact, the name is simply <strong>ZeroOne D·O·T·S AI</strong>. The colored letters hint that there's more to the name, but you don't spell it out. Let curiosity do the work.</p>
+
+<div class="ex">
+<div class="ex-label">Homepage Hero Example</div>
+<div class="ex-content">
+<div class="serif">AI consulting that <em style="font-style:italic;color:#2D1B4E">guarantees</em><br>your margins grow.</div>
+<div style="margin-top:16px"><span class="mono">ZEROONE </span><span style="color:var(--lav);font-family:var(--mo);font-size:12px;font-weight:700">D</span><span style="color:var(--n400);font-family:var(--mo);font-size:12px">·</span><span style="color:var(--mint);font-family:var(--mo);font-size:12px;font-weight:700">O</span><span style="color:var(--n400);font-family:var(--mo);font-size:12px">·</span><span style="color:var(--peach);font-family:var(--mo);font-size:12px;font-weight:700">T</span><span style="color:var(--n400);font-family:var(--mo);font-size:12px">·</span><span style="color:var(--sky);font-family:var(--mo);font-size:12px;font-weight:700">S</span><span class="mono"> AI</span></div>
+</div>
+</div>
+
+<div class="ex">
+<div class="ex-label">What visitors feel</div>
+<div class="ex-content">"The colored letters are interesting — there's clearly a meaning behind them. The name is memorable. I want to learn more."</div>
+</div>
+
+<p><strong>Rule:</strong> Never write out "Data · Operations · Tech · Strategy" on the homepage hero. The colors are the only hint. If someone hovers or scrolls, they might see a subtle tooltip or a brief line like <em>"Four pillars. One outcome."</em></p>
+</div>
+</div>
+
+<!-- TIER 2 -->
+<div class="tier">
+<div class="tier-head">
+<div class="tier-num">2</div>
+<div class="tier-title"><h3>The Reveal</h3><div class="where">Services Page · About Page · Scroll-Down Sections</div></div>
+</div>
+<div class="tier-body">
+<p>Once visitors are engaged, the acronym unfolds. This is where D.O.T.S. becomes a framework. The reveal should feel elegant — like discovering a hidden layer of meaning.</p>
+
+<div class="ex">
+<div class="ex-label">Services Page Section Example</div>
+<div class="ex-content">
+<div class="mono" style="margin-bottom:8px">OUR FRAMEWORK</div>
+<div class="serif" style="font-size:32px;margin-bottom:16px">D.O.T.S. isn't just a name.<br><em style="font-style:italic;color:#2D1B4E">It's how we guarantee outcomes.</em></div>
+<div style="font-size:15px;color:var(--n600);line-height:1.8">We assess and optimize across four pillars — each one directly tied to your margin improvement. No pillar works alone. Together, they're the Outcome Engine.</div>
+</div>
+</div>
+
+<p>Below this headline, each pillar gets its own card with its brand color, a brief description, and examples of what you do under each:</p>
+
+<div class="pillar-grid">
+<div class="pillar p-d"><h4>D · Data</h4><p>Your AI is only as good as your data.</p><ul><li>Data strategy & architecture</li><li>Quality & governance frameworks</li><li>AI-ready pipeline design</li><li>Data monetization assessment</li></ul></div>
+<div class="pillar p-o"><h4>O · Operations</h4><p>Where margin improvement actually lives.</p><ul><li>Process automation</li><li>Workflow intelligence</li><li>Operational efficiency audits</li><li>AI-powered decision support</li></ul></div>
+<div class="pillar p-t"><h4>T · Tech</h4><p>The right AI, implemented right.</p><ul><li>ML/AI model development</li><li>GenAI implementation</li><li>System integration</li><li>Infrastructure optimization</li></ul></div>
+<div class="pillar p-s"><h4>S · Strategy</h4><p>Technology without strategy is expensive noise.</p><ul><li>AI readiness roadmaps</li><li>ROI modeling & forecasting</li><li>Change management</li><li>Outcome-based planning</li></ul></div>
+</div>
+
+<div class="ex">
+<div class="ex-label">What visitors feel</div>
+<div class="ex-content">"Now I get it — each letter means something. This isn't just a name, it's a methodology. They clearly know what they're doing across the full stack."</div>
+</div>
+</div>
+</div>
+
+<!-- TIER 3 -->
+<div class="tier">
+<div class="tier-head">
+<div class="tier-num">3</div>
+<div class="tier-title"><h3>The Framework</h3><div class="where">Proposals · Sales Decks · Case Studies · Workshops</div></div>
+</div>
+<div class="tier-body">
+<p>In sales contexts, D.O.T.S. becomes your methodology language. Each pillar becomes a diagnostic tool and a deliverable category. Clients buy a framework, not just "AI consulting."</p>
+
+<div class="ex">
+<div class="ex-label">Proposal Language Example</div>
+<div class="ex-content" style="font-size:15px;line-height:1.8">
+"Our engagement will apply the D.O.T.S. framework across your organization:<br><br>
+<strong style="color:var(--plum)">Data:</strong> We'll audit your data infrastructure and build AI-ready pipelines that feed the Outcome Engine.<br><br>
+<strong style="color:#1a5c42">Operations:</strong> We'll identify the highest-margin operational improvements and automate them.<br><br>
+<strong style="color:#8b4513">Tech:</strong> We'll implement the right AI models — not the trendiest ones — integrated with your existing systems.<br><br>
+<strong style="color:#1a4a7a">Strategy:</strong> We'll build a 12-month roadmap with clear KPIs, ensuring every initiative ties to your margin improvement guarantee."
+</div>
+</div>
+
+<div class="ex">
+<div class="ex-label">Case Study Structure</div>
+<div class="ex-content" style="font-size:15px;line-height:1.8">
+Each case study follows the D.O.T.S. structure:<br>
+<strong style="color:var(--plum)">D</strong> — What data challenges existed<br>
+<strong style="color:#1a5c42">O</strong> — What operational inefficiencies we found<br>
+<strong style="color:#8b4513">T</strong> — What tech we implemented<br>
+<strong style="color:#1a4a7a">S</strong> — The strategy that tied it all together<br>
+<strong>Result:</strong> +XX% margin improvement in Y months
+</div>
+</div>
+
+<div class="ex">
+<div class="ex-label">What clients feel</div>
+<div class="ex-content">"This is a real methodology, not just marketing. I can see exactly how they'll approach our business. The structure gives me confidence they can deliver."</div>
+</div>
+</div>
+</div>
+</div></div>
+
+<!-- COLOR MAPPING -->
+<div class="sec"><div class="c">
+<div class="sl">Color-Pillar Mapping</div>
+<div class="st">Each pillar, <em>its own identity</em></div>
+<div class="sd">Whenever a pillar is referenced — on the website, in slides, in reports — it uses its designated color. This creates subconscious brand recognition over time.</div>
+
+<table style="width:100%;border-collapse:collapse;margin-bottom:40px">
+<thead><tr>
+<th style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);text-align:left;padding:14px 16px;border-bottom:2px solid var(--n200)">Pillar</th>
+<th style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);text-align:left;padding:14px 16px;border-bottom:2px solid var(--n200)">Color</th>
+<th style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);text-align:left;padding:14px 16px;border-bottom:2px solid var(--n200)">Hex</th>
+<th style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);text-align:left;padding:14px 16px;border-bottom:2px solid var(--n200)">Used For</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:600"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--lav);vertical-align:middle;margin-right:8px"></span>D · Data</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200)">Lavender</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-family:var(--mo);font-size:13px;color:var(--lav)">#C8B6FF</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Data sections, analytics dashboards, data viz accents</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:600"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--mint);vertical-align:middle;margin-right:8px"></span>O · Operations</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200)">Mint</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-family:var(--mo);font-size:13px;color:var(--mint)">#B8E0D2</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Operations content, efficiency metrics, success states</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:600"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--peach);vertical-align:middle;margin-right:8px"></span>T · Tech</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200)">Peach</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-family:var(--mo);font-size:13px;color:var(--peach)">#FFCDB2</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Tech content, implementation details, code/API references</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:600"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--sky);vertical-align:middle;margin-right:8px"></span>S · Strategy</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200)">Sky</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-family:var(--mo);font-size:13px;color:var(--sky)">#A2D2FF</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Strategy content, roadmaps, planning, high-level vision</td></tr>
+</tbody>
+</table>
+</div></div>
+
+<!-- USAGE TABLE -->
+<div class="sec"><div class="c">
+<div class="sl">Usage Matrix</div>
+<div class="st">Where to use <em>what</em></div>
+
+<table style="width:100%;border-collapse:collapse">
+<thead><tr>
+<th style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);text-align:left;padding:14px 16px;border-bottom:2px solid var(--n200)">Touchpoint</th>
+<th style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);text-align:left;padding:14px 16px;border-bottom:2px solid var(--n200)">Acronym Visible?</th>
+<th style="font-family:var(--mo);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--n500);text-align:left;padding:14px 16px;border-bottom:2px solid var(--n200)">How</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Homepage hero</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--peach)">Hint only</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Colored D·O·T·S letters in logo, no explanation</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Logo (all variants)</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--peach)">Hint only</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Each letter in DOTS gets its pillar color</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Social profiles</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--peach)">Hint only</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Bio can say "Data · Operations · Tech · Strategy"</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Homepage scroll</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--lav)">Subtle reveal</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">"Four pillars. One outcome." — links to services</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Services page</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--mint)">Full reveal</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Full D.O.T.S. framework section with pillar cards</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">About page</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--mint)">Full reveal</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">"Our name is our methodology" narrative</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Blog posts</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--lav)">As relevant</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Tag posts by pillar (D/O/T/S) with color-coded tags</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">YouTube videos</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--lav)">As relevant</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Series per pillar: "D series", "S series" etc.</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Proposals</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--mint)">Full framework</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">Structure deliverables by D.O.T.S. pillars</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-weight:500">Case studies</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);color:var(--mint)">Full framework</td><td style="padding:14px 16px;border-bottom:1px solid var(--n200);font-size:14px;color:var(--n600)">D→O→T→S narrative structure with result</td></tr>
+<tr><td style="padding:14px 16px;font-weight:500">Sales decks</td><td style="padding:14px 16px;color:var(--mint)">Full framework</td><td style="padding:14px 16px;font-size:14px;color:var(--n600)">Dedicated D.O.T.S. methodology slide</td></tr>
+</tbody>
+</table>
+</div></div>
+
+<div class="ft">
+<p>ZEROONE D·O·T·S AI · LAYERED REVEAL STRATEGY · v1.0</p>
+<p style="margin-top:8px;color:#4A4842">INTERNAL BRAND DOCUMENT — FEBRUARY 2026</p>
+</div>
+
+</body>
+</html>

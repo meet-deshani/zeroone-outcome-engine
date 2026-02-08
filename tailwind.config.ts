@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -22,7 +27,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          light: "hsl(var(--primary-light))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -48,11 +52,32 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // D.O.T.S. Pillar Colors
+        dots: {
+          data: "#C8B6FF",
+          ops: "#B8E0D2",
+          tech: "#FFCDB2",
+          strategy: "#A2D2FF",
+          rose: "#FFB5C2",
+          lemon: "#FFF3B0",
+        },
+        // Deep Anchors
+        ink: "#191924",
+        plum: "#2D1B4E",
+        charcoal: "#2A2A3C",
+        // Warm Neutrals
+        cream: {
+          50: "#FDFCFA",
+          100: "#F8F7F4",
+        },
+        sand: {
+          200: "#E8E6E0",
+        },
       },
       fontFamily: {
-        heading: ["Poppins", "system-ui", "sans-serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
-        mono: ["Space Mono", "monospace"],
+        heading: ["'Instrument Serif'", "Georgia", "serif"],
+        body: ["'DM Sans'", "system-ui", "sans-serif"],
+        mono: ["'Space Mono'", "monospace"],
       },
       boxShadow: {
         sm: "var(--shadow-sm)",
@@ -68,10 +93,16 @@ export default {
       keyframes: {
         "accordion-down": {
           from: { height: "0", opacity: "0" },
-          to: { height: "var(--radix-accordion-content-height)", opacity: "1" },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+            opacity: "1",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+            opacity: "1",
+          },
           to: { height: "0", opacity: "0" },
         },
         "fade-up": {
@@ -94,10 +125,10 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.3s ease-out",
         "accordion-up": "accordion-up 0.3s ease-out",
-        "fade-up": "fade-up 0.6s ease-out",
-        "fade-in": "fade-in 0.4s ease-out",
-        "slide-in": "slide-in 0.5s ease-out",
-        "scale-in": "scale-in 0.4s ease-out",
+        "fade-up": "fade-up 0.8s cubic-bezier(0.16,1,0.3,1)",
+        "fade-in": "fade-in 0.6s cubic-bezier(0.16,1,0.3,1)",
+        "slide-in": "slide-in 0.6s cubic-bezier(0.16,1,0.3,1)",
+        "scale-in": "scale-in 0.3s cubic-bezier(.34,1.56,.64,1)",
       },
     },
   },

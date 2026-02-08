@@ -32,7 +32,7 @@ const HeatExchanger = () => {
                         <span className="font-semibold text-sm">HTRI Certified Design</span>
                     </div>
                     <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-                        Precision <span className="text-primary">Thermal Design</span> <br />
+                        Precision <span className="text-plum">Thermal Design</span> <br />
                         of Shell & Tube Exchangers
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in delay-100">
@@ -40,7 +40,7 @@ const HeatExchanger = () => {
                         Optimized for heat transfer efficiency and pressure drop constraints.
                     </p>
                     <div className="flex justify-center gap-4 animate-fade-in delay-200">
-                        <Button size="lg" className="gradient-primary text-white font-semibold shadow-glow" onClick={() => handleOpenForm("Hero Section")}>
+                        <Button size="lg" variant="brand" className="font-semibold" onClick={() => handleOpenForm("Hero Section")}>
                             Get a Quote
                         </Button>
                     </div>
@@ -52,14 +52,14 @@ const HeatExchanger = () => {
                 <div className="container mx-auto max-w-5xl">
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Design / Simulation */}
-                        <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl relative overflow-hidden group hover:bg-primary/10 transition-colors">
+                        <div className="bg-dots-tech/5 border border-dots-tech/20 p-8 rounded-2xl relative overflow-hidden group hover:bg-dots-tech/10 transition-colors">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                                 <PenTool size={100} />
                             </div>
                             <h3 className="text-2xl font-bold mb-2 flex items-center gap-2">
-                                <PenTool className="text-primary" /> Design & Simulation
+                                <PenTool className="text-plum" /> Design & Simulation
                             </h3>
-                            <p className="text-lg text-primary/80 mb-4 font-semibold">Building from Scratch</p>
+                            <p className="text-lg text-plum/80 mb-4 font-semibold">Building from Scratch</p>
                             <p className="text-muted-foreground leading-relaxed">
                                 Complete thermal design for new equipment. We iterate geometry to find the most efficient shell & tube configuration for your specific process duty.
                             </p>
@@ -122,25 +122,25 @@ const HeatExchanger = () => {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
                             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-                                From Process Data <br /> to <span className="text-primary">Final Datasheet</span>
+                                From Process Data <br /> to <span className="text-plum">Final Datasheet</span>
                             </h2>
                             <div className="space-y-8">
                                 <div className="flex gap-4">
-                                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">1</div>
+                                    <div className="w-8 h-8 rounded-full bg-dots-tech/20 flex items-center justify-center text-plum font-bold">1</div>
                                     <div>
                                         <h4 className="font-bold mb-1">Input Analysis & Validation</h4>
                                         <p className="text-sm text-muted-foreground">We validate physical properties, check <strong>Fouling Factors</strong>, and assess allowable pressure drops against process criticality.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
-                                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">2</div>
+                                    <div className="w-8 h-8 rounded-full bg-dots-tech/20 flex items-center justify-center text-plum font-bold">2</div>
                                     <div>
                                         <h4 className="font-bold mb-1">Thermal Simulation (HTRI Xist)</h4>
                                         <p className="text-sm text-muted-foreground">Iterative design to optimize <strong>Rho-V²</strong>, check Baffle cuts, and prevent acoustic resonance issues.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
-                                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">3</div>
+                                    <div className="w-8 h-8 rounded-full bg-dots-tech/20 flex items-center justify-center text-plum font-bold">3</div>
                                     <div>
                                         <h4 className="font-bold mb-1">Optimization & Deliverables</h4>
                                         <p className="text-sm text-muted-foreground">Balancing Heat Transfer Coefficient vs Pumping Cost. Delivering a <strong className="text-foreground">TEMA Class R/C/B</strong> Datasheet.</p>
@@ -149,7 +149,7 @@ const HeatExchanger = () => {
                             </div>
                         </div>
                         <div className="bg-black/40 p-8 rounded-3xl border border-white/10 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-3xl rounded-full -mr-32 -mt-32" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-dots-tech/20 blur-3xl rounded-full -mr-32 -mt-32" />
                             <div className="relative z-10">
                                 <h3 className="text-2xl font-bold mb-6">Pricing Model</h3>
                                 <div className="flex items-baseline gap-2 mb-2">
@@ -184,7 +184,7 @@ const HeatExchanger = () => {
             <section className="py-24 px-4">
                 <div className="container mx-auto max-w-4xl text-center">
                     <Factory className="w-16 h-16 text-muted-foreground mx-auto mb-6" />
-                    <h2 className="font-heading text-3xl font-bold mb-6">Beyond Design: <span className="text-primary">Fabrication Support</span></h2>
+                    <h2 className="font-heading text-3xl font-bold mb-6">Beyond Design: <span className="text-plum">Fabrication Support</span></h2>
                     <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                         We don't leave you with just <span className="text-foreground font-semibold">thermal design</span>. We connect you with our vetted network of Heat Exchanger Fabricators
                         who understand our designs and can build them to TEMA class precision.

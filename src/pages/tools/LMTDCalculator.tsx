@@ -82,7 +82,7 @@ const LMTDCalculator = () => {
 
             <div className="pt-32 pb-20 px-4 container mx-auto max-w-4xl">
                 <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dots-tech/10 text-plum mb-6">
                         <Calculator size={16} />
                         <span className="font-semibold text-sm">Free Engineering Tool</span>
                     </div>
@@ -141,7 +141,7 @@ const LMTDCalculator = () => {
 
                             {error && <p className="text-red-500 text-sm font-medium">{error}</p>}
 
-                            <Button onClick={calculateLMTD} className="w-full gradient-primary">
+                            <Button onClick={calculateLMTD} className="w-full bg-ink text-white hover:bg-plum">
                                 Calculate LMTD
                             </Button>
                         </CardContent>
@@ -149,9 +149,9 @@ const LMTDCalculator = () => {
 
                     <div className="space-y-6">
                         {/* Result Card */}
-                        <Card className="bg-primary/5 border-primary/20">
+                        <Card className="bg-dots-tech/5 border-dots-tech/20">
                             <CardHeader>
-                                <CardTitle className="text-primary">Calculation Result</CardTitle>
+                                <CardTitle className="text-plum">Calculation Result</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 {lmtd !== null ? (

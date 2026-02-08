@@ -1,106 +1,189 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Database, Code, Target, ArrowRight } from "lucide-react";
+import { Database, Settings, Code, Target, ArrowRight } from "lucide-react";
+
+const services = [
+  {
+    icon: Database,
+    title: "Smart Data Tools",
+    description:
+      "We organize your data so you can see exactly where money comes in and goes out.",
+    outcomes: [
+      "See all your numbers in one place",
+      "Get alerts when something looks wrong",
+      "Track what matters most to your business",
+    ],
+    pillar: "data" as const,
+  },
+  {
+    icon: Settings,
+    title: "Smoother Operations",
+    description:
+      "We automate the boring stuff so your team can focus on what matters.",
+    outcomes: [
+      "Automate repetitive tasks",
+      "Speed up your workflows",
+      "Reduce human errors",
+    ],
+    pillar: "ops" as const,
+  },
+  {
+    icon: Code,
+    title: "Custom Tech Solutions",
+    description:
+      "We build exactly what your business needs — no off-the-shelf compromises.",
+    outcomes: [
+      "Custom apps built for you",
+      "Connect all your tools together",
+      "AI assistants that work 24/7",
+    ],
+    pillar: "tech" as const,
+  },
+  {
+    icon: Target,
+    title: "Growth Strategy",
+    description:
+      "We help you make smarter decisions with clear data and proven plans.",
+    outcomes: [
+      "Find where you're losing money",
+      "Plan your next big move",
+      "Measure what's actually working",
+    ],
+    pillar: "strategy" as const,
+  },
+];
+
+const pillarStyles = {
+  data: {
+    iconBg: "bg-dots-data/15",
+    iconText: "text-dots-data",
+    dot: "bg-dots-data",
+  },
+  ops: {
+    iconBg: "bg-dots-ops/15",
+    iconText: "text-dots-ops",
+    dot: "bg-dots-ops",
+  },
+  tech: {
+    iconBg: "bg-dots-tech/15",
+    iconText: "text-dots-tech",
+    dot: "bg-dots-tech",
+  },
+  strategy: {
+    iconBg: "bg-dots-strategy/15",
+    iconText: "text-dots-strategy",
+    dot: "bg-dots-strategy",
+  },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 const ServicesSection = () => {
-  const services = [
-    {
-      icon: Database,
-      title: "Data Stack",
-      description: "Transform raw data into strategic intelligence",
-      outcomes: [
-        "Data Architecture & Engineering (warehouses, ETL/ELT, dbt)",
-        "Analytics Stack & KPI Layer (Power BI / Looker Studio)",
-        "Advanced Dashboard Visibility (role-based MIS, alerts)",
-      ],
-      color: "from-primary to-primary-light",
-    },
-    {
-      icon: Code,
-      title: "Tech Stack",
-      description: "Build scalable systems and automation",
-      outcomes: [
-        "Product Feature Development (MVP → prod, APIs)",
-        "Ops Process Setup & Tech Enablement (field/sales flows)",
-        "Management Control Centers (CXO panels, live reporting)",
-      ],
-      color: "from-primary-light to-secondary",
-    },
-    {
-      icon: Target,
-      title: "Strategy Engine",
-      description: "Drive measurable business outcomes",
-      outcomes: [
-        "Unit Economics Improvement & Cost Optimization",
-        "Process Improvement & Efficiency Gains",
-        "Organization MIS & KPI Frameworks",
-      ],
-      color: "from-secondary to-primary",
-    },
-  ];
-
   return (
-    <section className="py-24 bg-background">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 space-y-4 animate-fade-up">
+          <motion.div
+            className="text-center mb-16 space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-4xl md:text-5xl font-heading font-bold">
-              Full-Stack <span className="gradient-text">Solutions</span>
+              Everything Your Business{" "}
+              <span className="text-plum italic">Needs</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              End-to-end execution across data, technology, and strategy
+              Four pillars. One goal: help you make more money.
             </p>
-          </div>
+          </motion.div>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group relative rounded-2xl border border-border bg-card p-8 hover-lift animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {/* Icon */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-glow`}>
-                  <service.icon className="text-white" size={28} />
-                </div>
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {services.map((service, index) => {
+              const styles = pillarStyles[service.pillar];
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  className="group bg-white border border-sand-200 rounded-2xl p-8 group-hover:shadow-md transition-shadow"
+                >
+                  {/* Icon */}
+                  <div
+                    className={`w-14 h-14 rounded-xl ${styles.iconBg} flex items-center justify-center mb-6`}
+                  >
+                    <service.icon
+                      className={styles.iconText}
+                      size={28}
+                    />
+                  </div>
 
-                {/* Content */}
-                <h3 className="text-2xl font-heading font-bold mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  {service.description}
-                </p>
+                  {/* Content */}
+                  <h3 className="text-2xl font-heading font-bold mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    {service.description}
+                  </p>
 
-                {/* Outcomes List */}
-                <ul className="space-y-3">
-                  {service.outcomes.map((outcome, idx) => (
-                    <li key={idx} className="flex items-start text-sm">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0" />
-                      <span className="text-muted-foreground leading-relaxed">
-                        {outcome}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Hover Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              </div>
-            ))}
-          </div>
+                  {/* Outcomes List */}
+                  <ul className="space-y-3">
+                    {service.outcomes.map((outcome, idx) => (
+                      <li key={idx} className="flex items-start text-sm">
+                        <span
+                          className={`inline-block w-1.5 h-1.5 rounded-full ${styles.dot} mt-2 mr-3 flex-shrink-0`}
+                        />
+                        <span className="text-muted-foreground leading-relaxed">
+                          {outcome}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
+          </motion.div>
 
           {/* CTA */}
-          <div className="text-center animate-fade-up" style={{ animationDelay: "300ms" }}>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
             <Link to="/services">
               <Button size="lg" variant="outline" className="font-semibold">
                 Explore All Services
                 <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

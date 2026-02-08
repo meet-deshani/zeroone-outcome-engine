@@ -21,21 +21,22 @@ const Pricing = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4">
+      <section className="pt-32 pb-16 px-4 md:py-28">
         <div className="container mx-auto max-w-5xl text-center">
           <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6 animate-fade-in leading-tight">
-            Stop the <span className="text-secondary">Margin Leakage</span>.
+            <span className="text-dots-ops">Stop Losing Money</span>.
             <br />
-            Start the <span className="gradient-text">Acceleration</span>.
+            Start <span className="text-plum italic">Growing Faster</span>.
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in leading-relaxed">
-            No complex SQL. No technical debt. Just analytical sense delivered via tools that pay for themselves in months, not years.
+            No confusing code. No technical debt. Just clear answers from your data delivered via tools that pay for themselves in months, not years.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in delay-100">
             <Button
               size="lg"
-              className="gradient-primary text-white text-lg px-8 shadow-glow hover:scale-105 transition-transform"
+              variant="brand"
+              className="text-white text-lg px-8 shadow-2xl transition-transform"
               onClick={() => openContactForm("Get Strategic Growth Blueprint")}
             >
               Get Your Blueprint
@@ -54,7 +55,7 @@ const Pricing = () => {
       </section>
 
       {/* Price of Inaction Box */}
-      <section className="py-12 px-4">
+      <section className="py-20 md:py-28 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="bg-destructive/5 border border-destructive/20 rounded-2xl p-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -130,14 +131,14 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Tiers */}
-      <section className="py-20 px-4">
+      <section className="py-20 md:py-28 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
 
-            {/* Tier 1: The Wedge */}
-            <Card className="flex flex-col h-full border-2 hover:border-primary/50 transition-all hover-lift">
+            {/* Tier 1: Your First Step */}
+            <Card className="flex flex-col h-full border-2 hover:border-dots-data/50 transition-all hover-lift">
               <CardHeader>
-                <div className="mb-2 text-sm font-semibold text-primary uppercase tracking-wider">Tier 1: The Wedge</div>
+                <div className="mb-2 text-sm font-semibold text-plum uppercase tracking-wider">Tier 1: Your First Step</div>
                 <CardTitle className="text-2xl font-bold">Strategic Growth Blueprint</CardTitle>
                 <CardDescription className="text-3xl font-bold text-foreground mt-2">
                   $2.5k - $3.5k <span className="text-base font-normal text-muted-foreground">/ one-time</span>
@@ -151,16 +152,16 @@ const Pricing = () => {
                   <h4 className="font-semibold text-sm">What's Included:</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Data Hygiene & Privacy Audit</span>
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
+                      <span>Data Check-Up</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Process Blueprint (Visual Map)</span>
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
+                      <span>Step-by-Step Plan (Visual Map)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Custom ROI Roadmap</span>
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
+                      <span>Your Money-Back Plan</span>
                     </li>
                   </ul>
                 </div>
@@ -173,12 +174,12 @@ const Pricing = () => {
             </Card>
 
             {/* Tier 2: The Sprint */}
-            <Card className="flex flex-col h-full border-2 border-primary shadow-glow relative overflow-hidden transform md:-translate-y-4">
-              <div className="absolute top-0 center w-full bg-primary text-white text-xs font-bold text-center py-1">
+            <Card className="flex flex-col h-full border-2 border-ink shadow-2xl relative overflow-hidden transform md:-translate-y-4">
+              <div className="absolute top-0 center w-full bg-ink text-white text-xs font-bold text-center py-1">
                 POPULAR: TECHNICAL VALIDATION
               </div>
               <CardHeader className="pt-10">
-                <div className="mb-2 text-sm font-semibold text-primary uppercase tracking-wider">Tier 2: The Sprint</div>
+                <div className="mb-2 text-sm font-semibold text-plum uppercase tracking-wider">Tier 2: The Sprint</div>
                 <CardTitle className="text-2xl font-bold">5-Day Automation Sprint</CardTitle>
                 <CardDescription className="text-3xl font-bold text-foreground mt-2">
                   $5,000 <span className="text-base font-normal text-muted-foreground">/ fixed</span>
@@ -192,31 +193,31 @@ const Pricing = () => {
                   <h4 className="font-semibold text-sm">What's Included:</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
                       <span>Functional Prototype (Sandbox)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Zero-Knowledge Interface Integration</span>
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
+                      <span>Talk to Your Data Feature</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
                       <span>Technical Proof of Concept</span>
                     </li>
                   </ul>
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full gradient-primary text-white" onClick={() => openContactForm("Automation Sprint")}>
+                <Button variant="brand" className="w-full text-white" onClick={() => openContactForm("Automation Sprint")}>
                   Book Sprint
                 </Button>
               </CardFooter>
             </Card>
 
             {/* Tier 3: The Build */}
-            <Card className="flex flex-col h-full border-2 hover:border-primary/50 transition-all">
+            <Card className="flex flex-col h-full border-2 hover:border-dots-data/50 transition-all">
               <CardHeader>
-                <div className="mb-2 text-sm font-semibold text-primary uppercase tracking-wider">Tier 3: The Build</div>
+                <div className="mb-2 text-sm font-semibold text-plum uppercase tracking-wider">Tier 3: The Build</div>
                 <CardTitle className="text-2xl font-bold">Custom Analytics Transformation</CardTitle>
                 <CardDescription className="text-3xl font-bold text-foreground mt-2">
                   From $15k <span className="text-base font-normal text-muted-foreground">/ project</span>
@@ -230,15 +231,15 @@ const Pricing = () => {
                   <h4 className="font-semibold text-sm">What's Included:</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Full Vertical Integration</span>
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
+                      <span>Full System Build</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
-                      <span>Secured Data Pipeline (RAG/SLM)</span>
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
+                      <span>Safe Data System</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
                       <span>Training & 30-Day Support</span>
                     </li>
                   </ul>
@@ -252,9 +253,9 @@ const Pricing = () => {
             </Card>
 
             {/* Tier 4: The Retainer */}
-            <Card className="flex flex-col h-full border-2 hover:border-primary/50 transition-all bg-muted/20">
+            <Card className="flex flex-col h-full border-2 hover:border-dots-data/50 transition-all bg-cream-100">
               <CardHeader>
-                <div className="mb-2 text-sm font-semibold text-primary uppercase tracking-wider">Tier 4: The Retainer</div>
+                <div className="mb-2 text-sm font-semibold text-plum uppercase tracking-wider">Tier 4: The Retainer</div>
                 <CardTitle className="text-2xl font-bold">Managed AI Operations</CardTitle>
                 <CardDescription className="text-3xl font-bold text-foreground mt-2">
                   $3k - $5k <span className="text-base font-normal text-muted-foreground">/ month</span>
@@ -268,15 +269,15 @@ const Pricing = () => {
                   <h4 className="font-semibold text-sm">What's Included:</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
                       <span>Model Performance Monitoring</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
                       <span>Continuous Optimization</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                      <CheckCircle2 className="text-dots-ops flex-shrink-0 mt-0.5" size={16} />
                       <span>Unlimited Priority Support</span>
                     </li>
                   </ul>
@@ -293,12 +294,12 @@ const Pricing = () => {
 
           <div className="mt-8 text-center text-sm text-muted-foreground">
             <p className="flex items-center justify-center gap-2">
-              <ShieldCheck size={16} className="text-primary" />
+              <ShieldCheck size={16} className="text-dots-ops" />
               <strong>Strict SOW Policy:</strong> We provide rigid, clear deliverables. No nebulous "science projects".
             </p>
             <p className="flex items-center justify-center gap-2 mt-2">
-              <Zap size={16} className="text-primary" />
-              <strong>Note:</strong> All tiers include our proprietary "Zero-Knowledge Interface" (Talk to your Data).
+              <Zap size={16} className="text-dots-ops" />
+              <strong>Note:</strong> All tiers include our proprietary "Talk to Your Data" feature (Talk to your Data).
             </p>
           </div>
 
@@ -306,27 +307,27 @@ const Pricing = () => {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-20 md:py-28 px-4 bg-cream-100">
         <div className="container mx-auto max-w-3xl">
           <h2 className="font-heading text-3xl font-bold mb-8 text-center">Common Questions</h2>
           <Accordion type="single" collapsible className="space-y-4 shadow-none">
-            <AccordionItem value="item-1" className="bg-background rounded-lg border px-4">
+            <AccordionItem value="item-1" className="bg-white border border-sand-200 rounded-xl px-4">
               <AccordionTrigger className="text-left font-medium">
-                Why start with an Audit (The Wedge)?
+                Why start with an Audit (Your First Step)?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Buying complex AI solutions upfront is risky. The Audit (Wedge) is a low-cost "first date" where we uncover invisible inefficiencies and prove our value before you commit to a larger build.
+                Buying complex AI solutions upfront is risky. The Audit (Your First Step) is a low-cost "first date" where we uncover invisible inefficiencies and prove our value before you commit to a larger build.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-2" className="bg-background rounded-lg border px-4">
+            <AccordionItem value="item-2" className="bg-white border border-sand-200 rounded-xl px-4">
               <AccordionTrigger className="text-left font-medium">
-                What is the "Zero-Knowledge Interface"?
+                What is the "Talk to Your Data Feature"?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 It's our propriety layer that allows non-technical staff to query databases using natural language (Voice/Text) or Drag-and-Drop. No SQL knowledge required.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-3" className="bg-background rounded-lg border px-4">
+            <AccordionItem value="item-3" className="bg-white border border-sand-200 rounded-xl px-4">
               <AccordionTrigger className="text-left font-medium">
                 How fast is a "Sprint"?
               </AccordionTrigger>
@@ -334,7 +335,7 @@ const Pricing = () => {
                 Exactly 5 days (1 week). We scope it tightly to deliver a working Sandbox prototype that solves ONE specific pain point (e.g., Parsing Invoices or Lead Qualification).
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-4" className="bg-background rounded-lg border px-4">
+            <AccordionItem value="item-4" className="bg-white border border-sand-200 rounded-xl px-4">
               <AccordionTrigger className="text-left font-medium">
                 Do you offer refunds?
               </AccordionTrigger>

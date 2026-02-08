@@ -148,7 +148,7 @@ export const notifyWebsiteVisit = async () => {
 // Page name mapping for service pages
 const SERVICE_PAGES: Record<string, string> = {
     '/solutions': 'Solutions',
-    '/digital-authority': 'Digital Authority',
+    '/seo-geo': 'SEO & GEO',
     '/infinity-crm': 'Infinity CRM',
     '/overtrade-op': 'OvertradeOP',
     '/inhouse-slm': 'In-house SLM',

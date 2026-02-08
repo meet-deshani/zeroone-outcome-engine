@@ -27,22 +27,26 @@ const AiWorkshop = () => {
         {
             icon: Presentation,
             title: "Simplicity & Ethics",
-            desc: "Demystifying AI. We teach your team to handle AI securely and with credibility, removing fear and adding value."
+            desc: "Demystifying AI. We teach your team to handle AI securely and with credibility, removing fear and adding value.",
+            colorClass: "bg-dots-data/10 text-dots-data"
         },
         {
             icon: Shield,
             title: "Privacy & Security",
-            desc: "The Right Practice. Learn how to use AI power without ever sending company secrets to open systems."
+            desc: "The Right Practice. Learn how to use AI power without ever sending company secrets to open systems.",
+            colorClass: "bg-dots-ops/10 text-dots-ops"
         },
         {
             icon: Users,
             title: "Tailored Team Sessions",
-            desc: "We spend 30-60 mins with each department (Sales, HR, Dev, etc.) to solve their specific bottlenecks."
+            desc: "We spend 30-60 mins with each department (Sales, HR, Dev, etc.) to solve their specific bottlenecks.",
+            colorClass: "bg-dots-tech/10 text-dots-tech"
         },
         {
             icon: Laptop,
             title: "The 100+ Tool Box",
-            desc: "Access to a curated list of 100+ AI tools and wrappers that are ready to deploy for immediate efficiency."
+            desc: "Access to a curated list of 100+ AI tools and wrappers that are ready to deploy for immediate efficiency.",
+            colorClass: "bg-dots-strategy/10 text-dots-strategy"
         }
     ];
 
@@ -52,17 +56,17 @@ const AiWorkshop = () => {
 
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-4 relative overflow-hidden text-center">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-dots-data/5 rounded-full blur-[120px] -z-10" />
 
                 <div className="container mx-auto max-w-4xl">
                     <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={fadeInUp}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dots-data/10 border border-dots-data/20 text-ink mb-6"
                     >
                         <Zap size={16} />
-                        <span className="font-semibold text-sm">1-Day Corporate Transformation</span>
+                        <span className="font-semibold text-sm">1-Day AI Workshop</span>
                     </motion.div>
 
                     <motion.h1
@@ -71,7 +75,7 @@ const AiWorkshop = () => {
                         variants={fadeInUp}
                         className="font-heading text-5xl md:text-7xl font-bold mb-6"
                     >
-                        AI Made IT <span className="text-primary">Easy</span>
+                        AI Made IT <span className="text-plum">Easy</span>
                     </motion.h1>
 
                     <motion.p
@@ -80,7 +84,7 @@ const AiWorkshop = () => {
                         variants={fadeInUp}
                         className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed"
                     >
-                        Boost productivity, protect your data, and demystify AI.
+                        Help your team use AI safely and save hours every day.
                         We spend a day with your team to unlock efficiency without the complexity.
                     </motion.p>
 
@@ -91,7 +95,8 @@ const AiWorkshop = () => {
                     >
                         <Button
                             size="lg"
-                            className="gradient-primary text-white text-lg h-14 px-10 shadow-lg hover:shadow-primary/25 transition-all rounded-full"
+                            variant="brand"
+                            className="text-lg h-14 px-10 shadow-lg transition-all rounded-full"
                             onClick={() => openContactForm("Book Workshop - Hero")}
                         >
                             Book Workshop - ₹9,999
@@ -102,7 +107,7 @@ const AiWorkshop = () => {
             </section>
 
             {/* The Problem / Value Prop */}
-            <section className="py-20 px-4 bg-muted/30">
+            <section className="py-20 md:py-28 px-4 bg-cream-100">
                 <div className="container mx-auto max-w-6xl">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
@@ -112,7 +117,7 @@ const AiWorkshop = () => {
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
                                 Most companies are stuck. They see the hype but don't know how to implement it safely.
-                                Or worse, employees are secretly using unsafe tools that leak proprietary data.
+                                Or worse, team members might be using AI tools that share your company secrets.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
                                 Our "AI Made IT Easy" workshop bridges the gap. We don't just lecture;
@@ -135,9 +140,9 @@ const AiWorkshop = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-6">
                             {modules.map((mod, idx) => (
-                                <Card key={idx} className="border-border/50 hover:border-primary/50 transition-all hover:shadow-md">
+                                <Card key={idx} className="border-border/50 hover:border-dots-data/50 transition-all hover:shadow-md">
                                     <CardContent className="p-6">
-                                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
+                                        <div className={`w-12 h-12 rounded-lg ${mod.colorClass} flex items-center justify-center mb-4`}>
                                             <mod.icon size={24} />
                                         </div>
                                         <h3 className="font-bold text-lg mb-2">{mod.title}</h3>
@@ -153,11 +158,11 @@ const AiWorkshop = () => {
             </section>
 
             {/* ROI Section: Is it worth it? */}
-            <section className="py-24 px-4">
+            <section className="py-20 md:py-28 px-4">
                 <div className="container mx-auto max-w-4xl text-center">
                     <h2 className="font-heading text-3xl md:text-5xl font-bold mb-12">Is it actually worth it?</h2>
 
-                    <div className="bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                    <div className="bg-dots-strategy/5 border border-dots-strategy/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-4 opacity-10">
                             <Lightbulb size={120} />
                         </div>
@@ -165,7 +170,7 @@ const AiWorkshop = () => {
                         <div className="grid md:grid-cols-2 gap-12 text-left relative z-10">
                             <div>
                                 <h3 className="text-xl font-bold mb-4">The Investment</h3>
-                                <div className="text-5xl font-black text-primary mb-2">₹9,999</div>
+                                <div className="text-5xl font-black text-ink mb-2">₹9,999</div>
                                 <p className="text-muted-foreground mb-6">One-time workshop fee for the whole office.</p>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     Less than the cost of a single software license or a team lunch.
@@ -197,7 +202,7 @@ const AiWorkshop = () => {
             </section>
 
             {/* CTA / Booking */}
-            <section className="py-20 px-4 bg-primary text-primary-foreground text-center">
+            <section className="py-20 md:py-28 px-4 bg-ink text-white text-center">
                 <div className="container mx-auto max-w-3xl">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to empower your workforce?</h2>
                     <p className="text-xl opacity-90 mb-10">
@@ -207,7 +212,7 @@ const AiWorkshop = () => {
                     <Button
                         size="lg"
                         variant="secondary"
-                        className="text-primary font-bold text-lg h-14 px-12 shadow-2xl hover:scale-105 transition-transform"
+                        className="text-ink font-bold text-lg h-14 px-12 shadow-2xl transition-transform"
                         onClick={() => openContactForm("Book Workshop - Bottom CTA")}
                     >
                         Schedule Your Workshop

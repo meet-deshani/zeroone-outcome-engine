@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120">
+  <defs>
+    <linearGradient id="aurora" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8B6FF"/>
+      <stop offset="50%" stop-color="#A2D2FF"/>
+      <stop offset="100%" stop-color="#B8E0D2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Aurora Gradient Background -->
+  <rect width="480" height="120" fill="url(#aurora)" rx="0"/>
+  
+  <!-- Dot Matrix (dark dots on gradient) -->
+  <circle cx="36" cy="36" r="10" fill="#191924"/>
+  <circle cx="62" cy="36" r="10" fill="rgba(25,25,36,0.15)"/>
+  <circle cx="88" cy="36" r="10" fill="rgba(25,25,36,0.15)"/>
+  <circle cx="36" cy="62" r="10" fill="rgba(25,25,36,0.15)"/>
+  <circle cx="62" cy="62" r="10" fill="#191924"/>
+  <circle cx="88" cy="62" r="10" fill="rgba(25,25,36,0.15)"/>
+  <circle cx="36" cy="88" r="10" fill="rgba(25,25,36,0.15)"/>
+  <circle cx="62" cy="88" r="10" fill="rgba(25,25,36,0.15)"/>
+  <circle cx="88" cy="88" r="10" fill="#191924"/>
+  
+  <!-- Wordmark -->
+  <text x="120" y="58" font-family="'Space Mono', 'Courier New', monospace" font-weight="700" font-size="18" letter-spacing="2" fill="#191924">ZEROONE</text>
+  <text x="120" y="82" font-family="'Space Mono', 'Courier New', monospace" font-weight="700" font-size="18" letter-spacing="2">
+    <tspan fill="#2D1B4E">DOTS</tspan>
+    <tspan fill="rgba(25,25,36,0.3)" dx="6">·</tspan>
+    <tspan fill="#2D1B4E" dx="6">AI</tspan>
+  </text>
+</svg>

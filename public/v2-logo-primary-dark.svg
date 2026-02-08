@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+  <rect width="520" height="120" fill="#191924"/>
+  
+  <!-- Dot Matrix -->
+  <circle cx="36" cy="36" r="10" fill="#C8B6FF"/>
+  <circle cx="62" cy="36" r="10" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="88" cy="36" r="10" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="36" cy="62" r="10" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="62" cy="62" r="10" fill="#B8E0D2"/>
+  <circle cx="88" cy="62" r="10" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="36" cy="88" r="10" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="62" cy="88" r="10" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="88" cy="88" r="10" fill="#FFCDB2"/>
+  
+  <!-- Wordmark -->
+  <text x="120" y="58" font-family="'Space Mono', 'Courier New', monospace" font-weight="700" font-size="18" letter-spacing="2" fill="#FFFFFF">ZEROONE</text>
+  <text x="120" y="82" font-family="'Space Mono', 'Courier New', monospace" font-weight="700" font-size="18" letter-spacing="2">
+    <tspan fill="#C8B6FF">D</tspan><tspan fill="rgba(255,255,255,0.25)">·</tspan><tspan fill="#B8E0D2">O</tspan><tspan fill="rgba(255,255,255,0.25)">·</tspan><tspan fill="#FFCDB2">T</tspan><tspan fill="rgba(255,255,255,0.25)">·</tspan><tspan fill="#A2D2FF">S</tspan>
+    <tspan fill="#FFFFFF" dx="10">AI</tspan>
+  </text>
+</svg>

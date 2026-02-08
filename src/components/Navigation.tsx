@@ -18,21 +18,21 @@ const MegaMenuContent = ({ columns }: { columns: any[] }) => {
   return (
     <div className="grid grid-cols-12 h-[450px]">
       {/* Sidebar - Categories */}
-      <div className="col-span-4 bg-muted/30 border-r border-border p-2 space-y-1">
+      <div className="col-span-4 bg-cream-100/60 border-r border-sand-200 p-2 space-y-1">
         {columns.map((col, idx) => (
           <div
             key={idx}
             onMouseEnter={() => setActiveCategory(idx)}
             className={`cursor-pointer px-4 py-4 rounded-lg transition-all duration-200 group ${activeCategory === idx
-              ? "bg-background shadow-sm border border-border/50"
-              : "hover:bg-muted/50 border border-transparent"
+              ? "bg-cream-100 shadow-sm border border-sand-200"
+              : "hover:bg-cream-100/50 border border-transparent"
               }`}
           >
-            <p className={`text-[10px] font-bold uppercase tracking-wider mb-1 transition-colors ${activeCategory === idx ? "text-primary" : "text-muted-foreground group-hover:text-primary/70"
+            <p className={`text-[10px] font-bold uppercase tracking-wider mb-1 transition-colors ${activeCategory === idx ? "text-ink" : "text-muted-foreground group-hover:text-ink/70"
               }`}>
               {col.subtitle}
             </p>
-            <h4 className={`font-heading font-bold text-base transition-colors ${activeCategory === idx ? "text-foreground" : "text-foreground/70"
+            <h4 className={`font-heading font-bold text-base transition-colors ${activeCategory === idx ? "text-ink" : "text-ink/70"
               }`}>
               {col.title}
             </h4>
@@ -41,7 +41,7 @@ const MegaMenuContent = ({ columns }: { columns: any[] }) => {
       </div>
 
       {/* Content Area - Details */}
-      <div className="col-span-8 p-8 bg-background relative">
+      <div className="col-span-8 p-8 bg-white relative">
         {columns.map((col, idx) => (
           <div
             key={idx}
@@ -50,7 +50,7 @@ const MegaMenuContent = ({ columns }: { columns: any[] }) => {
           >
             <div className="h-full flex flex-col">
               <div className="mb-8">
-                <h3 className="font-heading text-2xl font-bold mb-3">{col.title}</h3>
+                <h3 className="font-heading text-2xl font-bold text-ink mb-3">{col.title}</h3>
                 <p className="text-muted-foreground leading-relaxed max-w-md">
                   {col.description}
                 </p>
@@ -61,10 +61,10 @@ const MegaMenuContent = ({ columns }: { columns: any[] }) => {
                   <li key={item.name}>
                     <Link to={item.path} className="group block">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-foreground group-hover:text-primary transition-colors text-lg">
+                        <span className="font-semibold text-ink group-hover:text-plum transition-colors text-lg">
                           {item.name}
                         </span>
-                        <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
+                        <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-ink" />
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
                     </Link>
@@ -72,8 +72,8 @@ const MegaMenuContent = ({ columns }: { columns: any[] }) => {
                 ))}
               </ul>
 
-              <div className="pt-6 border-t border-border mt-6">
-                <Link to="/pricing" className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors bg-primary/5 px-4 py-2 rounded-full border border-primary/10">
+              <div className="pt-6 border-t border-sand-200 mt-6">
+                <Link to="/pricing" className="inline-flex items-center gap-2 text-sm font-bold text-ink hover:text-plum transition-colors bg-cream-100 px-4 py-2 rounded-full border border-sand-200">
                   Get Strategic Blueprint <ArrowRight size={14} />
                 </Link>
               </div>
@@ -142,11 +142,11 @@ const Navigation = () => {
           ]
         },
         {
-          title: "Integrated Authority",
-          subtitle: "Digital Trust",
-          description: "Ensure your brand is found by AI and trusted by humans.",
+          title: "SEO & GEO",
+          subtitle: "AI Visibility",
+          description: "Get found on Google and recommended by AI.",
           items: [
-            { name: "The Authority Audit", path: "/digital-authority", desc: "Get your AI Presence Score." }
+            { name: "SEO & GEO Services", path: "/seo-geo", desc: "Be the brand AI recommends." }
           ]
         }
       ]
@@ -162,19 +162,19 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass shadow-md" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-cream-50/90 backdrop-blur-xl shadow-sm border-b border-sand-200" : "bg-transparent"
         }`}
     >
       {/* Top Bar */}
-      <div className="bg-primary/90 text-primary-foreground py-2 text-center text-xs sm:text-sm font-medium tracking-wide">
-        Problem Solving First • Outcome First — Zero Billing • Data Safeguard First
+      <div className="bg-ink text-cream-50 py-2 text-center font-mono tracking-wider uppercase text-[11px]">
+        Problem Solving First <span className="text-dots-data">&#x2022;</span> Outcome First — Zero Billing <span className="text-dots-ops">&#x2022;</span> Data Safeguard First
       </div>
 
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <Logo imgClassName="h-12 w-auto sm:h-14" />
+            <Logo imgClassName="h-10 w-auto sm:h-12" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -184,14 +184,14 @@ const Navigation = () => {
                 return (
                   <DropdownMenu key={link.name}>
                     <DropdownMenuTrigger
-                      className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-sm transition-all outline-none ${location.pathname.startsWith(link.path)
-                        ? "text-primary bg-primary/5"
-                        : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
+                      className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-sm transition-colors outline-none ${location.pathname.startsWith(link.path)
+                        ? "text-ink font-semibold"
+                        : "text-muted-foreground hover:text-ink"
                         }`}
                     >
                       {link.name} <ChevronDown size={14} />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="center" className="w-[800px] bg-background/95 backdrop-blur-md border-border p-0 shadow-2xl overflow-hidden rounded-xl">
+                    <DropdownMenuContent align="center" className="w-[800px] bg-white/95 backdrop-blur-xl border-sand-200 p-0 shadow-2xl overflow-hidden rounded-xl">
                       <MegaMenuContent columns={link.columns} />
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -201,9 +201,9 @@ const Navigation = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 rounded-lg font-medium text-sm transition-all ${isActive(link.path)
-                    ? "text-primary bg-primary/5"
-                    : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
+                  className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${isActive(link.path)
+                    ? "text-ink font-semibold"
+                    : "text-muted-foreground hover:text-ink"
                     }`}
                 >
                   {link.name}
@@ -214,10 +214,11 @@ const Navigation = () => {
 
 
           {/* CTA Button */}
-          < div className="hidden lg:block">
+          <div className="hidden lg:block">
             <Button
+              variant="brand"
               size="lg"
-              className="gradient-primary text-white font-semibold shadow-lg hover:shadow-glow transition-all"
+              className="font-medium"
               onClick={() => {
                 logEvent("Navigation", "Click CTA", "Start Your Project (Desktop)");
                 setIsContactFormOpen(true);
@@ -230,7 +231,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-cream-100 transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -241,31 +242,31 @@ const Navigation = () => {
       {/* Mobile Menu */}
       {
         isMobileMenuOpen && (
-          <div className="lg:hidden glass border-t border-border animate-fade-in max-h-[calc(100vh-120px)] overflow-y-auto">
+          <div className="lg:hidden bg-cream-50/95 backdrop-blur-xl border-t border-sand-200 animate-fade-in max-h-[calc(100vh-120px)] overflow-y-auto">
             <div className="container mx-auto px-4 py-4 space-y-2">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   {link.megaMenu ? (
                     <div className="space-y-4 py-2">
-                      <div className="px-4 font-bold text-lg text-foreground">
+                      <div className="px-4 font-bold text-lg text-ink">
                         {link.name}
                       </div>
                       <div className="pl-4 space-y-6">
                         {link.columns.map((col, idx) => (
                           <div key={idx} className="space-y-2">
                             <p className="text-xs uppercase font-bold text-muted-foreground px-4">{col.subtitle}</p>
-                            <div className="space-y-2 border-l-2 border-primary/10 ml-4 pl-3">
+                            <div className="space-y-2 border-l-2 border-sand-200 ml-4 pl-3">
                               {col.items.map((item) => (
                                 <Link
                                   key={item.name}
                                   to={item.path}
                                   onClick={() => setIsMobileMenuOpen(false)}
-                                  className="block py-1 text-sm font-medium text-foreground/80"
+                                  className="block py-1 text-sm font-medium text-ink/80"
                                 >
                                   {item.name}
                                 </Link>
                               ))}
-                              <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 text-xs font-bold text-primary">
+                              <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 text-xs font-bold text-ink">
                                 + Get Strategic Blueprint
                               </Link>
                             </div>
@@ -277,9 +278,9 @@ const Navigation = () => {
                     <Link
                       to={link.path}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block px-4 py-3 rounded-lg font-medium transition-all ${isActive(link.path)
-                        ? "text-primary bg-primary/5"
-                        : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
+                      className={`block px-4 py-3 rounded-lg font-medium transition-colors ${isActive(link.path)
+                        ? "text-ink font-semibold"
+                        : "text-muted-foreground hover:text-ink"
                         }`}
                     >
                       {link.name}
@@ -288,8 +289,9 @@ const Navigation = () => {
                 </div>
               ))}
               <Button
+                variant="brand"
                 size="lg"
-                className="w-full gradient-primary text-white font-semibold mt-4"
+                className="w-full font-medium mt-4"
                 onClick={() => {
                   logEvent("Navigation", "Click CTA", "Start Your Project (Mobile)");
                   setIsMobileMenuOpen(false);
@@ -308,7 +310,7 @@ const Navigation = () => {
         onOpenChange={setIsContactFormOpen}
         defaultSubject="Start Your Project"
       />
-    </nav >
+    </nav>
   );
 };
 

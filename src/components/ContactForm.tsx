@@ -173,13 +173,13 @@ const ContactForm = ({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[500px] animate-scale-in max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[500px] animate-scale-in max-h-[90vh] overflow-y-auto bg-cream-50">
         {isSubmitted ? (
           // Success state with WhatsApp button
           <div className="text-center space-y-6 py-8">
             <div className="flex justify-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                <CheckCircle2 className="text-primary" size={32} />
+              <div className="w-16 h-16 rounded-full bg-dots-ops/20 flex items-center justify-center">
+                <CheckCircle2 className="text-dots-ops" size={32} />
               </div>
             </div>
             <div className="space-y-2">
@@ -191,7 +191,8 @@ const ContactForm = ({
             <div className="space-y-3 pt-4">
               <Button
                 size="lg"
-                className="w-full gradient-primary text-white font-semibold"
+                className="w-full font-semibold"
+                variant="brand"
                 onClick={handleWhatsAppClick}
               >
                 <MessageCircle className="mr-2" size={20} />
@@ -274,7 +275,7 @@ const ContactForm = ({
                 />
                 {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
               </div>
-              <Button type="submit" className="w-full gradient-primary text-white" disabled={isSubmitting}>
+              <Button type="submit" className="w-full" variant="brand" disabled={isSubmitting}>
                 {isSubmitting ? "Submitting..." : "Submit Request"}
               </Button>
             </form>

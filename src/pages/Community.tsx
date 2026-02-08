@@ -62,9 +62,9 @@ const Insights = () => {
         desc: "Auto-switches gateways upon failure detection. Automatically reconciles stuck payments and notifies users via WhatsApp.",
         stats: "99.9% Success Rate",
         icon: Zap,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Ship Payment Orchestrators",
@@ -86,9 +86,9 @@ const Insights = () => {
         desc: "Monitors usage patterns. Triggers automated, personalized engagement sequences when engagement drops below threshold.",
         stats: "15% Churn Reduction",
         icon: Bot,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Build Retention Bots",
@@ -110,9 +110,9 @@ const Insights = () => {
         desc: "Automated nudges and penalties for sellers at risk of breaching SLAs. Gamified dashboard for performance improvement.",
         stats: "40% Better adherence",
         icon: Trophy,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Automate Marketplace Ops",
@@ -134,9 +134,9 @@ const Insights = () => {
         desc: "AI-driven dynamic routing that batches orders to maximize truck fill rate. Adjusts in real-time based on traffic.",
         stats: "30% Fuel Saved",
         icon: Cpu,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Master Logistics AI",
@@ -158,9 +158,9 @@ const Insights = () => {
         desc: "Predicts demand spikes using historical data and trends. Auto-generates purchase orders before stock hits zero.",
         stats: "Zero Revenue Loss",
         icon: TrendingUp,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Build Inventory Agents",
@@ -182,9 +182,9 @@ const Insights = () => {
         desc: "Unified patient journey tracker. Auto-schedules follow-ups and reminds patients of appointments via WhatsApp/SMS.",
         stats: "25% More Conversions",
         icon: Bot,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Automate Care Flows",
@@ -206,9 +206,9 @@ const Insights = () => {
         desc: "Aggregates quiz scores, attendance, and engagement. Generates personalized progress reports for agents and parents.",
         stats: "2x Counselor Productivity",
         icon: Sparkles,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Build Education Agents",
@@ -230,9 +230,9 @@ const Insights = () => {
         desc: "Digital KYC and document gathering bot. Auto-verifies documents and nudges customers to sign via mobile.",
         stats: "50% Faster Closing",
         icon: Lock,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Automate Property Ops",
@@ -254,9 +254,9 @@ const Insights = () => {
         desc: "AI-driven production scheduling that groups similar runs to minimize changeover time. Alerts maintenance teams in advance.",
         stats: "15% More Uptime",
         icon: Cpu,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Build Factory Agents",
@@ -278,9 +278,9 @@ const Insights = () => {
         desc: "Visual AI agent that analyzes accident photos for instant damage assessment and claim estimation.",
         stats: "Claims Settled in Mins",
         icon: Smartphone,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Ship Insurtech Agents",
@@ -293,18 +293,18 @@ const Insights = () => {
         title: "The Network Blindspot",
         desc: "No unified view of network experience per user. Support teams can't diagnose 'slow internet' complaints effectively.",
         icon: Activity,
-        color: "text-cyan-600",
-        bg: "bg-cyan-600/10",
-        border: "border-cyan-600/20"
+        color: "text-dots-strategy",
+        bg: "bg-dots-strategy/10",
+        border: "border-dots-strategy/20"
       },
       agent: {
         title: "The Network Pulse Agent",
         desc: "Real-time probe that correlates tower metrics with user complaints. Auto-diagnoses issues and informs users of outages.",
         stats: "40% Fewer Tickets",
         icon: Zap,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Build Telco AI",
@@ -327,9 +327,9 @@ const Insights = () => {
         desc: "IoT-connected agent that detects voltage fluctuations and reroutes power or dispatches crews instantly.",
         stats: "50% Lower Downtime",
         icon: Cpu,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Build Energy Agents",
@@ -342,18 +342,18 @@ const Insights = () => {
         title: "The Preference Miss",
         desc: "Poor visibility into guest preferences. Returning guests get generic treatment, hurting loyalty.",
         icon: Users,
-        color: "text-purple-500",
-        bg: "bg-purple-500/10",
-        border: "border-purple-500/20"
+        color: "text-dots-data",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       agent: {
         title: "The Guest Experience Bot",
         desc: "Unified guest profile agent that prompts staff with personalized preferences (e.g., 'Likes extra pillows') at check-in.",
         stats: "30% Higher LTV",
         icon: Sparkles,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Automate Hospitality",
@@ -375,9 +375,9 @@ const Insights = () => {
         desc: "Analyzes cross-platform trends and suggests content tweaks. Auto-generates hooks and thumbnails.",
         stats: "2x Reach Growth",
         icon: TrendingUp,
-        color: "text-primary",
-        bg: "bg-primary/10",
-        border: "border-primary/20"
+        color: "text-ink",
+        bg: "bg-dots-data/10",
+        border: "border-dots-data/20"
       },
       community: {
         title: "Build Creator AI",
@@ -413,13 +413,13 @@ const Insights = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 text-center">
         <div className="container mx-auto max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dots-data/10 border border-dots-data/20 text-ink mb-6">
             <Users size={16} />
             <span className="font-semibold text-sm">Become an AI Master</span>
           </div>
 
           <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
-            Insights + <span className="text-primary">Community</span>
+            Insights + <span className="text-plum">Community</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -430,7 +430,7 @@ const Insights = () => {
       </section>
 
       {/* Industry Spotlight Tabs */}
-      <section className="py-12 px-4">
+      <section className="py-20 md:py-28 px-4">
         <div className="container mx-auto max-w-6xl">
           <Tabs defaultValue="fintech" className="w-full">
             <div className="flex justify-center mb-12">
@@ -439,7 +439,7 @@ const Insights = () => {
                   <TabsTrigger
                     key={key}
                     value={key}
-                    className="rounded-full px-5 py-2.5 text-sm font-medium border border-border/50 bg-muted/30 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:border-primary transition-all hover:bg-muted/50"
+                    className="rounded-full px-5 py-2.5 text-sm font-medium border border-sand-200 bg-cream-100 data-[state=active]:bg-ink data-[state=active]:text-white data-[state=active]:border-ink transition-all hover:bg-cream-50"
                   >
                     {data.label}
                   </TabsTrigger>
@@ -474,7 +474,7 @@ const Insights = () => {
                     </Card>
 
                     {/* The Fix (Right) */}
-                    <Card className={`border-l-4 ${data.agent.border} shadow-lg relative overflow-hidden bg-gradient-to-br from-background to-primary/5 group h-full`}>
+                    <Card className={`border-l-4 ${data.agent.border} shadow-lg relative overflow-hidden bg-white group h-full`}>
                       <div className={`absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity`}>
                         <data.agent.icon size={120} className={data.agent.color} />
                       </div>
@@ -496,12 +496,12 @@ const Insights = () => {
                   </div>
 
                   {/* Community Upsell Bar */}
-                  <div className="rounded-2xl border-2 border-dashed border-amber-500/30 bg-amber-500/5 p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+                  <div className="rounded-2xl border-2 border-dashed border-dots-data/30 bg-dots-data/5 p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-dots-data/10 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
 
                     <div className="flex items-center gap-6">
-                      <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0 border border-amber-500/30">
-                        <Lock className="text-amber-600" size={32} />
+                      <div className="w-16 h-16 rounded-full bg-dots-data/10 flex items-center justify-center shrink-0 border border-dots-data/30">
+                        <Lock className="text-ink" size={32} />
                       </div>
                       <div>
                         <h4 className="text-xl font-bold text-foreground mb-1">
@@ -514,8 +514,9 @@ const Insights = () => {
                     </div>
 
                     <Button
+                      variant="brand"
                       size="lg"
-                      className="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 shadow-lg shadow-amber-500/20 min-w-[240px]"
+                      className="font-semibold px-8 shadow-lg min-w-[240px]"
                       onClick={() => openContactForm(`Community - ${data.label}`, "Why do you want to build this?", "I want to solve...")}
                     >
                       <Sparkles size={18} className="mr-2" />
@@ -530,12 +531,11 @@ const Insights = () => {
       </section >
 
       {/* Student Idea Contest Section */}
-      < section className="py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white relative overflow-hidden" >
+      < section className="py-20 md:py-28 px-4 bg-ink text-white relative overflow-hidden" >
         {/* Background visual effects */}
-        < div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" ></div >
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-indigo-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-dots-data/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-dots-data/20 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="container mx-auto max-w-5xl relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white mb-8 backdrop-blur-sm shadow-xl">
@@ -543,60 +543,60 @@ const Insights = () => {
             <span className="font-bold tracking-wide">STUDENT CHALLENGE</span>
           </div>
 
-          <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-indigo-200">
+          <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-white">
             Do You Have a Billion Dollar Idea?
           </h2>
 
-          <p className="text-xl md:text-2xl text-purple-100/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Submit a yearly revenue idea. Best submission wins <span className="text-white font-bold border-b-2 border-purple-400">1 Month Free Mentorship</span>. <br />
-            Convert it to a full-time role and earn <span className="text-green-400 font-bold">₹1 Lakh/Month</span> building AI Automations.
+          <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Share your best business idea. Best submission wins <span className="text-white font-bold border-b-2 border-dots-data">1 Month Free Mentorship</span>. <br />
+            Turn it into a real job and earn <span className="text-dots-ops font-bold">₹1 Lakh/Month</span> building AI tools.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button
               size="lg"
-              className="bg-white text-purple-900 hover:bg-gray-100 font-bold text-lg h-16 px-10 rounded-full shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] transition-transform hover:scale-105"
+              className="bg-white text-ink hover:bg-cream-100 font-bold text-lg h-16 px-10 rounded-full shadow-2xl transition-transform hover:scale-105"
               onClick={() => setIsIdeaFormOpen(true)}
             >
-              <Lightbulb size={20} className="mr-2 fill-purple-900" />
+              <Lightbulb size={20} className="mr-2 fill-ink" />
               Submit My Idea
             </Button>
           </div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left max-w-6xl mx-auto">
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-yellow-500/20 flex items-center justify-center mb-6 border border-yellow-500/30 group-hover:scale-110 transition-transform">
-                <Trophy className="text-yellow-400" size={24} />
+              <div className="w-12 h-12 rounded-2xl bg-dots-tech/20 flex items-center justify-center mb-6 border border-dots-tech/30 group-hover:scale-110 transition-transform">
+                <Trophy className="text-dots-tech" size={24} />
               </div>
               <h3 className="font-bold text-xl mb-3">Win Mentorship</h3>
-              <p className="text-purple-200 leading-relaxed">Get 1:1 guidance from our architects to refine and build your idea into a real product.</p>
+              <p className="text-white/70 leading-relaxed">Get 1:1 guidance from our architects to refine and build your idea into a real product.</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-6 border border-cyan-500/30 group-hover:scale-110 transition-transform">
-                <Bot className="text-cyan-400" size={24} />
+              <div className="w-12 h-12 rounded-2xl bg-dots-data/20 flex items-center justify-center mb-6 border border-dots-data/30 group-hover:scale-110 transition-transform">
+                <Bot className="text-dots-data" size={24} />
               </div>
               <h3 className="font-bold text-xl mb-3">Build Agents</h3>
-              <p className="text-purple-200 leading-relaxed">Don't just pitch decks. Learn to build AI agents with ethics and security like an AI Master.</p>
+              <p className="text-white/70 leading-relaxed">Don't just pitch decks. Learn to build AI agents with ethics and security like an AI Master.</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/30 group-hover:scale-110 transition-transform">
-                <Sparkles className="text-green-400" size={24} />
+              <div className="w-12 h-12 rounded-2xl bg-dots-ops/20 flex items-center justify-center mb-6 border border-dots-ops/30 group-hover:scale-110 transition-transform">
+                <Sparkles className="text-dots-ops" size={24} />
               </div>
               <h3 className="font-bold text-xl mb-3">Earn ₹1 Lakh/Mo</h3>
-              <p className="text-purple-200 leading-relaxed">Top performers get offered full-time roles in our 100X Community.</p>
+              <p className="text-white/70 leading-relaxed">Top performers get offered full-time roles in our 100X Community.</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-pink-500/20 flex items-center justify-center mb-6 border border-pink-500/30 group-hover:scale-110 transition-transform">
-                <Users className="text-pink-400" size={24} />
+              <div className="w-12 h-12 rounded-2xl bg-dots-strategy/20 flex items-center justify-center mb-6 border border-dots-strategy/30 group-hover:scale-110 transition-transform">
+                <Users className="text-dots-strategy" size={24} />
               </div>
               <h3 className="font-bold text-xl mb-3">Onboard Clients</h3>
-              <p className="text-purple-200 leading-relaxed mb-4">
+              <p className="text-white/70 leading-relaxed mb-4">
                 Bring your own clients. Keep 90% of billing, pay only 10% for usage.
-                <span className="block mt-2 text-sm text-purple-300">Join 500+ student founders building real businesses.</span>
+                <span className="block mt-2 text-sm text-white/70">Join 500+ student founders building real businesses.</span>
               </p>
               <Button
                 variant="default" // Changed from outline to default or custom style
-                className="w-full bg-white text-purple-900 hover:bg-gray-100 font-bold border-none" // High contrast style
+                className="w-full bg-white text-ink hover:bg-cream-100 font-bold border-none" // High contrast style
                 onClick={() => setIsIdeaFormOpen(true)}
               >
                 Submit Your Key Idea

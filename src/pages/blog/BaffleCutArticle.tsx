@@ -65,8 +65,8 @@ const BaffleCutArticle = () => {
                             The goal in <strong>HTRI</strong> is to balance the B-Stream (Crossflow) and E-Stream (Leakage).
                             Ideally, the window velocity should be reasonably close to the crossflow velocity.
                         </p>
-                        <div className="bg-primary/5 p-6 rounded-xl border-l-4 border-primary my-8">
-                            <h4 className="text-primary mt-0">Pro Tip</h4>
+                        <div className="bg-dots-tech/5 p-6 rounded-xl border-l-4 border-dots-tech my-8">
+                            <h4 className="text-plum mt-0">Pro Tip</h4>
                             <p className="mb-0 text-sm">
                                 If your pressure drop is too high, simply increasing the baffle cut isn't always the answer. Increasing Baffle Spacing is often more effective for reducing Beta-stream collisions.
                             </p>
@@ -92,7 +92,7 @@ const BaffleCutArticle = () => {
                         <p className="text-muted-foreground mb-6">
                             We can run this optimization for you in HTRI. Get a TEMA datasheet guaranteed to be vibration-safe.
                         </p>
-                        <Button size="lg" className="gradient-primary text-white" asChild>
+                        <Button size="lg" variant="brand" asChild>
                             <Link to="/he-design">Start a Design <ArrowRight className="ml-2 w-4 h-4" /></Link>
                         </Button>
                     </div>
