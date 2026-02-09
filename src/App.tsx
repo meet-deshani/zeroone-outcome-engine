@@ -2,9 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import Solutions from "./pages/Solutions";
@@ -21,17 +21,28 @@ import AiWorkshop from "./pages/AiWorkshop";
 import HeatExchanger from "./pages/HeatExchanger";
 import PersonalAiAgent from "./pages/PersonalAiAgent";
 import Resources from "./pages/Resources";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import LMTDCalculator from "./pages/tools/LMTDCalculator";
 import BaffleCutArticle from "./pages/blog/BaffleCutArticle";
-import BusinessMarginGuide from "./pages/blog/BusinessMarginGuide";
-import AiAutomationGuide from "./pages/blog/AiAutomationGuide";
-import AiCommunityGuide from "./pages/blog/AiCommunityGuide";
-import AiEducationGuide from "./pages/blog/AiEducationGuide";
-import AiToolsIndia from "./pages/blog/AiToolsIndia";
 import AnalyticsTracker from "./components/AnalyticsTracker";
 import { initGA } from "./lib/analytics";
 
+// Code-split blog pages (loaded on demand for better performance)
+const BusinessMarginGuide = lazy(() => import("./pages/blog/BusinessMarginGuide"));
+const AiAutomationGuide = lazy(() => import("./pages/blog/AiAutomationGuide"));
+const AiCommunityGuide = lazy(() => import("./pages/blog/AiCommunityGuide"));
+const AiEducationGuide = lazy(() => import("./pages/blog/AiEducationGuide"));
+const AiToolsIndia = lazy(() => import("./pages/blog/AiToolsIndia"));
+
 const queryClient = new QueryClient();
+
+// Simple loading fallback for lazy-loaded pages
+const PageLoader = () => (
+  <div className="min-h-screen bg-cream-50 flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-ink border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const App = () => {
   useEffect(() => {
@@ -62,32 +73,33 @@ const App = () => {
               <Route path="/ai-workshop" element={<AiWorkshop />} />
               <Route path="/he-design" element={<HeatExchanger />} />
               <Route path="/personal-ai-agent" element={<PersonalAiAgent />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
 
               {/* Resources & Tools */}
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/lmtd-calculator" element={<LMTDCalculator />} />
               <Route path="/resources/baffle-cut-optimization" element={<BaffleCutArticle />} />
-              <Route path="/resources/business-margin-guide" element={<BusinessMarginGuide />} />
-              <Route path="/resources/ai-automation-guide" element={<AiAutomationGuide />} />
-              <Route path="/resources/ai-community" element={<AiCommunityGuide />} />
-              <Route path="/resources/ai-education" element={<AiEducationGuide />} />
-              <Route path="/resources/ai-tools-india" element={<AiToolsIndia />} />
+
+              {/* Blog pages (code-split for performance) */}
+              <Route path="/resources/business-margin-guide" element={<Suspense fallback={<PageLoader />}><BusinessMarginGuide /></Suspense>} />
+              <Route path="/resources/ai-automation-guide" element={<Suspense fallback={<PageLoader />}><AiAutomationGuide /></Suspense>} />
+              <Route path="/resources/ai-community" element={<Suspense fallback={<PageLoader />}><AiCommunityGuide /></Suspense>} />
+              <Route path="/resources/ai-education" element={<Suspense fallback={<PageLoader />}><AiEducationGuide /></Suspense>} />
+              <Route path="/resources/ai-tools-india" element={<Suspense fallback={<PageLoader />}><AiToolsIndia /></Suspense>} />
 
               {/* Legacy route redirects */}
               <Route path="/approach" element={<Pricing />} />
               <Route path="/services" element={<Solutions />} />
               <Route path="/work" element={<Community />} />
-              {/* Placeholder routes - to be implemented */}
               <Route path="/contact" element={<Index />} />
-              <Route path="/privacy" element={<Index />} />
-              <Route path="/terms" element={<Index />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
-            </Routes >
-          </BrowserRouter >
-        </TooltipProvider >
-      </QueryClientProvider >
-    </HelmetProvider >
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 };
 
