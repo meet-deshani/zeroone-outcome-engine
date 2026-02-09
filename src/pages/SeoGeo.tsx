@@ -209,6 +209,19 @@ const SeoGeo = () => {
         title="SEO & GEO — Be the Brand AI Recommends"
         description="Get found on Google AND recommended by AI. Our SEO & GEO services ensure ChatGPT, Perplexity, and Gemini know your brand. Start with the Authority Audit for ₹25,000."
         keywords="SEO, GEO, Generative Engine Optimization, AI visibility, AI brand discovery, ChatGPT SEO, AI recommendations, Authority Audit"
+        canonical="https://zeroonedotsai.consulting/seo-geo"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        }}
       />
       <Navigation />
 

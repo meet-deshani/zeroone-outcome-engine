@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Users, Shield, Zap, Lightbulb, ChevronRight, Presentation, Laptop, FileText } from "lucide-react";
@@ -52,6 +53,12 @@ const AiWorkshop = () => {
 
     return (
         <div className="min-h-screen bg-background text-foreground">
+            <SEO
+                title="AI Workshop — Learn AI in One Day, No Coding Required"
+                description="A practical one-day AI workshop for business leaders in India. Learn to use AI tools, automate workflows, and make better decisions. No technical background needed."
+                keywords="AI education business leaders India, AI workshop India, learn AI for business, AI training non-technical, AI literacy program"
+                canonical="https://zeroonedotsai.consulting/ai-workshop"
+            />
             <Navigation />
 
             {/* Hero Section */}

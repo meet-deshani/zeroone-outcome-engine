@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -408,6 +409,12 @@ const Insights = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="AI Community — Learn, Connect, Grow with AI"
+        description="Join India's most practical AI community for business owners. Real case studies, industry-specific AI solutions, and a network of founders using AI to grow."
+        keywords="AI community India, AI community business owners, AI networking India, AI case studies, business AI community"
+        canonical="https://zeroonedotsai.consulting/community"
+      />
       <Navigation />
 
       {/* Hero Section */}

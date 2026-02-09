@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Shield, Lock, Eye, Key, FileCheck, Server, CheckCircle2, Download } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
@@ -90,6 +91,12 @@ const Security = () => {
 
   return (
     <div className="min-h-screen w-full">
+      <SEO
+        title="Security — How We Keep Your Data Safe"
+        description="Your data stays yours. Learn about our security practices, compliance standards, and how we protect your business information with enterprise-grade safeguards."
+        keywords="AI data security India, data privacy AI consulting, secure AI solutions, compliance AI, enterprise security"
+        canonical="https://zeroonedotsai.consulting/security"
+      />
       <Navigation />
 
       <main className="pt-20">

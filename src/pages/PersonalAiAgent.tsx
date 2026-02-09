@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
@@ -36,6 +37,12 @@ const PersonalAiAgent = () => {
 
     return (
         <div className="min-h-screen bg-background text-foreground">
+            <SEO
+                title="Personal AI Agent — Your 24/7 AI Assistant, Trained on You"
+                description="An AI agent that knows your business, your style, and your goals. Available 24/7 to help you write, analyse, decide, and execute faster than ever."
+                keywords="personal AI agent business, AI assistant India, custom AI agent, 24/7 AI helper, AI productivity tool"
+                canonical="https://zeroonedotsai.consulting/personal-ai-agent"
+            />
             <Navigation />
 
             {/* Hero Section (The Hook) */}
