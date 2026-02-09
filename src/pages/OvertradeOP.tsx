@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { CheckCircle2, Zap, BarChart2, Shield, Activity, Globe, Lock, Code2, AlertTriangle, PlayCircle, Star, Sparkles } from "lucide-react";
@@ -36,6 +37,12 @@ const OvertradeOP = () => {
 
     return (
         <div className="min-h-screen bg-background text-foreground">
+            <SEO
+                title="OvertradeOP — Stop Losing Money on Every Sale"
+                description="AI-powered margin recovery for e-commerce and D2C brands. Find where you lose money on discounts, returns, and operations — then fix it automatically."
+                keywords="AI margin recovery e-commerce, business margin optimization, D2C profit optimization, stop losing money AI, margin leakage detection"
+                canonical="https://zeroonedotsai.consulting/overtrade-op"
+            />
             <Navigation />
 
             {/* Hero Section */}

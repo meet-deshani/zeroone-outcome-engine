@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle2, AlertTriangle, ArrowRight, ShieldCheck, Zap } from "lucide-react";
@@ -18,6 +19,12 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Pricing — Transparent AI Consulting, Pay Only for Results"
+        description="No hidden fees. No hourly billing. Choose your plan and see exactly what you get. AI consulting pricing designed for Indian businesses of every size."
+        keywords="AI consulting pricing India, AI automation cost, business AI pricing, outcome-based AI consulting"
+        canonical="https://zeroonedotsai.consulting/pricing"
+      />
       <Navigation />
 
       {/* Hero Section */}

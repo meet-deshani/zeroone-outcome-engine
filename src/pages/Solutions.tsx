@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -183,6 +184,28 @@ const Solutions = () => {
   return (
     <TooltipProvider>
       <div className="min-h-screen w-full">
+        <SEO
+          title="AI Automation Solutions — Stop Losing Money, Start Growing"
+          description="AI agents that protect your revenue, speed up operations, and find growth opportunities. Built for Indian businesses that want real results, not slides."
+          keywords="AI automation small business India, AI solutions, revenue protection AI, operations automation, business AI agents"
+          canonical="https://zeroonedotsai.consulting/solutions"
+          jsonLd={{
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "AI Consulting & Automation",
+            "provider": {
+              "@type": "Organization",
+              "name": "ZeroOne D.O.T.S AI",
+              "url": "https://zeroonedotsai.consulting"
+            },
+            "areaServed": { "@type": "Country", "name": "India" },
+            "description": "AI agents that protect revenue, speed up operations, and find growth opportunities for businesses in India.",
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock"
+            }
+          }}
+        />
         <Navigation />
 
         <main className="pt-20">

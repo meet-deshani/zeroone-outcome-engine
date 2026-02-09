@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Server, ShieldCheck, Cpu, Code2, Database, BrainCircuit } from "lucide-react";
@@ -73,6 +74,12 @@ const InhouseSLM = () => {
 
     return (
         <div className="min-h-screen bg-background text-foreground">
+            <SEO
+                title="In-House SLM — Your Own AI That Stays on Your Servers"
+                description="Deploy a private AI model trained on your business data. Runs on your servers, never shares data externally. Perfect for companies that need AI with full data control."
+                keywords="private AI model business India, in-house AI, on-premise AI, secure AI deployment, BYO VPC AI, custom language model"
+                canonical="https://zeroonedotsai.consulting/inhouse-slm"
+            />
             <Navigation />
 
             {/* Hero Section */}

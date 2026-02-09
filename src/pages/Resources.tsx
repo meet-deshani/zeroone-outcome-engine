@@ -2,84 +2,188 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Calculator, FileText, ArrowRight, BookOpen } from "lucide-react";
+import { Calculator, ArrowRight, BookOpen, TrendingUp, Bot, Users, GraduationCap, Wrench } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import SEO from "@/components/SEO";
+import AnimatedSection from "@/components/AnimatedSection";
+
+const blogArticles = [
+    {
+        title: "How to Improve Business Margins with AI",
+        description: "Find where your business loses money. Learn how AI spots margin leaks and fixes them automatically.",
+        badge: "Business Margins",
+        badgeColor: "bg-dots-data/20 text-dots-data",
+        icon: TrendingUp,
+        iconColor: "text-dots-data",
+        href: "/resources/business-margin-guide",
+        readTime: "8 min read",
+    },
+    {
+        title: "AI Automation for Small Business in India",
+        description: "5 things AI can automate today. What it costs, what it saves, and where to start.",
+        badge: "AI Automation",
+        badgeColor: "bg-dots-ops/20 text-dots-ops",
+        icon: Bot,
+        iconColor: "text-dots-ops",
+        href: "/resources/ai-automation-guide",
+        readTime: "10 min read",
+    },
+    {
+        title: "AI Community for Business Owners",
+        description: "Why learning AI alone is hard. How the right community helps you grow faster.",
+        badge: "AI Community",
+        badgeColor: "bg-dots-tech/20 text-dots-tech",
+        icon: Users,
+        iconColor: "text-dots-tech",
+        href: "/resources/ai-community",
+        readTime: "7 min read",
+    },
+    {
+        title: "AI Education for Business Leaders",
+        description: "The 3 levels of AI literacy. What you need to know — and what you can skip.",
+        badge: "AI Education",
+        badgeColor: "bg-dots-strategy/20 text-dots-strategy",
+        icon: GraduationCap,
+        iconColor: "text-dots-strategy",
+        href: "/resources/ai-education",
+        readTime: "9 min read",
+    },
+    {
+        title: "Best AI Tools for Indian Businesses in 2026",
+        description: "A curated list of AI tools that actually work for Indian businesses. With honest pricing.",
+        badge: "AI Tools",
+        badgeColor: "bg-rose/20 text-rose",
+        icon: Wrench,
+        iconColor: "text-rose",
+        href: "/resources/ai-tools-india",
+        readTime: "12 min read",
+    },
+];
 
 const Resources = () => {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-cream-50">
             <SEO
-                title="Engineering Resources & Tools"
-                description="Free process engineering tools including LMTD Calculator (Log Mean Temperature Difference) and technical articles on Heat Exchanger design."
-                keywords="LMTD Calculator, Engineering Tools, Heat Exchanger Design, TEMA Standards, Process Engineering"
+                title="Resources — Free AI Guides, Tools & Articles for Indian Businesses"
+                description="Free AI guides, automation playbooks, margin improvement tools, and expert articles. Learn how to use AI to grow your business in India."
+                keywords="AI guides India, AI automation guide, business margin improvement, AI tools India, AI education, AI community"
+                canonical="https://zeroonedotsai.consulting/resources"
             />
             <Navigation />
 
             {/* Hero */}
-            <div className="pt-32 pb-16 md:pb-20 px-4 text-center">
-                <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">Engineering Resources</h1>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Tools, technical articles, and design guides for the process industry.
-                </p>
-            </div>
+            <AnimatedSection>
+                <div className="pt-32 pb-16 md:pb-20 px-4 text-center">
+                    <Badge className="bg-dots-data/10 text-dots-data border-0 mb-6 font-mono text-xs uppercase tracking-wider">
+                        Free Resources
+                    </Badge>
+                    <h1 className="font-heading text-display-xl font-bold mb-6 text-ink">
+                        Learn AI. Grow Your Business.
+                    </h1>
+                    <p className="text-body-lg text-slate-700 max-w-2xl mx-auto">
+                        Free guides, tools, and articles that help Indian businesses use AI the smart way. No jargon. No fluff.
+                    </p>
+                </div>
+            </AnimatedSection>
 
             <div className="container mx-auto px-4 pb-20 md:pb-28 max-w-6xl">
-                {/* Tools Section */}
-                <div className="mb-16">
-                    <div className="flex items-center gap-2 mb-8">
-                        <Calculator className="text-ink" />
-                        <h2 className="text-2xl font-bold">Free Calculation Tools</h2>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <Link to="/resources/lmtd-calculator" className="group">
-                            <Card className="bg-white border border-sand-200 rounded-2xl h-full hover:border-dots-data/50 transition-colors">
-                                <CardHeader>
-                                    <CardTitle className="flex items-center justify-between">
-                                        LMTD Calculator
-                                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-dots-data" />
-                                    </CardTitle>
-                                    <CardDescription>Log Mean Temperature Difference</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground">
-                                        Calculate LMTD for counter-current heat exchangers. Essential for preliminary sizing and efficiency checks.
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        </Link>
-                    </div>
-                </div>
 
-                {/* Articles Section */}
-                <div>
-                    <div className="flex items-center gap-2 mb-8">
-                        <BookOpen className="text-ink" />
-                        <h2 className="text-2xl font-bold">Technical Articles</h2>
+                {/* AI Guides Section */}
+                <AnimatedSection>
+                    <div className="mb-20">
+                        <div className="flex items-center gap-3 mb-8">
+                            <BookOpen className="w-6 h-6 text-ink" />
+                            <h2 className="font-heading text-display-lg font-bold text-ink">AI Guides & Articles</h2>
+                        </div>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {blogArticles.map((article) => (
+                                <Link key={article.href} to={article.href} className="group">
+                                    <Card className="bg-white border border-sand-200 rounded-2xl h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                                        <CardHeader>
+                                            <div className="flex items-center justify-between mb-3">
+                                                <Badge className={`${article.badgeColor} border-0 text-xs`}>
+                                                    {article.badge}
+                                                </Badge>
+                                                <span className="text-body-sm text-stone-500">{article.readTime}</span>
+                                            </div>
+                                            <CardTitle className="font-heading text-display-sm line-clamp-2 group-hover:text-plum transition-colors">
+                                                {article.title}
+                                            </CardTitle>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <p className="text-body-sm text-slate-700 line-clamp-3 mb-4">
+                                                {article.description}
+                                            </p>
+                                            <div className="flex items-center text-body-sm font-medium text-ink group-hover:text-plum transition-colors">
+                                                Read Guide <ArrowRight className="ml-1 w-4 h-4" />
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <Link to="/resources/baffle-cut-optimization" className="group">
-                            <Card className="bg-white border border-sand-200 rounded-2xl h-full hover:border-dots-data/50 transition-colors">
-                                <CardHeader>
-                                    <div className="mb-2">
-                                        <Badge variant="secondary" className="text-xs">Heat Exchangers</Badge>
-                                    </div>
-                                    <CardTitle className="line-clamp-2 group-hover:text-plum transition-colors">
-                                        Optimizing Baffle Cut in TEMA Shell & Tube Exchangers
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground line-clamp-3">
-                                        Why 25% isn't always the answer. A deep dive into window velocity, pressure drop, and vibration analysis (Xvib).
-                                    </p>
-                                    <div className="mt-4 flex items-center text-sm font-medium text-ink group-hover:text-plum">
-                                        Read Article <ArrowRight className="ml-1 w-4 h-4 text-dots-data" />
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </Link>
+                </AnimatedSection>
+
+                {/* Engineering Tools Section */}
+                <AnimatedSection>
+                    <div className="mb-16">
+                        <div className="flex items-center gap-3 mb-8">
+                            <Calculator className="w-6 h-6 text-ink" />
+                            <h2 className="font-heading text-display-lg font-bold text-ink">Engineering Tools</h2>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <Link to="/resources/lmtd-calculator" className="group">
+                                <Card className="bg-white border border-sand-200 rounded-2xl h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                                    <CardHeader>
+                                        <CardTitle className="flex items-center justify-between">
+                                            LMTD Calculator
+                                            <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-dots-data" />
+                                        </CardTitle>
+                                        <CardDescription>Log Mean Temperature Difference</CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-sm text-slate-700">
+                                            Calculate LMTD for counter-current heat exchangers. Essential for preliminary sizing and efficiency checks.
+                                        </p>
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        </div>
                     </div>
-                </div>
+                </AnimatedSection>
+
+                {/* Technical Articles Section */}
+                <AnimatedSection>
+                    <div>
+                        <div className="flex items-center gap-3 mb-8">
+                            <BookOpen className="w-6 h-6 text-ink" />
+                            <h2 className="font-heading text-display-lg font-bold text-ink">Technical Articles</h2>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <Link to="/resources/baffle-cut-optimization" className="group">
+                                <Card className="bg-white border border-sand-200 rounded-2xl h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                                    <CardHeader>
+                                        <div className="mb-2">
+                                            <Badge variant="secondary" className="text-xs">Heat Exchangers</Badge>
+                                        </div>
+                                        <CardTitle className="line-clamp-2 group-hover:text-plum transition-colors">
+                                            Optimizing Baffle Cut in TEMA Shell & Tube Exchangers
+                                        </CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-sm text-slate-700 line-clamp-3">
+                                            Why 25% isn't always the answer. A deep dive into window velocity, pressure drop, and vibration analysis (Xvib).
+                                        </p>
+                                        <div className="mt-4 flex items-center text-sm font-medium text-ink group-hover:text-plum transition-colors">
+                                            Read Article <ArrowRight className="ml-1 w-4 h-4 text-dots-data" />
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        </div>
+                    </div>
+                </AnimatedSection>
             </div>
 
             <Footer />

@@ -23,6 +23,11 @@ import PersonalAiAgent from "./pages/PersonalAiAgent";
 import Resources from "./pages/Resources";
 import LMTDCalculator from "./pages/tools/LMTDCalculator";
 import BaffleCutArticle from "./pages/blog/BaffleCutArticle";
+import BusinessMarginGuide from "./pages/blog/BusinessMarginGuide";
+import AiAutomationGuide from "./pages/blog/AiAutomationGuide";
+import AiCommunityGuide from "./pages/blog/AiCommunityGuide";
+import AiEducationGuide from "./pages/blog/AiEducationGuide";
+import AiToolsIndia from "./pages/blog/AiToolsIndia";
 import AnalyticsTracker from "./components/AnalyticsTracker";
 import { initGA } from "./lib/analytics";
 
@@ -62,6 +67,11 @@ const App = () => {
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/lmtd-calculator" element={<LMTDCalculator />} />
               <Route path="/resources/baffle-cut-optimization" element={<BaffleCutArticle />} />
+              <Route path="/resources/business-margin-guide" element={<BusinessMarginGuide />} />
+              <Route path="/resources/ai-automation-guide" element={<AiAutomationGuide />} />
+              <Route path="/resources/ai-community" element={<AiCommunityGuide />} />
+              <Route path="/resources/ai-education" element={<AiEducationGuide />} />
+              <Route path="/resources/ai-tools-india" element={<AiToolsIndia />} />
 
               {/* Legacy route redirects */}
               <Route path="/approach" element={<Pricing />} />

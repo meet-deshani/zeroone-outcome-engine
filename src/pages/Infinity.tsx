@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
@@ -105,6 +106,12 @@ const Infinity = () => {
 
   return (
     <div className="min-h-screen bg-cream-50">
+      <SEO
+        title="Infinity CRM — The CRM That Thinks for You"
+        description="A CRM powered by AI agents. Auto-prioritises leads, answers questions from your data, and connects your entire business stack. Built on the DOTS framework."
+        keywords="AI CRM India, smart CRM automation, AI-powered CRM, CRM with AI agents, Infinity CRM, business automation CRM"
+        canonical="https://zeroonedotsai.consulting/infinity-crm"
+      />
       <Navigation />
 
       <main>

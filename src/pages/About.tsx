@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Target, Zap, Shield, Gauge, Users, Briefcase } from "lucide-react";
@@ -76,6 +77,12 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About ZeroOne — The Anti-Consultancy That Builds AI Systems"
+        description="We don't sell slides. We build AI systems that make your business money. Meet the team behind India's most outcome-focused AI consulting firm."
+        keywords="AI consulting company India, ZeroOne DOTS, AI consulting firm, about zeroone, outcome-driven AI"
+        canonical="https://zeroonedotsai.consulting/about"
+      />
       <Navigation />
 
       {/* Hero */}
