@@ -6,49 +6,49 @@ import { Database, Settings, Code, Target, ArrowRight } from "lucide-react";
 const services = [
   {
     icon: Database,
-    title: "Smart Data Tools",
+    title: "Private Data Intelligence",
     description:
-      "We organize your data so you can see exactly where money comes in and goes out.",
+      "Your data stays on your servers. Our AI finds patterns, flags issues, and gives you clear answers — privately.",
     outcomes: [
-      "See all your numbers in one place",
-      "Get alerts when something looks wrong",
-      "Track what matters most to your business",
+      "AI-powered analytics on your own infrastructure",
+      "Alerts when something looks wrong — no data leaves your servers",
+      "Dashboards that update in real-time, fully offline-capable",
     ],
     pillar: "data" as const,
   },
   {
     icon: Settings,
-    title: "Smoother Operations",
+    title: "AI-Powered Operations",
     description:
-      "We automate the boring stuff so your team can focus on what matters.",
+      "Automate the boring stuff with AI that runs on your machines. No cloud. No subscriptions.",
     outcomes: [
-      "Automate repetitive tasks",
-      "Speed up your workflows",
-      "Reduce human errors",
+      "Automate repetitive tasks with private AI agents",
+      "Speed up workflows without sending data outside",
+      "Reduce errors with consistent, owned AI",
     ],
     pillar: "ops" as const,
   },
   {
     icon: Code,
-    title: "Custom Tech Solutions",
+    title: "Built-to-Own Technology",
     description:
-      "We build exactly what your business needs — no off-the-shelf compromises.",
+      "We build AI solutions that are 100% yours. File a patent. Publish research. No lock-in.",
     outcomes: [
-      "Custom apps built for you",
-      "Connect all your tools together",
-      "AI assistants that work 24/7",
+      "Custom AI models trained on your data",
+      "Full source code ownership — no vendor lock-in",
+      "Patent-ready intellectual property",
     ],
     pillar: "tech" as const,
   },
   {
     icon: Target,
-    title: "Growth Strategy",
+    title: "AI Growth Strategy",
     description:
-      "We help you make smarter decisions with clear data and proven plans.",
+      "Use private AI to find growth opportunities and make smarter decisions with your own data.",
     outcomes: [
-      "Find where you're losing money",
-      "Plan your next big move",
-      "Measure what's actually working",
+      "AI-driven insights from your private data",
+      "Roadmaps for scaling AI across your business",
+      "Measure ROI with tools you control",
     ],
     pillar: "strategy" as const,
   },
@@ -109,11 +109,11 @@ const ServicesSection = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl md:text-5xl font-heading font-bold">
-              Everything Your Business{" "}
-              <span className="text-plum italic">Needs</span>
+              How Private AI Grows{" "}
+              <span className="text-plum italic">Your Business</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Four pillars. One goal: help you make more money.
+              Four pillars. One goal: AI that you own, running on your terms.
             </p>
           </motion.div>
 

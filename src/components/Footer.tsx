@@ -13,8 +13,8 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo imgClassName="h-10 w-auto sm:h-12" variant="dark" />
             <p className="text-sm text-cream-100/60 leading-relaxed">
-              Problem Solving First • Outcome First — Zero Billing<br />
-              Data Safeguard First
+              Own Your AI. Don't Rent It.<br />
+              Private AI for Every Business
             </p>
             <div className="flex space-x-3">
               <a
@@ -47,32 +47,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Solutions */}
+          {/* Private AI */}
           <div>
-            <h4 className="font-heading font-semibold mb-4 text-cream-50">AI Agents</h4>
+            <h4 className="font-heading font-semibold mb-4 text-cream-50">Private AI</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/solutions" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-dots-data" />
-                  Data Agents
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-dots-ops" />
-                  Ops Agents
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-dots-tech" />
-                  Tech Agents
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
+                <Link to="/private-ai" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-dots-strategy" />
-                  Strategy Agents
+                  Overview
+                </Link>
+              </li>
+              <li>
+                <Link to="/private-ai/without-internet" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-dots-tech" />
+                  AI Without Internet
+                </Link>
+              </li>
+              <li>
+                <Link to="/private-ai/council" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-dots-data" />
+                  AI Council
+                </Link>
+              </li>
+              <li>
+                <Link to="/private-ai/office" className="text-sm text-cream-100/50 hover:text-cream-50 transition-colors inline-flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-dots-ops" />
+                  AI Office
                 </Link>
               </li>
               <li>
@@ -150,7 +150,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-white/10 text-center text-sm text-cream-100/40">
           <p className="mb-1">Made in India • Serving globally</p>
-          <p className="text-xs mb-2">Problem Solving First • Outcome First — Zero Billing • Data Safeguard First</p>
+          <p className="text-xs mb-2">Own Your AI. Don't Rent It. • Private AI for Every Business</p>
           <p>© {currentYear} ZeroOne D.O.T.S AI. All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link to="/privacy" className="text-cream-100/40 hover:text-cream-50 transition-colors">

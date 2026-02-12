@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Flag, Lock, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactForm from "@/components/ContactForm";
 
@@ -27,24 +27,22 @@ const HeroSection = () => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="font-mono text-[11px] tracking-[3px] uppercase text-muted-foreground mb-8"
           >
-            Outcome-Driven AI Consulting
+            Private AI for Every Business
           </motion.div>
 
-          {/* Main Headline — Instrument Serif, simple language */}
+          {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-display-xxl font-heading font-normal leading-[1.05] mb-8"
           >
-            We help businesses
+            Own Your AI.
             <br />
-            <em className="italic text-plum">stop losing money</em>
-            <br />
-            using smart AI tools.
+            <em className="italic text-plum">Don't Rent It.</em>
           </motion.h1>
 
-          {/* D.O.T.S. colored letters — intrigue element */}
+          {/* D.O.T.S. colored letters */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,8 +65,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="text-body-lg text-muted-foreground max-w-xl mx-auto leading-relaxed mb-12"
           >
-            We find where your business leaks money, build AI tools that fix it,
-            and you only pay when it works.
+            We build AI that runs on your servers, works without internet,
+            and is 100% yours. You can even file a patent on it.
           </motion.p>
 
           {/* CTAs */}
@@ -76,33 +74,48 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
+            <Link to="/private-ai">
+              <Button
+                size="lg"
+                variant="brand"
+                className="text-base px-8 font-medium"
+              >
+                See How Private AI Works
+                <ArrowRight className="ml-2" size={18} />
+              </Button>
+            </Link>
             <Button
               size="lg"
-              variant="brand"
+              variant="outline"
               className="text-base px-8 font-medium"
               onClick={() => setIsContactFormOpen(true)}
             >
               Get Your Free Business Check-Up
-              <ArrowRight className="ml-2" size={18} />
             </Button>
-            <Link to="/community">
-              <Button size="lg" variant="outline" className="text-base px-8 font-medium">
-                See Our Work
-              </Button>
-            </Link>
           </motion.div>
 
-          {/* Subtle tagline */}
-          <motion.p
+          {/* Trust badges */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="font-mono text-[10px] tracking-[2px] uppercase text-muted-foreground/50"
+            className="flex flex-wrap justify-center gap-6 text-xs text-muted-foreground"
           >
-            Four pillars. One outcome.
-          </motion.p>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream-100 border border-sand-200">
+              <Flag size={12} className="text-dots-tech" />
+              Made in India
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream-100 border border-sand-200">
+              <Lock size={12} className="text-dots-data" />
+              100% Data Ownership
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream-100 border border-sand-200">
+              <Award size={12} className="text-dots-strategy" />
+              Patent-Ready IP
+            </span>
+          </motion.div>
         </div>
       </div>
 

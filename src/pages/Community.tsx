@@ -24,10 +24,15 @@ import {
   Activity,
   Smartphone,
   Leaf,
-  Tv
+  Tv,
+  Code,
+  BookOpen,
+  FileText,
+  CheckCircle2
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import IdeaSubmissionForm from "@/components/IdeaSubmissionForm";
+import BountyForm from "@/components/BountyForm";
 import { motion } from "framer-motion";
 import { logEvent } from "@/lib/analytics";
 
@@ -410,9 +415,9 @@ const Insights = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="AI Community — Learn, Connect, Grow with AI"
-        description="Join India's most practical AI community for business owners. Real case studies, industry-specific AI solutions, and a network of founders using AI to grow."
-        keywords="AI community India, AI community business owners, AI networking India, AI case studies, business AI community"
+        title="Community of Solvers — Build, Solve, Earn with Private AI"
+        description="Join ZeroOne's Community of Solvers. Post bounties, solve problems, build Private AI solutions. For founders, engineers, vibe coders, and learners."
+        keywords="AI community India, AI solvers community, AI bounty platform, private AI community, build AI India"
         canonical="https://zeroonedotsai.consulting/community"
       />
       <Navigation />
@@ -426,13 +431,80 @@ const Insights = () => {
           </div>
 
           <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
-            Insights + <span className="text-plum">Community</span>
+            A Community of <span className="text-plum">Solvers</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Don't just read about AI. <span className="text-foreground font-semibold">See exactly how we solve real corporate pain points.</span> <br />
-            Then, join the community to build it yourself.
+            One mission: Make AI private, free, and accessible.{" "}
+            <span className="text-foreground font-semibold">See how we solve real problems.</span>{" "}
+            Then join us to build.
           </p>
+        </div>
+      </section>
+
+      {/* Community of Solvers Roles */}
+      <section className="py-20 md:py-28 px-4 bg-cream-100">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">
+              Who Are the <span className="text-plum italic">Solvers?</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Every person in our community plays a vital role in making Private AI a reality.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { icon: Lightbulb, title: "Founder", desc: "One goal: Making AI private, free for all, and cutting out internet dependency.", color: "bg-dots-data/10", iconColor: "text-dots-data" },
+              { icon: Cpu, title: "AI Engineers", desc: "Building the core models and infrastructure that power Private AI.", color: "bg-dots-ops/10", iconColor: "text-dots-ops" },
+              { icon: Code, title: "Vibe Coders", desc: "Building wrappers and tools using Private AI. Real-world testing and practical applications.", color: "bg-dots-tech/10", iconColor: "text-dots-tech" },
+              { icon: TrendingUp, title: "Entrepreneurs & Supporters", desc: "Funding, backing, and championing the Private AI movement.", color: "bg-dots-strategy/10", iconColor: "text-dots-strategy" },
+              { icon: GraduationCap, title: "Trainers", desc: "Teaching the next generation of AI builders. Making knowledge accessible.", color: "bg-dots-data/10", iconColor: "text-dots-data" },
+              { icon: BookOpen, title: "Learners", desc: "Getting hands-on with Private AI. Tomorrow's engineers start here.", color: "bg-dots-ops/10", iconColor: "text-dots-ops" },
+            ].map((role, idx) => (
+              <div key={idx} className="bg-white border border-sand-200 rounded-2xl p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                <div className={`w-14 h-14 ${role.color} rounded-xl flex items-center justify-center mb-5`}>
+                  <role.icon className={`w-7 h-7 ${role.iconColor}`} />
+                </div>
+                <h3 className="font-heading text-xl font-semibold mb-3">{role.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{role.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bounty Engine */}
+      <section className="py-20 md:py-28 px-4 bg-ink text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <p className="font-mono text-xs uppercase tracking-widest text-dots-data mb-4">BOUNTY ENGINE</p>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-4">
+              Got a Problem? <span className="text-dots-data italic">Post a Bounty.</span>
+            </h2>
+            <p className="text-lg text-cream-100 max-w-3xl mx-auto">
+              Anyone can post a business problem, set a price, and our community of solvers builds the solution.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {[
+              { icon: FileText, title: "Post", desc: "Describe your problem. Link a Google Doc with details. Name your price.", color: "bg-dots-data/20", iconColor: "text-dots-data" },
+              { icon: Zap, title: "Solve", desc: "Community members pick your problem and build a solution using Private AI.", color: "bg-dots-ops/20", iconColor: "text-dots-ops" },
+              { icon: CheckCircle2, title: "Pay", desc: "Review the solution. Approve it. Pay the bounty. Keep the IP.", color: "bg-dots-strategy/20", iconColor: "text-dots-strategy" },
+            ].map((step, idx) => (
+              <div key={idx} className="bg-charcoal/50 border border-plum/20 rounded-2xl p-8">
+                <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center mb-6`}>
+                  <step.icon className={`w-8 h-8 ${step.iconColor}`} />
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-white mb-3">{step.title}</h3>
+                <p className="text-cream-100 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <BountyForm />
         </div>
       </section>
 
