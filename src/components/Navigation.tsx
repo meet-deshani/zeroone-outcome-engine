@@ -102,6 +102,38 @@ const Navigation = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     {
+      name: "Private AI",
+      path: "/private-ai",
+      megaMenu: true,
+      columns: [
+        {
+          title: "AI Without Internet",
+          subtitle: "Offline AI",
+          description: "On-device AI that works without internet. Download once, use forever.",
+          items: [
+            { name: "AI Without Internet", path: "/private-ai/without-internet", desc: "On-device LLM, STT, TTS — zero cloud." },
+            { name: "See All Private AI", path: "/private-ai", desc: "Overview of all three pillars." }
+          ]
+        },
+        {
+          title: "AI Council",
+          subtitle: "Multi-Model Team",
+          description: "A team of AIs with automatic failover and cost optimization.",
+          items: [
+            { name: "AI Council", path: "/private-ai/council", desc: "CEO, CTO, COO — each an AI model." }
+          ]
+        },
+        {
+          title: "AI Office",
+          subtitle: "Self-Hosted Infrastructure",
+          description: "9 tools on one server. Zero external dependencies.",
+          items: [
+            { name: "AI Office", path: "/private-ai/office", desc: "Your complete AI stack on one server." }
+          ]
+        }
+      ]
+    },
+    {
       name: "Solutions",
       path: "/solutions",
       megaMenu: true,
@@ -120,8 +152,7 @@ const Navigation = () => {
           description: "Institutional-grade operating systems to scale without bloating headcount.",
           items: [
             { name: "Infinity CRM", path: "/infinity-crm", desc: "AI powered CRM for Enterprise Team (Customised)." },
-            { name: "OvertradeOP", path: "/overtrade-op", desc: "Tool to Trade Crypto market with AI." },
-            { name: "Inhouse SLM", path: "/inhouse-slm", desc: "Private Small Language Models." }
+            { name: "OvertradeOP", path: "/overtrade-op", desc: "Tool to Trade Crypto market with AI." }
           ]
         },
         {
@@ -167,7 +198,7 @@ const Navigation = () => {
     >
       {/* Top Bar */}
       <div className="bg-ink text-cream-50 py-2 text-center font-mono tracking-wider uppercase text-[11px]">
-        Problem Solving First <span className="text-dots-data">&#x2022;</span> Outcome First — Zero Billing <span className="text-dots-ops">&#x2022;</span> Data Safeguard First
+        Own Your AI. Don't Rent It. <span className="text-dots-data">—</span> Private AI for Every Business
       </div>
 
       <div className="container mx-auto px-4">
@@ -220,11 +251,11 @@ const Navigation = () => {
               size="lg"
               className="font-medium"
               onClick={() => {
-                logEvent("Navigation", "Click CTA", "Start Your Project (Desktop)");
+                logEvent("Navigation", "Click CTA", "Build Your Private AI (Desktop)");
                 setIsContactFormOpen(true);
               }}
             >
-              Start Your Project
+              Build Your Private AI
             </Button>
           </div>
 
@@ -293,12 +324,12 @@ const Navigation = () => {
                 size="lg"
                 className="w-full font-medium mt-4"
                 onClick={() => {
-                  logEvent("Navigation", "Click CTA", "Start Your Project (Mobile)");
+                  logEvent("Navigation", "Click CTA", "Build Your Private AI (Mobile)");
                   setIsMobileMenuOpen(false);
                   setIsContactFormOpen(true);
                 }}
               >
-                Start Your Project
+                Build Your Private AI
               </Button>
             </div>
           </div>
@@ -308,7 +339,7 @@ const Navigation = () => {
       <ContactForm
         open={isContactFormOpen}
         onOpenChange={setIsContactFormOpen}
-        defaultSubject="Start Your Project"
+        defaultSubject="Build My Private AI"
       />
     </nav>
   );

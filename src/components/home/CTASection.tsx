@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactForm";
 
 const CTASection = () => {
@@ -26,15 +27,17 @@ const CTASection = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-4"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-dots-data/10 text-ink font-semibold text-sm mb-4">
-                Ready to Get Started?
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-dots-strategy/10 text-ink font-mono text-xs tracking-[2px] uppercase mb-4">
+                The Jio of AI
               </div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold">
-                Stop Losing Money Today
+                Make AI Affordable for
+                <br />
+                <em className="italic text-plum">Every Business in India.</em>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Get a free check-up of your business. We'll show you exactly
-                where money is being wasted — and how to fix it.
+                Own your AI. Don't rent it. Start with a free business check-up
+                and see how Private AI can transform your business.
               </p>
             </motion.div>
 
@@ -55,16 +58,16 @@ const CTASection = () => {
                 <Calendar className="mr-2" size={20} />
                 Get Your Free Check-Up
               </Button>
-              <a href="mailto:hello@zeroonedotsai.consulting">
+              <Link to="/private-ai">
                 <Button
                   size="lg"
                   variant="outline"
                   className="font-semibold text-lg px-8 py-6 border-2 border-sand-200 hover:bg-cream-100/50 transition-all"
                 >
-                  <Mail className="mr-2" size={20} />
-                  Email Us Directly
+                  Explore Private AI
+                  <ArrowRight className="ml-2" size={18} />
                 </Button>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Trust Elements */}
@@ -88,11 +91,11 @@ const CTASection = () => {
                 </span>
                 <span className="flex items-center">
                   <ArrowRight size={14} className="mr-1 text-dots-ops" />
-                  Fixed prices, no surprises
+                  You own everything we build
                 </span>
                 <span className="flex items-center">
                   <ArrowRight size={14} className="mr-1 text-dots-ops" />
-                  You only pay for results
+                  Works without internet
                 </span>
               </div>
             </motion.div>

@@ -117,8 +117,8 @@ const CaseStudiesSection = () => {
               <span className="text-plum italic">Helped Others</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real stories about businesses that stopped losing money with our
-              help.
+              Real stories about businesses using Private AI to solve real problems.
+              All solutions deployed on client-owned infrastructure.
             </p>
           </motion.div>
 
@@ -209,7 +209,7 @@ const CaseStudiesSection = () => {
                       {/* Footer note */}
                       <div className="pt-3 border-t border-sand-200">
                         <p className="text-xs text-muted-foreground italic text-center">
-                          Powered by ZeroOne D.O.T.S AI Agents
+                          Deployed on client-owned infrastructure
                         </p>
                       </div>
                     </div>

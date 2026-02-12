@@ -16,7 +16,7 @@ import Security from "./pages/Security";
 import Infinity from "./pages/Infinity";
 import NotFound from "./pages/NotFound";
 import OvertradeOP from "./pages/OvertradeOP";
-import InhouseSLM from "./pages/InhouseSLM";
+import PrivateAI from "./pages/PrivateAI";
 import AiWorkshop from "./pages/AiWorkshop";
 import HeatExchanger from "./pages/HeatExchanger";
 import PersonalAiAgent from "./pages/PersonalAiAgent";
@@ -34,6 +34,11 @@ const AiAutomationGuide = lazy(() => import("./pages/blog/AiAutomationGuide"));
 const AiCommunityGuide = lazy(() => import("./pages/blog/AiCommunityGuide"));
 const AiEducationGuide = lazy(() => import("./pages/blog/AiEducationGuide"));
 const AiToolsIndia = lazy(() => import("./pages/blog/AiToolsIndia"));
+
+// Code-split Private AI sub-pages
+const WithoutInternet = lazy(() => import("./pages/private-ai/WithoutInternet"));
+const AiCouncil = lazy(() => import("./pages/private-ai/AiCouncil"));
+const AiOffice = lazy(() => import("./pages/private-ai/AiOffice"));
 
 const queryClient = new QueryClient();
 
@@ -69,7 +74,11 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/security" element={<Security />} />
               <Route path="/overtrade-op" element={<OvertradeOP />} />
-              <Route path="/inhouse-slm" element={<InhouseSLM />} />
+              <Route path="/private-ai" element={<PrivateAI />} />
+              <Route path="/private-ai/without-internet" element={<Suspense fallback={<PageLoader />}><WithoutInternet /></Suspense>} />
+              <Route path="/private-ai/council" element={<Suspense fallback={<PageLoader />}><AiCouncil /></Suspense>} />
+              <Route path="/private-ai/office" element={<Suspense fallback={<PageLoader />}><AiOffice /></Suspense>} />
+              <Route path="/inhouse-slm" element={<Navigate to="/private-ai" replace />} />
               <Route path="/ai-workshop" element={<AiWorkshop />} />
               <Route path="/he-design" element={<HeatExchanger />} />
               <Route path="/personal-ai-agent" element={<PersonalAiAgent />} />

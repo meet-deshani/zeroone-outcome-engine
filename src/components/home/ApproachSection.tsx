@@ -31,8 +31,8 @@ const ApproachSection = () => {
       phase: "1",
       title: "Check-Up",
       description:
-        "We look at your business data to find where money is being wasted.",
-      deliverables: ["Health Score", "Waste Report", "Growth Plan"],
+        "We analyze your business to find where AI can save time, cut costs, and improve quality — free.",
+      deliverables: ["AI Readiness Score", "Opportunity Map", "Ownership Plan"],
       color: "text-dots-data",
       bgColor: "bg-dots-data/15",
       pillColor: "bg-dots-data/15 text-dots-data",
@@ -40,10 +40,10 @@ const ApproachSection = () => {
     {
       icon: Hammer,
       phase: "2",
-      title: "Build & Fix",
+      title: "Build & Own",
       description:
-        "We build smart tools that fix the problems we found. You don't pay until it works.",
-      deliverables: ["Custom Dashboards", "Easy Interface", "Live Updates"],
+        "We build your Private AI — on your servers, trained on your data, 100% yours.",
+      deliverables: ["Private AI Setup", "Custom Models", "Full Source Code"],
       color: "text-dots-ops",
       bgColor: "bg-dots-ops/15",
       pillColor: "bg-dots-ops/15 text-dots-ops",
@@ -51,10 +51,10 @@ const ApproachSection = () => {
     {
       icon: Rocket,
       phase: "3",
-      title: "Grow",
+      title: "Scale",
       description:
-        "Now that you can see everything clearly, we help you make more money.",
-      deliverables: ["Save Money", "Keep Customers", "Grow Revenue"],
+        "Your AI grows with you. Add new capabilities, train new models — you own it all.",
+      deliverables: ["Patent-Ready IP", "Team Training", "Ongoing Support"],
       color: "text-dots-strategy",
       bgColor: "bg-dots-strategy/15",
       pillColor: "bg-dots-strategy/15 text-dots-strategy",
@@ -74,11 +74,11 @@ const ApproachSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-ink">
-              How We{" "}
-              <span className="text-plum italic">Work</span>
+              How You{" "}
+              <span className="text-plum italic">Get Started</span>
             </h2>
             <p className="text-xl text-ink/70 max-w-2xl mx-auto">
-              From finding the problem to fixing it — in 3 simple steps.
+              From free check-up to owning your AI — in 3 simple steps.
             </p>
           </motion.div>
 

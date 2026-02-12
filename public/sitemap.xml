@@ -24,6 +24,28 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Private AI Pages -->
+  <url>
+    <loc>https://zeroonedotsai.consulting/private-ai</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zeroonedotsai.consulting/private-ai/without-internet</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zeroonedotsai.consulting/private-ai/council</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zeroonedotsai.consulting/private-ai/office</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Product Pages -->
   <url>
     <loc>https://zeroonedotsai.consulting/infinity-crm</loc>
