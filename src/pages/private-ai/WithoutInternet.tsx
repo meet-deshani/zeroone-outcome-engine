@@ -25,7 +25,8 @@ import {
   Box,
   Stethoscope,
   Factory,
-  Briefcase
+  Briefcase,
+  ArrowRight
 } from "lucide-react";
 
 export default function WithoutInternet() {
@@ -46,6 +47,44 @@ export default function WithoutInternet() {
         description="Run AI on any device without internet. Speech-to-text, language models, and voice synthesis — all offline. Built by ZeroOne for businesses that need reliable AI everywhere."
         keywords="offline AI, on-device AI, AI without internet, private AI mobile, edge AI India"
         canonical="https://zeroonedotsai.consulting/private-ai/without-internet"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can AI work without internet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Modern AI models can be downloaded once and run entirely on-device — phones, tablets, or servers. No internet needed after the initial download."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What can offline AI do?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Offline AI can run language models (chat, text generation), speech-to-text transcription, text-to-speech synthesis, and voice activity detection — all without any internet connection."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which devices support offline AI?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Offline AI works on iOS (Swift with Metal GPU), Android (Kotlin), React Native, Flutter, web browsers, and edge devices like IoT sensors, wearables, and AR glasses."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do offline AI models get updated?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Models update over-the-air when connectivity is available. The AI works offline between updates, and new model versions download automatically when the device connects to the internet."
+              }
+            }
+          ]
+        }}
       />
       <Navigation />
 
@@ -313,6 +352,23 @@ export default function WithoutInternet() {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Learn More */}
+      <section className="py-16 bg-cream-100">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <AnimatedSection>
+            <p className="text-body-lg text-slate-700 mb-4">
+              Want the full breakdown of what works offline in 2026?
+            </p>
+            <Link
+              to="/resources/offline-ai-guide"
+              className="inline-flex items-center gap-2 text-plum font-semibold hover:underline text-body-lg"
+            >
+              Read the Full Offline AI Guide <ArrowRight className="w-5 h-5" />
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 

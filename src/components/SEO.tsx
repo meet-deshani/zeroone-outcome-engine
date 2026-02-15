@@ -10,7 +10,7 @@ interface SEOProps {
     jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SITE_URL = "https://zeroonedotsai.consulting";
+const SITE_URL = import.meta.env.VITE_SITE_URL || "https://zeroonedotsai.consulting";
 
 const SEO = ({
     title,
