@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Calculator, ArrowRight, BookOpen, TrendingUp, Bot, Users, GraduationCap, Wrench } from "lucide-react";
+import { Calculator, ArrowRight, BookOpen, TrendingUp, Bot, Users, GraduationCap, Wrench, Brain, Shield, Server, WifiOff, Scale, HardDrive } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import SEO from "@/components/SEO";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -57,6 +57,66 @@ const blogArticles = [
         iconColor: "text-rose",
         href: "/resources/ai-tools-india",
         readTime: "12 min read",
+    },
+    {
+        title: "What Is an AI Council? Why Your Business Needs Multiple AI Models",
+        description: "No single AI is perfect. Learn how an AI Council uses multiple models together for failover, cost savings, and better results.",
+        badge: "AI Council",
+        badgeColor: "bg-dots-data/20 text-dots-data",
+        icon: Brain,
+        iconColor: "text-dots-data",
+        href: "/resources/ai-council-guide",
+        readTime: "10 min read",
+    },
+    {
+        title: "Private AI for Indian Businesses — DPDP Act Compliance Guide",
+        description: "India's DPDP Act changes everything. Learn how private AI keeps your data in India and your business compliant.",
+        badge: "Private AI India",
+        badgeColor: "bg-dots-strategy/20 text-dots-strategy",
+        icon: Shield,
+        iconColor: "text-dots-strategy",
+        href: "/resources/private-ai-india",
+        readTime: "11 min read",
+    },
+    {
+        title: "How to Set Up an AI Office — Self-Hosted AI Guide for Business",
+        description: "9 tools on one server. Everything your business needs to run AI privately — search, chat, automate, and serve.",
+        badge: "AI Office",
+        badgeColor: "bg-dots-ops/20 text-dots-ops",
+        icon: Server,
+        iconColor: "text-dots-ops",
+        href: "/resources/ai-office-setup",
+        readTime: "12 min read",
+    },
+    {
+        title: "Offline AI in 2026 — What Actually Works Without Internet",
+        description: "Download once, use forever. Which AI models work offline, on which devices, and what they can actually do.",
+        badge: "Offline AI",
+        badgeColor: "bg-dots-tech/20 text-dots-tech",
+        icon: WifiOff,
+        iconColor: "text-dots-tech",
+        href: "/resources/offline-ai-guide",
+        readTime: "10 min read",
+    },
+    {
+        title: "Private AI vs Cloud AI — An Honest Comparison for Business Leaders",
+        description: "When does private AI make sense? When is cloud better? An honest breakdown with real numbers.",
+        badge: "AI Comparison",
+        badgeColor: "bg-dots-data/20 text-dots-data",
+        icon: Scale,
+        iconColor: "text-dots-data",
+        href: "/resources/private-ai-vs-cloud",
+        readTime: "11 min read",
+    },
+    {
+        title: "On-Premise AI — A No-Jargon Guide for Non-Technical Founders",
+        description: "What on-premise AI actually means, what it costs, and whether your business needs it. In plain English.",
+        badge: "On-Premise AI",
+        badgeColor: "bg-dots-ops/20 text-dots-ops",
+        icon: HardDrive,
+        iconColor: "text-dots-ops",
+        href: "/resources/on-premise-ai-guide",
+        readTime: "10 min read",
     },
 ];
 

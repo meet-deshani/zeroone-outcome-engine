@@ -34,6 +34,12 @@ const AiAutomationGuide = lazy(() => import("./pages/blog/AiAutomationGuide"));
 const AiCommunityGuide = lazy(() => import("./pages/blog/AiCommunityGuide"));
 const AiEducationGuide = lazy(() => import("./pages/blog/AiEducationGuide"));
 const AiToolsIndia = lazy(() => import("./pages/blog/AiToolsIndia"));
+const AiCouncilGuide = lazy(() => import("./pages/blog/AiCouncilGuide"));
+const PrivateAiIndia = lazy(() => import("./pages/blog/PrivateAiIndia"));
+const AiOfficeSetup = lazy(() => import("./pages/blog/AiOfficeSetup"));
+const OfflineAiGuide = lazy(() => import("./pages/blog/OfflineAiGuide"));
+const PrivateAiVsCloud = lazy(() => import("./pages/blog/PrivateAiVsCloud"));
+const OnPremiseAiGuide = lazy(() => import("./pages/blog/OnPremiseAiGuide"));
 
 // Code-split Private AI sub-pages
 const WithoutInternet = lazy(() => import("./pages/private-ai/WithoutInternet"));
@@ -96,6 +102,12 @@ const App = () => {
               <Route path="/resources/ai-community" element={<Suspense fallback={<PageLoader />}><AiCommunityGuide /></Suspense>} />
               <Route path="/resources/ai-education" element={<Suspense fallback={<PageLoader />}><AiEducationGuide /></Suspense>} />
               <Route path="/resources/ai-tools-india" element={<Suspense fallback={<PageLoader />}><AiToolsIndia /></Suspense>} />
+              <Route path="/resources/ai-council-guide" element={<Suspense fallback={<PageLoader />}><AiCouncilGuide /></Suspense>} />
+              <Route path="/resources/private-ai-india" element={<Suspense fallback={<PageLoader />}><PrivateAiIndia /></Suspense>} />
+              <Route path="/resources/ai-office-setup" element={<Suspense fallback={<PageLoader />}><AiOfficeSetup /></Suspense>} />
+              <Route path="/resources/offline-ai-guide" element={<Suspense fallback={<PageLoader />}><OfflineAiGuide /></Suspense>} />
+              <Route path="/resources/private-ai-vs-cloud" element={<Suspense fallback={<PageLoader />}><PrivateAiVsCloud /></Suspense>} />
+              <Route path="/resources/on-premise-ai-guide" element={<Suspense fallback={<PageLoader />}><OnPremiseAiGuide /></Suspense>} />
 
               {/* Legacy route redirects */}
               <Route path="/approach" element={<Pricing />} />

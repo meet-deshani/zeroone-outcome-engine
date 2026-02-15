@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   XCircle,
   TrendingDown,
+  ArrowRight,
 } from "lucide-react";
 
 export default function AiCouncil() {
@@ -37,6 +38,44 @@ export default function AiCouncil() {
         description="No single AI is perfect. Our AI Council uses Claude, Gemini, and DeepSeek together — automatic failover, cost optimization, and the right model for every task."
         keywords="AI council, multi-model AI, AI failover, AI team, AI orchestration India"
         canonical="https://zeroonedotsai.consulting/private-ai/council"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is an AI Council?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An AI Council is a team of multiple AI models working together. Instead of relying on one AI, different models handle different tasks — the best model for each job, with automatic failover if one goes down."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why use multiple AI models instead of one?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No single AI is perfect at everything. Some are great at reasoning, others at speed, others at cost efficiency. A multi-model approach gives you the best of each, plus redundancy if one provider has an outage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does AI failover work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When the primary AI model is unavailable, the system automatically routes the request to the next model in line. This happens instantly — your users never notice any downtime."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the AI Council work offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The Council includes a local model (DeepSeek R1) that runs on your server without internet. Even if all cloud providers go down, you still have AI available."
+              }
+            }
+          ]
+        }}
       />
       <Navigation />
 
@@ -392,6 +431,23 @@ export default function AiCouncil() {
                 Most tasks don't need the CEO. Your AI Council routes each question to the most cost-effective model that can handle it.
               </p>
             </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Learn More */}
+      <section className="py-16 bg-cream-100">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <AnimatedSection>
+            <p className="text-body-lg text-slate-700 mb-4">
+              Want to understand AI Councils in depth?
+            </p>
+            <Link
+              to="/resources/ai-council-guide"
+              className="inline-flex items-center gap-2 text-plum font-semibold hover:underline text-body-lg"
+            >
+              Read the Full AI Council Guide <ArrowRight className="w-5 h-5" />
+            </Link>
           </AnimatedSection>
         </div>
       </section>

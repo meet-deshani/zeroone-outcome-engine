@@ -21,6 +21,7 @@ import {
   Server,
   CheckCircle2,
   Boxes,
+  ArrowRight,
 } from "lucide-react";
 
 export default function AiOffice() {
@@ -41,6 +42,44 @@ export default function AiOffice() {
         description="9 tools on one server. Private search, chat interface, AI models, APIs, and database — all self-hosted. Zero vendor lock-in. Full control."
         keywords="self-hosted AI, AI infrastructure, private AI server, AI office, Docker AI setup India"
         canonical="https://zeroonedotsai.consulting/private-ai/office"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is an AI Office?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An AI Office is your complete AI infrastructure running on a single server. It includes 9 connected tools — AI models, chat interface, private search, APIs, database, and security — all self-hosted with zero external dependencies."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What hardware do I need for a self-hosted AI server?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A minimum of 8 CPU cores and 32 GB RAM. The AI Office runs 9 Docker containers including Ollama for local AI models, PostgreSQL for data, and nginx for routing — all on one machine."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I run AI without cloud services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The AI Office includes Ollama for running AI models locally, SearXNG for private search, and PostgreSQL for data storage. Everything works even if external services go down."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is the AI Office different from using ChatGPT?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ChatGPT sends your data to OpenAI's servers. The AI Office keeps everything on your server — your data never leaves your building. You get a similar chat interface (Open WebUI) but with full control and privacy."
+              }
+            }
+          ]
+        }}
       />
       <Navigation />
 
@@ -392,6 +431,23 @@ export default function AiOffice() {
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      {/* Learn More */}
+      <section className="py-16 bg-cream-100">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <AnimatedSection>
+            <p className="text-body-lg text-slate-700 mb-4">
+              Want a step-by-step setup guide?
+            </p>
+            <Link
+              to="/resources/ai-office-setup"
+              className="inline-flex items-center gap-2 text-plum font-semibold hover:underline text-body-lg"
+            >
+              Read the AI Office Setup Guide <ArrowRight className="w-5 h-5" />
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 
