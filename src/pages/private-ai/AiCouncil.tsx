@@ -17,7 +17,6 @@ import {
   CheckCircle2,
   XCircle,
   TrendingDown,
-  ArrowRight,
 } from "lucide-react";
 
 export default function AiCouncil() {
