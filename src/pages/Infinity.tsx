@@ -95,7 +95,7 @@ const faqItems = [
   },
 ];
 
-const Infinity = () => {
+const InfinityCRM = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [contactSubject, setContactSubject] = useState("Talk to DOTS.ai");
 
@@ -468,4 +468,4 @@ const Infinity = () => {
   );
 };
 
-export default Infinity;
+export default InfinityCRM;

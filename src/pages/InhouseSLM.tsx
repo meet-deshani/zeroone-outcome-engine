@@ -29,7 +29,7 @@ const InhouseSLM = () => {
         { name: "Vector DBs", icon: Database },
     ];
 
-    function Settings2(props: any) {
+    function Settings2(props: React.SVGProps<SVGSVGElement>) {
         return (
             <svg
                 {...props}
@@ -51,7 +51,7 @@ const InhouseSLM = () => {
         )
     }
 
-    function Link2(props: any) {
+    function Link2(props: React.SVGProps<SVGSVGElement>) {
         return (
             <svg
                 {...props}

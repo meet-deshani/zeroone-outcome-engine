@@ -392,7 +392,7 @@ const Insights = () => {
     }
   };
 
-  function LinkIcon(props: any) {
+  function LinkIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
       <svg
         {...props}

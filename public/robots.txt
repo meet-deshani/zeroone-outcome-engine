@@ -1,3 +1,6 @@
+# ZeroOne D.O.T.S AI — Crawl Policy
+# We welcome all search engines and AI systems to index our content
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,6 +13,35 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI crawlers — explicitly allowed for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# All other bots
 User-agent: *
 Allow: /
 

@@ -7,6 +7,9 @@ interface SEOProps {
     image?: string;
     url?: string;
     canonical?: string;
+    type?: "website" | "article";
+    publishedTime?: string;
+    modifiedTime?: string;
     jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -15,10 +18,13 @@ const SITE_URL = import.meta.env.VITE_SITE_URL || "https://zeroonedotsai.consult
 const SEO = ({
     title,
     description,
-    keywords = "AI consulting India, business growth, AI automation, margin recovery, zeroone dots, outcome engine",
+    keywords = "AI consulting India, Private AI India, business AI automation, margin recovery, zeroone dots, outcome engine",
     image = "/og-image.png",
     url,
     canonical,
+    type = "website",
+    publishedTime,
+    modifiedTime,
     jsonLd,
 }: SEOProps) => {
     const siteTitle = "ZeroOne DOTS";
@@ -33,11 +39,15 @@ const SEO = ({
             <meta name="description" content={description} />
             <meta name="keywords" content={keywords} />
 
+            {/* Geo targeting for India */}
+            <meta name="geo.region" content="IN" />
+            <meta name="geo.placename" content="India" />
+
             {/* Canonical URL */}
             {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
             {/* Open Graph / Facebook */}
-            <meta property="og:type" content="website" />
+            <meta property="og:type" content={type} />
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={fullImage} />
@@ -45,6 +55,11 @@ const SEO = ({
             <meta property="og:image:height" content="630" />
             {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
             <meta property="og:site_name" content={siteTitle} />
+            <meta property="og:locale" content="en_IN" />
+
+            {/* Article-specific OG tags */}
+            {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+            {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />

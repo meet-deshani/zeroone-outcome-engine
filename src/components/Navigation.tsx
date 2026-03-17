@@ -12,7 +12,20 @@ import ContactForm from "./ContactForm";
 import Logo from "./Logo";
 import { logEvent } from "@/lib/analytics";
 
-const MegaMenuContent = ({ columns }: { columns: any[] }) => {
+interface MegaMenuItem {
+  name: string;
+  path: string;
+  desc: string;
+}
+
+interface MegaMenuColumn {
+  title: string;
+  subtitle: string;
+  description: string;
+  items: MegaMenuItem[];
+}
+
+const MegaMenuContent = ({ columns }: { columns: MegaMenuColumn[] }) => {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
@@ -57,7 +70,7 @@ const MegaMenuContent = ({ columns }: { columns: any[] }) => {
               </div>
 
               <ul className="space-y-4 mb-auto">
-                {col.items.map((item: any) => (
+                {col.items.map((item: MegaMenuItem) => (
                   <li key={item.name}>
                     <Link to={item.path} className="group block">
                       <div className="flex items-center gap-2">

@@ -13,7 +13,7 @@ import SeoGeo from "./pages/SeoGeo";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Security from "./pages/Security";
-import Infinity from "./pages/Infinity";
+import InfinityCRM from "./pages/Infinity";
 import NotFound from "./pages/NotFound";
 import OvertradeOP from "./pages/OvertradeOP";
 import PrivateAI from "./pages/PrivateAI";
@@ -75,7 +75,7 @@ const App = () => {
               <Route path="/community" element={<Community />} />
               <Route path="/seo-geo" element={<SeoGeo />} />
               <Route path="/digital-authority" element={<Navigate to="/seo-geo" replace />} />
-              <Route path="/infinity-crm" element={<Infinity />} />
+              <Route path="/infinity-crm" element={<InfinityCRM />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
               <Route path="/security" element={<Security />} />
