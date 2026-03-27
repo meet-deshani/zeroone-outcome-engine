@@ -104,7 +104,10 @@ async function prerender() {
   console.log("\n🔍 Prerendering routes for SEO...\n");
 
   const server = await startServer();
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
 
   let success = 0;
   let failed = 0;
