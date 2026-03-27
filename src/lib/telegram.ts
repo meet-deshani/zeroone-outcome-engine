@@ -1,8 +1,5 @@
 // Telegram Notification Service
-// Uses environment variables for sensitive data
-
-const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || '';
-const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID || '';
+// Messages are sent via /api/telegram (Cloudflare Pages Function) — no tokens in the browser.
 
 interface VisitorInfo {
     ip: string;
@@ -41,25 +38,16 @@ export const getVisitorInfo = async (): Promise<VisitorInfo | null> => {
     }
 };
 
-// Core function to send Telegram message
+// Core function to send Telegram message via server-side proxy
 export const sendTelegramMessage = async (message: string): Promise<boolean> => {
-    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-        console.warn('Telegram credentials not configured');
-        return false;
-    }
-
     try {
-        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-        await fetch(url, {
+        const res = await fetch('/api/telegram', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                chat_id: TELEGRAM_CHAT_ID,
-                text: message,
-                parse_mode: 'HTML',
-            }),
+            body: JSON.stringify({ message }),
         });
-        return true;
+        const data = await res.json();
+        return data.ok === true;
     } catch (error) {
         console.error('Failed to send Telegram message:', error);
         return false;
